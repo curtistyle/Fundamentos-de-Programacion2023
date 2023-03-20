@@ -26,3 +26,30 @@ Algoritmo
 FinAlgoritmo
 ```
 
+
+
+## Ejercicio 13
+
+13. De los y las estudiantes de Fundamentos de Programacion se desea saber que porcentaje menores a 20 años se encuentran cursando la materia. El programa debe solicitar al usuario que ingrese la cantidad total de estudiantes menores a 20 años y el total.
+
+ - **Entrada:**
+ > Total_Estudiantes, Estudiantes_Menores : Real
+ - **Proceso:**
+ > Porcentaje = (Estudiantes_Menores * 100) - Total_Estudiantes
+ - **Salida:**
+ > Porcentaje : Real
+
+#### Pseudocodigo
+```
+Algoritmo
+    Definir Total_Estudiantes, Estudiantes_Menores, Porcentaje Como Real
+
+    Leer Total_Estudiantes, Estudiantes_Menores
+
+    Porcentaje <- (Estudiantes_Menores * 100) Total_Estudiantes
+
+    Escribir Porcentaje
+FinAlgoritmo
+```
+
+
