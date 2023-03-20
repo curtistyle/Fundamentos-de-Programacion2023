@@ -66,13 +66,13 @@ FinAlgoritmo
 #### Pseudocodigo
 ```
 Algoritmo
-    Definir Cateto1, Cateto2, Hipotenusa Como Real
+    Definir Cateto1, Cateto2, Hipotenusa Como Real;
 
-    Leer Cateto1, Cateto2
+    Leer Cateto1, Cateto2;
 
-    Hipotenusa <- sqrt((Cateto1^2)+(Cateto^2))
+    Hipotenusa <- sqrt((Cateto1^2)+(Cateto^2));
 
-    Escribir Hipotenusa
+    Escribir Hipotenusa;
 FinAlgoritmo
 ```
 
@@ -146,9 +146,9 @@ Algoritmo
     Leer A, B;
 
     Si (A > B) Entonces
-        Resultado <- Verdadero
+        Resultado <- Verdadero;
     SiNo
-        Resultado <- Falso
+        Resultado <- Falso;
     FinSi
     
     Escribir Resultado;
@@ -287,9 +287,9 @@ FinAlgoritmo
  #### Pseudocodigo
 ```
 Algoritmo
-    Definir Radio, Altura, Volumen Como Real
+    Definir Radio, Altura, Volumen Como Real;
 
-    Leer Radio, Altura
+    Leer Radio, Altura;
 
     Volumen <- PI * (Radio^2) * Altura;
 
@@ -326,6 +326,7 @@ Algoritmo
     Digito3 <- (Numero - ((Digito1 * 100) + (Digito2 * 10)));
 
     Suma <- (Digito1^3) + (Digito^3) + (Digito3^3);
+
     Si (Suma = Numero) Entonces
         Resultado <- Verdadero;
     FinSi
