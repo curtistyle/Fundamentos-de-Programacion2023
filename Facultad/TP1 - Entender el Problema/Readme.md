@@ -304,7 +304,7 @@ FinAlgoritmo
  - **Entrada:**
  > Numero : Real
  - **Proceso:**
- > _(El 'div' divide y nos devuelve la parte entera del resultado)_ \
+ > _(El 'div' divide y nos devuelve la parte entera del numero)o_ \
  > Digito1 = Numero div 100  \
  > Digito2 = (Numero - (Digito1 * 100)) div 10  \
  > Digito3 = (Numero - ((Digito1 * 100) + (Digito2 * 10)))  \
@@ -329,8 +329,9 @@ Algoritmo
 
     Si (Suma = Numero) Entonces
         Resultado <- Verdadero;
-    FinSi
+    SiNo
         Resultado <- Falso;
+    FinSi
 
     Escribir Resultado;
 FinAlgoritmo
