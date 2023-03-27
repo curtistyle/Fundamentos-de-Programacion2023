@@ -370,8 +370,7 @@ FinAlogoritmo
 
 13. De los y las estudiantes de Fundamentos de Programación se desea saber qué porcentaje 
 de personas  menores a  20  años  se  encuentran  cursando  la  materia.  El  programa  debe 
-solicitar  al  usuario  que  ingrese  la cantidad  total  de  estudiantes  menores  a 20  años  y  el 
-total.
+solicitar  al  usuario  que  ingrese  la cantidad  total  de  estudiantes  menores  a 20  años  y  el total.
 
  - **Entrada:**
  > Total_Estudiantes, Menores : Entero
@@ -393,3 +392,4 @@ total.
         Escribir Porcentaje;
     FinAlgoritmo
 ```
+
