@@ -299,7 +299,9 @@ FinAlgoritmo
 
 ## Ejercicio 11
 
-11. Escriba un programa que permita el ingreso de un número de tres dígitos y determine si es un número Armstrong (ej. 153, 371). Como el número que se ingresa posee 3 dígitos, la suma de cada uno de sus dígitos elevado a 3 debe ser igual al número.
+11. Escriba un programa que permita el ingreso de un número de tres dígitos y determine si es un número 
+Armstrong (ej. 153, 371). Como el número que se ingresa posee 3 dígitos, la suma de cada uno de sus dígitos  
+elevado a 3 debe ser igual al número.
 
  - **Entrada:**
  > Numero : Real
@@ -335,4 +337,59 @@ Algoritmo
 
     Escribir Resultado;
 FinAlgoritmo
+```
+
+## Ejercicio 12
+
+12. Solicitar al usuario que ingrese el precio de un producto al inicio del año, y el precio del 
+mismo producto transcurrido un determinado tiempo. El usuario debe mostrar cuál fue el 
+porcentaje de aumento que tuvo ese producto en el año.
+
+ - **Entrada:**
+ > Valor_Inicial, Valor_Final : Real
+ - **Proceso:**
+ > Porcentaje = ((Valor_Final - Valor_Inicial) / Valor_Inicial) * 100
+ - **Salida:**
+ > Porcentaje : Real
+
+### Pseudocodigo
+
+```
+Algoritmo
+    Definir Valor_Inicial, Valor_Final, Porcentaje Como Real;
+
+    Leer Valor_Inicial, Valor_Final;
+
+    Porcentaje <- ((Valor_Final - Valor_Inicial) / Valor_Inicial) * 100;
+
+    Escribir Porcentaje
+FinAlogoritmo
+```
+
+## Ejercicio 13
+
+13. De los y las estudiantes de Fundamentos de Programación se desea saber qué porcentaje 
+de personas  menores a  20  años  se  encuentran  cursando  la  materia.  El  programa  debe 
+solicitar  al  usuario  que  ingrese  la cantidad  total  de  estudiantes  menores  a 20  años  y  el 
+total.
+
+ - **Entrada:**
+ > Total_Estudiantes, Menores : Entero
+ - **Proceso:**
+ > Porcentaje = (Menores * 100) / Total_Estudiantes
+ - **Salida:**
+ > Porcentaje : Real
+
+### Pseudocodigo
+
+```
+    Algoritmo
+        Definir Total_Estudiantes, Menores Como Entero;
+
+        Leer Total_Estudiantes, Menores;
+
+        Porcentaje <- (Menores * 100) / Total_Estudiantes;
+
+        Escribir Porcentaje;
+    FinAlgoritmo
 ```
