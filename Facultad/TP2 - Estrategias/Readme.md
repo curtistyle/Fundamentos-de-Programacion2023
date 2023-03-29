@@ -45,8 +45,10 @@
 
 | # | DESCRIPCION |
 | - | ------ |
-| 1 |  |
-| 2 |  |
-| 3 |  |
-| 4 |  |
-| 5 |  |
+| 1 | Encender el dispositivo (PC, SmartPhone, TV) |
+| 2 | Elejir una plataforma para mirar la pelicula (Netflix, Prime Video, etc) |
+| 3 | Iniciar la plataforma ya elegida o Descargarla e Instalarla |
+| 4 | Iniciar sesion o registrarse |
+| 5 | Buscar en el catalogo la pelicula que mas te guste (Por nombre, genero, ranking, etc) |
+| 6 | Seleccionar la pelicula |
+| 7 | Reproducir la pelicula |
