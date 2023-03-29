@@ -87,10 +87,10 @@ FinAlgoritmo
 
 6. Diseñe un algoritmo que determine el porcentaje de: Alumnos promocionados, Alumnos regularizados, Alumnos desaprobados y Alumnos libres, teniendo como datos cantidad de alumnos que cumplen con cada condición.
 
-**version 1**
+**version 1** __(sobrescribiendo variables)__
 ```
 Algoritmo
-    Definir Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libros, Total Como Entero;
+    Definir Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libres, Total Como Entero;
     Definir Porcentaje Como Real;
 
     Leer Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libres;
@@ -108,16 +108,56 @@ Algoritmo
 
     Porcentaje <- (Alumnos_Libres * 100) / Total;
     Escribir Porcentaje;
-
 FinAlgoritmo
 ```
 
-**version 2**
+**version 2** __(sobrescribiendo variables)__
+```
+Algoritmo
+    Definir Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libres, Porcentaje, Total Como Real;
+
+    Leer Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libres;
+
+    Total <- Alumnos_Promocionados + Alumnos_Regularizados + Alumnos_Desaprobados + Alumnos_Libres;
+
+    Alumnos_Promocionados <- (Alumnos_Promocionados * 100) / Total;
+    Alumnos_Regularizados <- (Alumnos_Regularizados * 100) / Total;
+    Alumnos_Desaprobados <- (Alumnos_Desaprobados * 100) / Total;
+    Alumnos_Libres <- (Alumnos_Libres * 100) / Total;
+
+    Escribir Alumnos_Promocionados, Alumnos_Regularizados, Alumnos_Desaprobados, Alumnos_Libres;
+FinAlgoritmo
+```
+
+
+**version 3**
 
 | VARIABLE | DESCRIPCION |
 | -------- | ----------- |
 | A_P | Alumnos Promocionados |
 | A_R | Alumnos Regularizados |
-| A_D | Alumnos Desaprobados |
-| A_L | Alumnos Libres |
+| A_D | Alumnos Desaprobados  |
+| A_L |     Alumnos Libres    |
+|     |                       |
+| P_P | Alumnos Promocionados |
+| P_R | Alumnos Regularizados |
+| P_D |  Alumnos Desaprobados |
+| P_L |     Alumnos Libres    |
+
+```
+Algoritmo
+    Definir A_P, A_R, A_D, A_L, Total Como Entero;
+    Definir P_P, P_R, P_D, P_L Como Real;
+
+    Leer A_P, A_R, A_D, A_L;
+
+    Total <- A_P + A_R + A_D + A_L;
+    P_P <- (A_P * 100) / Total;
+    P_R <- (A_R * 100) / Total;
+    P_D <- (A_D * 100) / Total;
+    P_L <- (A_L * 100) / Total;
+
+    Ecribir P_P, P_R, P_D, P_L;
+FinAlgoritmo
+```
 
