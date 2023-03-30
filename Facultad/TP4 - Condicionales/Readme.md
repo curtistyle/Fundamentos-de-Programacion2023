@@ -128,7 +128,7 @@ Algoritmo
             Escribir (Nombre, " gana $30000.");
         SiNo
             Si (Sueldo > 0) y (Sueldo < 30000) Entonces
-                Escribir (Nombre " gana menos $30000.");
+                Escribir (Nombre, " gana menos $30000.");
             SiNo
                 Escribir ("¡Error!, el sueldo ingresado no es valido.");
     FinSi
@@ -137,11 +137,51 @@ FinAlgoritmo
 
 ## Ejercicio 4
 
-4. 
+4. Dados dos números si el primero es divisible por el segundo mostrar un mensaje que así 
+lo indique. 
 
-
+**version 1** _(condicional simple)_
 ```
 Algoritmo
-    Definir 
+    Definir Numero1, Numero2, Resultado Como Entero;
+
+    Leer Numero1, Numero2;
+
+    Resultado <- Numero1 mod Numero2;
+
+    Si (Resultado = 0) Entonces
+        Escribir (Numero1 ," es divisible por ", Numero2);
+    FinSi
 FinAlgoritmo
 ```
+
+**version 2** _(condicional simple)_
+```
+Algoritmo
+    Definir Numero1, Numero2 Como Entero;
+
+    Leer Numero1, Numero2;
+
+    Si ((Numero1 mod Numero2) = 0) Entonces
+        Escribir (Numero1 ," es divisible por ", Numero2);
+    FinSi
+FinAlgoritmo
+```
+
+**version 3** _(condicional doble)_
+```
+Algoritmo
+    Definir Numero1, Numero2, Resultado Como Entero;
+
+    Leer Numero1, Numero2;
+
+    Resultado <- Numero1 mod Numero2;
+
+    Si (Resultado = 0) Entonces
+        Escribir (Numero1 ," es divisible por ", Numero2);
+    SiNo
+        Escribir (Numero1 ," NO es divisible por", Numero2);
+    FinSi
+FinAlgoritmo
+```
+
