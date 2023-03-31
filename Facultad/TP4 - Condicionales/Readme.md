@@ -362,6 +362,49 @@ Algoritmo ejercicio
 FinAlgoritmo
 ```
 
+## Ejercicio 11
+
+11. Confeccionar un algoritmo tal que dados dos números enteros devuelva la suma de los 
+mismos, si se cumple que el primero es menor que el segundo, en caso contrario devolver 
+el producto de los mismos. 
+
+```
+Algoritmo
+    Definir Numero1, Numero2, Producto, Suma Como Entero;
+
+    Leer Numero1, Numero2;
+
+    Si (Numero1 < Numero2) Entonces
+        Suma <- Numero1 + Numero2;
+        Escribir Suma;
+    SiNo
+        Producto <- Numero1 * Numero2;
+        Escribir Producto;
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 12
+
+12. Se ingresa el nombre, edad y dirección de dos socios, se pide mostrar los datos de socio 
+más joven. 
+
+```
+Algoritmo
+    Definir Nombre1, Direccion1, Nombre2, Direccion2 Como Cadena;
+    Definir Edad1, Edad2 Como Entero;
+
+    Leer Nombre1, Direccion1, Edad1; 
+    Leer Nombre2, Direccion2, Edad2;
+
+    Si (Edad1 < Edad2) Entonces
+        Escribir Nombre1, "es el Socio mas Joven,  con la edad de ", Edad1, " años y direccion ", Direccion1;
+    SiNo
+        Escribir Nombre2, "es el Socio mas Joven,  con la edad de ", Edad2, " años y direccion ", Direccion2;
+    FinSi    
+FinAlgoritmo
+```
+
 ## Ejercicio 13
 
 13. Desarrollar un algoritmo que una vez leída una Fecha en formato dd/mm/aaaa, indique cual 
@@ -392,9 +435,6 @@ será la fecha un día después.
  > r : Es divisible entre 100 ( ¬r : No es divisible entre 100 ). \
  > Entonces nos queda la siguiente proposicion. \
  > p ∧ (¬r ∨ q)
-
-
-
 
 ```
 Algoritmo
