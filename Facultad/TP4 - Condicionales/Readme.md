@@ -498,3 +498,245 @@ Algoritmo
 FinAlgoritmo
 ```
 
+## Ejercicio 14
+
+14. Dados tres nombres de alumnos, mostrar si Mariana Ríos se encuentra entre ellos, de lo contrario emitir un mensaje “No existe”. 
+
+**version 1**
+```
+Algoritmo
+    Definir Nombre1, Nombre2, Nombre3 Como Cadena;
+
+    Leer Nombre1, Nombre2, Nombre3;
+
+    Si (Nombre1 = 'Mariana Ríos') Entonces
+        Escribir "Mariana Ríos esta en la lista.";
+    SiNo
+        Si (Nombre2 = 'Mariana Ríos') Entonces
+            Escribir "Mariana Ríos esta en la lista.";
+        SiNo
+            Si (Nombre3 = 'Mariana Ríos') Entonces
+                Escribir "Mariana Ríos esta en la lista.";
+            SiNo
+                Escribir "No existe en la lista.";
+            FiSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+**version 2**
+```
+Algoritmo
+    Definir Nombre1, Nombre2, Nombre3 Como Cadena;
+
+    Leer Nombre1, Nombre2, Nombre3;
+
+    Si (Nombre1 = 'Mariana Ríos') o (Nombre = 'Mariana Ríos') o (Nombre3 = 'Mariana Ríos') Entonces
+        Escribir "Mariana Ríos esta en la lista.";
+    SiNo
+        Escribir "No existe en la lista";
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 15
+
+15. Calcular el descuento considerando que para un monto mayor de $1000.- el descuento 
+es del 10%, caso contrario es del 2%. Se pide mostrar monto con descuento incluido.
+
+**version 1**
+```
+Algoritmo
+    Definir Descuento, Monto, Total Como Real;
+
+    Leer Monto;
+
+    Si (Monto > 1000) Entonces
+        Descuento <- (10 * Monto) / 100;
+        Total <- Monto - Descuento;
+        Escribir "Monto mas el descuento del 10%: ", Total; 
+    SiNo
+        Descuento <- (2 * Monto) / 100;
+        Total <- Monto - Descuento;
+        Escribir "Monto mas el descuento del 2%: ", Total; 
+    FinSi
+FinAlgoritmo
+```
+
+**version 2**
+```
+Algoritmo
+    Definir Descuento, Monto Como Real;
+
+    Leer Monto;
+
+    Si (Monto > 1000) Entonces
+        Descuento <- Monto - (Monto * 0.1);
+        Escribir "Monto mas el descuento del 10%: ", Descuento;  
+    SiNo
+        Descuento <- Monto - (Monto * 0.02);
+        Escribir "Monto mas el descuento del 2%: ", Descuento; 
+    FinSi
+FinAlgoritmo
+```
+
+16. Escribir un algoritmo en el que se introduzca el número de un mes (1 a 12) y visualice el Nº de días de ese mes. (no considerar año bisiesto).
+
+
+**version 1** _(condicional anidado)_
+```
+Algoritmo   
+    Definir Mes Como Entero;
+
+    Leer Mes;
+
+    Si (Mes = 1) Entonces
+        Escribir "31";
+    SiNo
+        Si (Mes = 2) Entonces
+            Escribir "28";
+        SiNo
+            Si (Mes = 3) Entonces
+                Escribir "31";
+            SiNo
+                Si (Mes = 4) Entonces
+                    Escribir "30";
+                SiNo
+                    Si (Mes = 5) Entonces
+                        Escribir "31";
+                    SiNo
+                        Si (Mes = 6) Entonces
+                            Escribir "30";
+                        SiNo
+                            Si (Mes = 7) Entonces
+                                Escribir "31";
+                            SiNo
+                                Si (Mes = 8) Entonces
+                                    Escribir "31";
+                                SiNo
+                                    Si (Mes = 9) Entonces
+                                        Escribir "30";
+                                    SiNo
+                                        Si (Mes = 10) Entonces
+                                            Escribir "31";
+                                        SiNo
+                                            Si (Mes = 11) Entonces
+                                                Escribir "30";
+                                            SiNo
+                                                Si (Mes = 12) Entonces
+                                                    Escribir "31";
+                                                SiNo
+                                                    Escribir "Mes fuera de rango.";
+                                                FinSi
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+**version 2** _(condicional segun)_
+
+```
+Algoritmo
+    Definir Mes Como Entero;
+
+    Leer Mes;
+
+    Segun Mes Hacer
+        1 : 
+            Escribir "31";
+        2 : 
+            Escribir "28";
+        3 : 
+            Escribir "31";
+        4 : 
+            Escribir "30";
+        5 : 
+            Escribir "31";
+        6 : 
+            Escribir "30";
+        7 : 
+            Escribir "31";
+        8 : 
+            Escribir "31";
+        9 : 
+            Escribir "30";
+        10:
+            Escribir "31";
+        11:
+            Escribir "30";
+        12: 
+            Escribir "31";
+        De otro modo:
+            Escribir "Mes fuera de rango.";
+    Fin Segun
+FinAlgoritmo
+```
+
+## Ejercicio 17
+
+17. Emular una calculadora en la cual se ingresan 2 números y el operador (*, /, +, -) e 
+imprime el resultado.
+
+```
+Algoritmo
+    Definir Numero1, Numero2, Resultado Como Real;
+    Definir Operador Como Cadena
+
+    Leer Numero1, Numero2, Operador;
+
+    Si (Operador = '+') Entonces
+        Resultado <- Numero1 + Numero2;
+        Escribir Resultado;
+    SiNo
+        Si (Operador = '-') Entonces
+            Resultado <- Numero1 - Numero2;
+            Escribir Resultado;
+        SiNo
+            Si (Operador = '*') Entonces
+                Resultado <- Numero1 * Numero2;
+                Escribir Resultado;
+            SiNo
+                Si (Operador = '/') y (Numero2 <> 0) Entonces   
+                    Resultado <- Numero1 / Numero2;
+                    Escribir Resultado;
+                SiNo
+                    Escribir "¡Operador incorrecto!"
+                FinSi
+            FinSI
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 18 
+
+18. Leer dos números. Decir si el primero es divisible por el segundo, si esto se cumple decir 
+si es un número par o impar.
+
+```
+Algoritmo
+    Definir Numero1, Numero2 Como Real;
+
+    Leer Numero1, Numero2;
+
+    Si ((Numero1 mod Numero2) = 0) Entonces
+        Si ((Numero1 mod 2) = 0) Entonces
+            Escribir "El primer numero es par.";
+        SiNo
+            Escribir "El primer numero es impar.";
+        FinSi
+    SiNo
+        Escribir "El primer numero no es divisible por el segundo.";
+    FinSi
+FinAlgoritmo
+```
+
