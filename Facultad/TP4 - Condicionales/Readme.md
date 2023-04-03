@@ -580,6 +580,8 @@ Algoritmo
 FinAlgoritmo
 ```
 
+## Ejercicio 16
+
 16. Escribir un algoritmo en el que se introduzca el número de un mes (1 a 12) y visualice el Nº de días de ese mes. (no considerar año bisiesto).
 
 
