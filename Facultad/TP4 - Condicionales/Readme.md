@@ -806,10 +806,75 @@ FinAlgoritmo
 21. La tarifa de un TAXI en Europa es la siguiente: 
 - Una cantidad fija de 20 euros, sino se sobrepasan los 30 km. 
 - Para más de 30 km, se considerarán los siguientes supuestos: 
-▪ Si no se sobrepasan los 100 km, 1 euro por km, que exceda de los 30, además 
-de los 20 euros. 
-▪ Si sobrepasa los 100 km, 0,50 céntimos por km que exceda de los 100, 1 euro 
-por km desde los 30 a los 100 y los 20 euros. Diseñar un programa que pida los 
-kilómetros recorridos y calcule el total a pagar según la tarifa anterior. 
+    - Si no se sobrepasan los 100 km, 1 euro por km, que exceda de los 30, además de los 20 euros. 
+    - Si sobrepasa los 100 km, 0,50 céntimos por km que exceda de los 100, 1 euro por km desde los 30 a los 100 y los 20 euros. Diseñar un programa que pida los kilómetros recorridos y calcule el total a pagar según la tarifa anterior. 
+
+
+```
+Algoritmo
+    Definir Kilometros, Tarifa, Auxiliar_Kilometros Como Real;
+
+    Leer Kilemetros;
+
+    Si (Kilometros <= 30) Entonces
+        Tarifa <- Kilometro * 20;
+        Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+    SiNo
+        Si (Kilometros > 30) y (Kilometros <= 100) Entonces
+            Auxiliar_Kilometros <- Kilometros - 30;
+            Tarifa <- (Kilometros * 30) + Auxiliar_Kilometros;
+            Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+        SiNo
+            Si (Kilometros > 100) Entonces
+                Auxiliar_Kilometros <- Kilometros - 100;
+                Tarifa <- (Kilometros * 30) + 70 + (Auxiliar_Kilometros * 0.50);
+                Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+            FinSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 22
+
 22.  Dados 3 números, informarlos en orden creciente.
 
+```
+Algoritmo
+    Definir Numero1, Numero2, Numero3 Como Real;
+
+    Leer Numero1, Numero2, Numero3;
+
+    Si (Numero1 > Numero2) y (Numero2 > Numero3) Entonces
+        Escribir Numero1, Numero2, Numero3;
+    SiNo
+        Si (Numero1 > Numero3) y (Numero3 > Numero2) Entonces
+            Escribir Numero1, Numero3, Numero2;
+        SiNo
+            Si (Numero2 > Numero1) y (Numero1 > Numero3) Entonces
+                Escribir Numero2, Numero1, Numero3;
+            SiNo
+                Si (Numero2 > Numero3) y (Numero3 > Numero1) Entonces
+                    Escribir Numero2, Numero3, Numero1;
+                SiNo
+                    Si (Numero3 > Numero1) y (Numero1 > Numero2) Entonces
+                        Escribir Numero3, Numero1, Numero2;
+                    SiNo
+                        Escribir Numero3, Numero2, Numero1;
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 23
+
+De una prueba de nivel realizada a un alumno se conoce la cantidad total de preguntas 
+realizadas y la cantidad de respuestas correctas. Informar el nivel registrado de acuerdo 
+a la siguiente escala:
+- Muy Bueno si el porcentaje es mayor o igual a 90% 
+- Bueno entre 70% y 90% 
+- Regular entre 50% y 70% 
+- Malo si el porcentaje es menor que 50% 
