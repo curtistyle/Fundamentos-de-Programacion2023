@@ -871,10 +871,9 @@ FinAlgoritmo
 
 ## Ejercicio 23
 
-De una prueba de nivel realizada a un alumno se conoce la cantidad total de preguntas 
-realizadas y la cantidad de respuestas correctas. Informar el nivel registrado de acuerdo 
-a la siguiente escala:
+De una prueba de nivel realizada a un alumno se conoce la cantidad total de preguntas realizadas y la cantidad de respuestas correctas. Informar el nivel registrado de acuerdo  a la siguiente escala:
 - Muy Bueno si el porcentaje es mayor o igual a 90% 
 - Bueno entre 70% y 90% 
 - Regular entre 50% y 70% 
 - Malo si el porcentaje es menor que 50% 
+
