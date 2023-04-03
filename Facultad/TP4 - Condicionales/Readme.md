@@ -584,8 +584,47 @@ FinAlgoritmo
 
 16. Escribir un algoritmo en el que se introduzca el número de un mes (1 a 12) y visualice el Nº de días de ese mes. (no considerar año bisiesto).
 
+**version 1**
 
-**version 1** _(condicional anidado)_
+```
+Algoritmo
+    Definir Mes Como Entero;
+
+    Leer Mes;
+
+    Si (Mes = 1) o (Mes = 3) o (Mes = 5) o (Mes = 7) o (Mes = 8) o (Mes = 10) o (Mes = 12) Entonces
+        Escribir "31";
+    SiNo
+        Si (Mes = 2) Entonces
+            Escribir "28";
+        SiNo
+            Escribir "30";
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+**version 2**
+```
+Algoritmo
+    Definir Mes Como Entero;
+
+    Leer Mes;
+
+    Si (Mes = 4) o (Mes = 6) o (Mes = 9) o (Mes = 11) Entonces
+        Escribir "30";
+    SiNo
+        Si (Mes = 2) Entonces
+            Escribir "28";
+        SiNo
+            Escribir "31";
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+
+**version 3** 
 ```
 Algoritmo   
     Definir Mes Como Entero;
@@ -644,7 +683,27 @@ Algoritmo
 FinAlgoritmo
 ```
 
-**version 2** _(condicional segun)_
+
+**version 4** _(condicional segun)_
+
+```
+Algoritmo
+    Definir Mes Como Entero;
+
+    Leer Mes;
+
+    Segun Mes Hacer
+            1, 3, 5, 7, 8, 10, 12 : Escribir "31";
+            4, 6, 9, 11 : Escribir "30";
+            2 : Escribir "28";
+        De otro modo:
+            Escribir "Mes fuera de rango.";
+    Fin Segun
+FinAlgoritmo
+```
+
+
+**version 4** _(condicional segun)_
 
 ```
 Algoritmo
@@ -688,6 +747,8 @@ FinAlgoritmo
 17. Emular una calculadora en la cual se ingresan 2 números y el operador (*, /, +, -) e 
 imprime el resultado.
 
+**version 1**
+
 ```
 Algoritmo
     Definir Numero1, Numero2, Resultado Como Real;
@@ -716,6 +777,66 @@ Algoritmo
             FinSI
         FinSi
     FinSi
+FinAlgoritmo
+```
+
+**version 2**
+
+```
+Algoritmo
+    Definir Operador : Como Caracter;
+    Definir Numero1, Numero2, Resultado : Como Real
+
+    Leer Operador, Numero1, Numero2;
+
+    Segun Operador Hacer
+        "+" : 
+            Resultado <- Numero1 + Numero2;
+            Escribir "Resultado: ", Resultado;
+        "-" :
+            Resultado <- Numero1 - Numero2;
+            Escribir "Resultado: ", Resultado;
+        "*" :
+            Resultado <- Numero1 * Numero2;
+            Escribir "Resultado: ", Resultado;
+        "/" :
+            Si (Numero2 < > 0) Entonces
+                Resultado <- Numero1 / Numero2;
+                Escribir "Resultado: ", Resultado;
+            SiNo
+                Escribir "No se puede dividir por 0";
+            FinSi
+    De otro modo:
+        Escribir "Operador invalido";
+    FinSegun 
+FinAlgoritmo
+```
+
+**version 3**
+
+```
+Algoritmo
+    Definir Operador : Como Caracter;
+    Definir Numero1, Numero2 : Como Real
+
+    Leer Operador, Numero1, Numero2;
+
+    Segun Operador Hacer
+        "+" : 
+            Escribir "Resultado: ", Numero1 + Numero2;
+        "-" :
+            Escribir "Resultado: ", Numero1 - Numero2;
+        "*" :
+            Escribir "Resultado: ", Numero1 * Numero2;
+        "/" :
+            Si (Numero2 < > 0) Entonces
+                Escribir "Resultado: ", Numero1 / Numero2;
+            SiNo
+                Escribir "No se puede dividir por 0";
+            FinSi
+    De otro modo:
+        Escribir "Operador invalido";
+    FinSegun 
 FinAlgoritmo
 ```
 
@@ -879,3 +1000,43 @@ De una prueba de nivel realizada a un alumno se conoce la cantidad total de preg
 - Regular entre 50% y 70% 
 - Malo si el porcentaje es menor que 50% 
 
+**version 1**
+
+```
+Algoritmo
+    Definir Total, Correctas : Entero; 
+    Definir Porcentaje : Real;
+
+    Leer Total, Correctar;
+
+    Porcentaje <- (Correctas * 100) / Total;
+
+    Si (Porcentaje < 50) Entonces
+        Escribir "Malo";
+    SiNo
+        Si (Porcentaje >= 50) y (Porcentaje < 70) Entonces
+            Escribir "Regular";
+        SiNo
+            Si (Porcentaje >= 70) y (Porcentaje < 90) Entonces
+                Escribir "Bueno";
+            SiNo
+                Escribir "Muy Bueno";
+            FinSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+**version 2**
+
+```
+Algoritmo
+    Definir Total, Correctas, Porcentaje : Entero;
+
+    Leer Total, Correctar;
+
+    Porcentaje <- (Correctas * 100) / Total;
+
+    Segun Porcentaje 
+FinAlgoritmo
+```
