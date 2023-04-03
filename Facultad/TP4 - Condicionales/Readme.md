@@ -740,3 +740,76 @@ Algoritmo
 FinAlgoritmo
 ```
 
+## Ejercicio 19
+
+19. Leer un número, si dicho número está comprendido entre 23 y 54, decir si es múltiplo de 3 
+o de 5.
+
+**version 1** _(condicional simple)_
+```
+Algoritmo
+    Definir Numero Como Real;
+
+    Leer Numero;
+
+    Si (Numero >= 23) y (Numero <= 54) Entonces
+        Si ((Numero mod 5) = 0) Entonces
+            Escribir Numero, " es multiplo de 5";
+        FinSi
+    FinSi
+FinAlgoritmo
+```
+
+**version 2** _(condicional compuesto)_
+```
+Algoritmo
+    Definir Numero Como Real;
+
+    Leer Numero;
+
+    Si (Numero >= 23) y (Numero <= 54) Entonces
+        Si ((Numero mod 5) = 0) Entonces
+            Escribir Numero, " es multiplo de 5";
+        SiNo
+            Escribir Numero, " NO es multiplo de 5";
+        FinSi
+    Sino
+        Escribir "El ", Numero , " no esta en el rango definido.";
+    FinSi 
+FinAlgoritmo   
+```
+
+## Ejercicio 20
+
+20. Dadas las 4 notas obtenidas por un alumno, calcular e informar su promedio e informar 
+una leyenda que indique si está aprobado o no. La condición de aprobación es obtener un 
+promedio mayor o igual que 4.
+
+```
+Algoritmo
+    Definir Nota1, Nota2, Nota3, Nota4, Promedio Como Real;
+
+    Leer Nota1, Nota2, Nota3, Nota4;
+
+    Promedio <- (Nota1 + Nota2 + Nota3 + Nota4) / 4;
+
+    Si (Promedio >= 4) Entonces
+        Escribir "Su promedio es: ", Promedio ,", usted esta aprobado.";
+    SiNo
+        Escribir "Su promedio es: ", Promedio ,", usted esta desaprobado." 
+    FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 21
+
+21. La tarifa de un TAXI en Europa es la siguiente: 
+- Una cantidad fija de 20 euros, sino se sobrepasan los 30 km. 
+- Para más de 30 km, se considerarán los siguientes supuestos: 
+▪ Si no se sobrepasan los 100 km, 1 euro por km, que exceda de los 30, además 
+de los 20 euros. 
+▪ Si sobrepasa los 100 km, 0,50 céntimos por km que exceda de los 100, 1 euro 
+por km desde los 30 a los 100 y los 20 euros. Diseñar un programa que pida los 
+kilómetros recorridos y calcule el total a pagar según la tarifa anterior. 
+22.  Dados 3 números, informarlos en orden creciente.
+
