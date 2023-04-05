@@ -994,7 +994,7 @@ FinAlgoritmo
 
 ## Ejercicio 23
 
-De una prueba de nivel realizada a un alumno se conoce la cantidad total de preguntas realizadas y la cantidad de respuestas correctas. Informar el nivel registrado de acuerdo  a la siguiente escala:
+23. De una prueba de nivel realizada a un alumno se conoce la cantidad total de preguntas realizadas y la cantidad de respuestas correctas. Informar el nivel registrado de acuerdo  a la siguiente escala:
 - Muy Bueno si el porcentaje es mayor o igual a 90% 
 - Bueno entre 70% y 90% 
 - Regular entre 50% y 70% 
@@ -1027,17 +1027,93 @@ Algoritmo
 FinAlgoritmo
 ```
 
-**version 2**
+## Ejercicio 24
 
+24. Se realiza una encuesta de adaptación de tres productos (se ingresa el porcentaje de cada uno) y quiero determinar cual de ellos es el menos aceptado y el mas aceptado. Imprimir un mensaje indicando el nombre de los productos y sus porcentajes.
+
+*version 1*
 ```
 Algoritmo
-    Definir Total, Correctas, Porcentaje : Entero;
+    Definir Producto1, Producto2, Producto3 Como Cadena;
+    Definir Porcentaje1, Porcentaje2, Porcentaje3 Como Real;
 
-    Leer Total, Correctar;
+    Leer Producto1, Porcentaje1;
+    Leer Producto2, Porcentaje2;
+    Leer Producto3, Porcentaje3;
 
-    Porcentaje <- (Correctas * 100) / Total;
-
-    Segun Porcentaje 
+    Si (Porcentaje1 < Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
+        Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+    SiNo
+        Si (Porcentaje1 < Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
+            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";   
+            Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%."; 
+        SiNo
+            Si (Porcentaje2 < Porcentaje1) y (Porcentaje1 < Porcentaje3) Entonces
+                Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
+                Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+            SiNo
+                Si (Porcentaje2 < Porcentaje3) y (Porcentaje3 < Porcentaje1) Entonces
+                    Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
+                    Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                SiNo
+                    Si (Porcentaje3 < Porcentaje1) y (Porcentaje1 < Porcentaje2) Entonces
+                        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
+                        Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
+                    SiNo
+                        Si (Porcentaje3 < Porcentaje2) y (Porcentaje2 < Porcentaje1) Entonces
+                            Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
+                            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
 FinAlgoritmo
 ```
 
+*version 2*
+```
+Algoritmo
+    Definir Producto1, Producto2, Producto3 Como Cadena;
+    Definir Porcentaje1, Porcentaje2, Porcentaje3 Como Real;
+
+    Leer Producto1, Porcentaje1;
+    Leer Producto2, Porcentaje2;
+    Leer Producto3, Porcentaje3;
+
+    Si (Porcentaje1 < Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
+        Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+    SiNo
+        Si (Porcentaje1 < Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
+            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";   
+            Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%."; 
+        SiNo
+            Si (Porcentaje2 < Porcentaje1) y (Porcentaje1 < Porcentaje3) Entonces
+                Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
+                Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+            SiNo
+                Si (Porcentaje2 < Porcentaje3) y (Porcentaje3 < Porcentaje1) Entonces
+                    Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
+                    Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                SiNo
+                    Si (Porcentaje3 < Porcentaje1) y (Porcentaje1 < Porcentaje2) Entonces
+                        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
+                        Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
+                    SiNo
+                        Si (Porcentaje3 < Porcentaje2) y (Porcentaje2 < Porcentaje1) Entonces
+                            Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
+                            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                        SiNo
+                            Si (Porcentaje1 = Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
+                                Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
+                                Escrbir "El producto ", Producto3 , "tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+FinAlgoritmo
+```
