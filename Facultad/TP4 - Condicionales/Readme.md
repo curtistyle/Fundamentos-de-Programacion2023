@@ -1031,7 +1031,7 @@ FinAlgoritmo
 
 24. Se realiza una encuesta de adaptación de tres productos (se ingresa el porcentaje de cada uno) y quiero determinar cual de ellos es el menos aceptado y el mas aceptado. Imprimir un mensaje indicando el nombre de los productos y sus porcentajes.
 
-*version 1*
+**version 1**
 ```
 Algoritmo
     Definir Producto1, Producto2, Producto3 Como Cadena;
@@ -1073,7 +1073,7 @@ Algoritmo
 FinAlgoritmo
 ```
 
-*version 2*
+**version 2**
 ```
 Algoritmo
     Definir Producto1, Producto2, Producto3 Como Cadena;
@@ -1083,37 +1083,87 @@ Algoritmo
     Leer Producto2, Porcentaje2;
     Leer Producto3, Porcentaje3;
 
-    Si (Porcentaje1 < Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
-        Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
-        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
-    SiNo
-        Si (Porcentaje1 < Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
-            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";   
-            Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%."; 
+    Si (Porcentaje1 >= 0) y (Porcentaje2 >= 0) y (Porcentaje3 >= 0) Entonces
+        Si (Porcentaje1 < Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
+            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+            Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
         SiNo
-            Si (Porcentaje2 < Porcentaje1) y (Porcentaje1 < Porcentaje3) Entonces
-                Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
-                Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+            Si (Porcentaje1 < Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
+                Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";   
+                Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%."; 
             SiNo
-                Si (Porcentaje2 < Porcentaje3) y (Porcentaje3 < Porcentaje1) Entonces
+                Si (Porcentaje2 < Porcentaje1) y (Porcentaje1 < Porcentaje3) Entonces
                     Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
-                    Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                    Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
                 SiNo
-                    Si (Porcentaje3 < Porcentaje1) y (Porcentaje1 < Porcentaje2) Entonces
-                        Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
-                        Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
+                    Si (Porcentaje2 < Porcentaje3) y (Porcentaje3 < Porcentaje1) Entonces
+                        Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";   
+                        Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
                     SiNo
-                        Si (Porcentaje3 < Porcentaje2) y (Porcentaje2 < Porcentaje1) Entonces
+                        Si (Porcentaje3 < Porcentaje1) y (Porcentaje1 < Porcentaje2) Entonces
                             Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
-                            Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                            Escribir "El producto: ", Producto2, " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
                         SiNo
-                            Si (Porcentaje1 = Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
-                                Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
-                                Escrbir "El producto ", Producto3 , "tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                            Si (Porcentaje3 < Porcentaje2) y (Porcentaje2 < Porcentaje1) Entonces
+                                Escribir "El producto: ", Producto3, " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";   
+                                Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                            SiNo
+                                Si (Porcentaje1 = Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
+                                    Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
+                                    Escrbir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                                SiNo
+                                    Si (Porcentaje1 = Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
+                                        Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
+                                        Escrbir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                                    SiNo
+                                        Escribir "Los productos ", Producto2 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje2;
+                                        Escrbir "El producto ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+                                    FinSi
+                                FinSi
+                            FinSi
+                        FinSi
                     FinSi
                 FinSi
             FinSi
         FinSi
+    SiNo
+        Escribir "Los valores ingresado son incorrectos";
     FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 25
+
+25. Se desea escribir el nombre del dia de la semana en funcion de un numero del dia, introducido por teclado, donde 1 es el Domingo, 2 es Lunes, y asi sucecivamente.
+
+
+**version 1**
+```
+Algoritmo
+    Definir Dia Como Entero;
+
+    Leer Dia;
+
+    Segun Dia Hacer
+        1 : Escribir "Domingo";
+        2 : Escribir "Lunes";
+        3 : Escribir "Martes";
+        4 : Escribir "Miercoles";
+        5 : Escribir "Jueves";
+        6 : Escribir "Viernes";
+        7 : Escribir "Sabado";
+    De otro modo:
+        Escribir "Dato invalido.";
+FinAlgoritmo
+```
+
+**version 2**
+```
+Algoritmo
+    Definir Dia Como Entero;
+
+    Leer Dia;
+
+    
 FinAlgoritmo
 ```
