@@ -835,8 +835,8 @@ FinAlgoritmo
 
 ```
 Algoritmo
-    Definir Operador : Como Caracter;
-    Definir Numero1, Numero2 : Como Real
+    Definir Operador Como Caracter;
+    Definir Numero1, Numero2 Como Real;
 
     Leer Operador, Numero1, Numero2;
 
@@ -848,7 +848,7 @@ Algoritmo
         "*" :
             Escribir "Resultado: ", Numero1 * Numero2;
         "/" :
-            Si (Numero2 < > 0) Entonces
+            Si (Numero2 <> 0) Entonces
                 Escribir "Resultado: ", Numero1 / Numero2;
             SiNo
                 Escribir "No se puede dividir por 0";
@@ -861,8 +861,7 @@ FinAlgoritmo
 
 ## Ejercicio 18 
 
-18. Leer dos números. Decir si el primero es divisible por el segundo, si esto se cumple decir 
-si es un número par o impar.
+18. Leer dos números. Decir si el primero es divisible por el segundo, si esto se cumple decir si es un número par o impar.
 
 ```
 Algoritmo
@@ -923,9 +922,7 @@ FinAlgoritmo
 
 ## Ejercicio 20
 
-20. Dadas las 4 notas obtenidas por un alumno, calcular e informar su promedio e informar 
-una leyenda que indique si está aprobado o no. La condición de aprobación es obtener un 
-promedio mayor o igual que 4.
+20. Dadas las 4 notas obtenidas por un alumno, calcular e informar su promedio e informar una leyenda que indique si está aprobado o no. La condición de aprobación es obtener un promedio mayor o igual que 4.
 
 ```
 Algoritmo
@@ -955,22 +952,23 @@ FinAlgoritmo
 ```
 Algoritmo
     Definir Kilometros, Tarifa, Auxiliar_Kilometros Como Real;
-
-    Leer Kilemetros;
-
+	
+	Escribir "Ingrese la cantidad de kilometros recorridos: ";
+    Leer Kilometros;
+	
     Si (Kilometros <= 30) Entonces
         Tarifa <- Kilometro * 20;
-        Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+        Escribir "Kilometros Recorridos: ", Kilometros ,"Km, el monto a pagar es: ", Tarifa ," euros.";
     SiNo
         Si (Kilometros > 30) y (Kilometros <= 100) Entonces
             Auxiliar_Kilometros <- Kilometros - 30;
-            Tarifa <- (Kilometros * 30) + Auxiliar_Kilometros;
-            Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+            Tarifa <- (30 * 20) + Auxiliar_Kilometros;
+            Escribir "Kilometros Recorridos: ", Kilometros ,"Km, el monto a pagar es: ", Tarifa ," euros.";
         SiNo
             Si (Kilometros > 100) Entonces
                 Auxiliar_Kilometros <- Kilometros - 100;
-                Tarifa <- (Kilometros * 30) + 70 + (Auxiliar_Kilometros * 0.50);
-                Escribir "Kilometros Recorridos: ", Kilometros ," el monto a pagar es: ", Tarifa ," euros.";
+                Tarifa <- (30 * 20) + 70 + (Auxiliar_Kilometros * 0.50);
+                Escribir "Kilometros Recorridos: ", Kilometros ,"Km, el monto a pagar es: ", Tarifa ," euros.";
             FinSi
         FinSi
     FinSi
@@ -1019,12 +1017,11 @@ FinAlgoritmo
 - Regular entre 50% y 70% 
 - Malo si el porcentaje es menor que 50% 
 
-**version 1**
 
 ```
 Algoritmo
-    Definir Total, Correctas : Entero; 
-    Definir Porcentaje : Real;
+    Definir Total, Correctas Como Entero; 
+    Definir Porcentaje Como Real;
 
     Leer Total, Correctar;
 
@@ -1128,15 +1125,30 @@ Algoritmo
                                 Escribir "El producto: ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
                             SiNo
                                 Si (Porcentaje1 = Porcentaje2) y (Porcentaje2 < Porcentaje3) Entonces
-                                    Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
-                                    Escrbir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                                    Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1 ,"%";
+                                    Escribir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
                                 SiNo
                                     Si (Porcentaje1 = Porcentaje3) y (Porcentaje3 < Porcentaje2) Entonces
-                                        Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1;
-                                        Escrbir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+                                        Escribir "Los productos ", Producto1 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje1 ,"%";
+                                        Escribir "El producto ", Producto2 , " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
                                     SiNo
-                                        Escribir "Los productos ", Producto2 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje2;
-                                        Escrbir "El producto ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+										Si (Porcentaje2 = Porcentaje3) y (Porcentaje3 < Porcentaje1) Entonces
+											Escribir "Los productos ", Producto2 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje2 ,"%";
+											Escribir "El producto ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+										SiNo
+											Si (Porcentaje1 = Porcentaje2) y (Porcentaje2 > Porcentaje3) Entonces
+												Escribir "El producto ", Producto3 , " tiene un porcentaje de aceptacion de ", Porcentaje3 ,"%.";
+												Escribir "Los productos ", Producto1 ," y ", Producto2 , " tienen un porcentaje de aceptacion de ", Porcentaje1 ,"%";
+											SiNo
+												Si (Porcentaje1 = Porcentaje3) y (Porcentaje3 > Porcentaje2) Entonces
+													Escribir "El producto ", Producto2 , " tiene un porcentaje de aceptacion de ", Porcentaje2 ,"%.";
+													Escribir "Los productos ", Producto1 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje1 ,"%";
+												SiNo
+													Escribir "El producto ", Producto1, " tiene un porcentaje de aceptacion de ", Porcentaje1 ,"%.";
+													Escribir "Los productos ", Producto2 ," y ", Producto3 , " tienen un porcentaje de aceptacion de ", Porcentaje2 ,"%";
+												FinSi
+											FinSi
+										FinSi
                                     FinSi
                                 FinSi
                             FinSi
@@ -1173,6 +1185,7 @@ Algoritmo
         7 : Escribir "Sabado";
     De otro modo:
         Escribir "Dato invalido.";
+    FinSegun
 FinAlgoritmo
 ```
 
