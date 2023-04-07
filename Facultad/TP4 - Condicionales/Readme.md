@@ -12,7 +12,7 @@ Algoritmo
     Leer Numero;
 
     Si (Numero >= 0) Entonces
-        Escribir "El ingresado numero es positivo.";
+        Escribir "El numero ingresado es positivo.";
     FinSi
 FinAlgoritmo
 ```
@@ -79,6 +79,7 @@ Algoritmo
             Escribir "El Numero ingresado es igual a 10.";
         SiNo
             Escribir "El Numero ingresado es menor a 10.";
+        FinSi
     FinSi
 FinAlgoritmo
 ```
@@ -96,7 +97,7 @@ Algoritmo
     Leer Nombre, Sueldo;
 
     Si (Sueldo > 30000) Entonces
-        Escribir (Nombre, " gana mas de $30000.";
+        Escribir Nombre, " gana mas de $30000.";
     FinSi
 FinAlgoritmo
 ```
@@ -109,7 +110,9 @@ Algoritmo
     Leer Nombre, Sueldo;
 
     Si (Sueldo > 30000) Entonces
-        Escribir (Nombre, " gana mas de $30000.";
+        Escribir Nombre, " gana mas de $30000.";
+    SiNo
+        Escribir Nombre, " gana menos de $30000.";
     FinSi
 FinAlgoritmo
 ```
@@ -122,15 +125,17 @@ Algoritmo
     Leer Nombre, Sueldo;
 
     Si (Sueldo > 30000) Entonces
-        Escribir (Nombre, " gana mas de $30000.";
+        Escribir Nombre, " gana mas de $30000.";
     SiNo
         Si (Sueldo = 30000) Entonces
-            Escribir (Nombre, " gana $30000.";
+            Escribir Nombre, " gana $30000.";
         SiNo
             Si (Sueldo > 0) y (Sueldo < 30000) Entonces
-                Escribir (Nombre, " gana menos $30000.";
+                Escribir Nombre, " gana menos $30000.";
             SiNo
                 Escribir "¡Error!, el sueldo ingresado no es valido.";
+            FinSi
+        FinSi
     FinSi
 FinAlgoritmo
 ```
@@ -150,7 +155,7 @@ Algoritmo
     Resultado <- Numero1 mod Numero2;
 
     Si (Resultado = 0) Entonces
-        Escribir (Numero1 ," es divisible por ", Numero2);
+        Escribir Numero1 ," es divisible por ", Numero2;
     FinSi
 FinAlgoritmo
 ```
@@ -163,7 +168,7 @@ Algoritmo
     Leer Numero1, Numero2;
 
     Si ((Numero1 mod Numero2) = 0) Entonces
-        Escribir (Numero1 ," es divisible por ", Numero2);
+        Escribir Numero1 ," es divisible por ", Numero2;
     FinSi
 FinAlgoritmo
 ```
@@ -178,9 +183,9 @@ Algoritmo
     Resultado <- Numero1 mod Numero2;
 
     Si (Resultado = 0) Entonces
-        Escribir (Numero1 ," es divisible por ", Numero2);
+        Escribir Numero1 ," es divisible por ", Numero2;
     SiNo
-        Escribir (Numero1 ," NO es divisible por", Numero2);
+        Escribir Numero1 ," NO es divisible por", Numero2;
     FinSi
 FinAlgoritmo
 ```
@@ -214,9 +219,9 @@ Algoritmo
 
     Si (Numero1 > 0) y (Numero2 > 0) Entonces
         Promedio <- (Numero1 + Numero2) / 2;
-        Escribir "Los numeros son positivos y su promedio es: ", Promedio);
+        Escribir "Los numeros son positivos y su promedio es: ", Promedio;
     SiNo
-        Escrbir "Los numeros No son positivos.";
+        Escribir "Los numeros No son positivos.";
     FinSi
 FinAlgoritmo
 ```
@@ -225,6 +230,7 @@ FinAlgoritmo
 
 6. Dados dos números si el primero es divisible por el segundo intercambiarlos
 
+**version 1**_(condicional simple)_
 ```
 Algoritmo
     Definir Numero1, Numero2, Auxiliar Como Real;
@@ -236,8 +242,26 @@ Algoritmo
         Numero1 <- Numero2;
         Numero2 <- Auxiliar;
         
-        Escribir "Se intercambambiaron los numeros, Numero1: ", Numero1 ," y Numero2: ", Numero2);
+        Escribir "Se intercambambiaron los numeros, Numero1: ", Numero1 ," y Numero2: ", Numero2;
     FinSi
+FinAlgoritmo
+```
+**version 2**_(condicional doble)_
+```
+Algoritmo ejercicio6
+	Definir Numero1, Numero2, Auxiliar Como Real;
+	
+	Leer Numero1, Numero2;
+    
+	Si ((Numero1 mod Numero2) = 0) Entonces
+        Auxiliar <- Numero1;
+        Numero1 <- Numero2;
+        Numero2 <- Auxiliar;
+        
+        Escribir "Se intercambambiaron los numeros, Numero1: ", Numero1 ," y Numero2: ", Numero2;
+	SiNo
+		Escribir "El primer numero no es divisible por el segundo";
+	FinSi
 FinAlgoritmo
 ```
 
@@ -272,12 +296,12 @@ Algoritmo
 
     Si (Numero1 > 0) y (Numero2 > 0) y (Numero3 > 0) Entonces
         Si (Numero1 > Numero2) y (Numero1 > Numero3) Entonces 
-            Escribir "El mayor es ", Numero1);
+            Escribir "El mayor es ", Numero1;
         SiNo
             Si (Numero2 > Numero3) y (Numero2 > Numero1) Entonces
-                Escribir "El mayor es ", Numero2);
+                Escribir "El mayor es ", Numero2;
             SiNo
-                Escribir "El mayor es ", Numero3);
+                Escribir "El mayor es ", Numero3;
             FinSi
         FinSi
     FinSi
@@ -293,16 +317,16 @@ Algoritmo
 
     Si (Numero1 > 0) y (Numero2 > 0) y (Numero3 > 0) Entonces
         Si (Numero1 > Numero2) y (Numero1 > Numero3) Entonces 
-            Escribir "El mayor es ", Numero1);
+            Escribir "El mayor es ", Numero1;
         SiNo
             Si (Numero2 > Numero3) y (Numero2 > Numero1) Entonces
-                Escribir "El mayor es ", Numero2);
+                Escribir "El mayor es ", Numero2;
             SiNo
-                Escribir "El mayor es ", Numero3);
+                Escribir "El mayor es ", Numero3;
             FinSi
         FinSi
     SiNo
-        Escribir "Los numeros ingresados no son positivos".)
+        Escribir "Los numeros ingresados no son positivos.";
     FinSi
 FinAlgoritmo
 ```
@@ -320,7 +344,7 @@ Algoritmo
     Leer Numero;
 
     Si ((Numero mod 5) = 0) Entonces
-        Escribir "El numero ", numero ," es multiplo de 5.";
+        Escribir "El numero ", Numero ," es multiplo de 5.";
     FinSi
 FinAlgoritmo
 ```
@@ -348,7 +372,7 @@ FinAlgoritmo
 Algoritmo ejercicio
 	Definir Letra1, Letra2, Letra3 Como Caracter;
 	
-	Leer Letra1, Letra2;
+	Leer Letra1, Letra2, Letra3;
 	
 	Si ((Letra1 < Letra2) & (Letra1 < Letra3)) Entonces
 		Escribir "La letra ", Letra1, " viene Primero.";
@@ -364,9 +388,7 @@ FinAlgoritmo
 
 ## Ejercicio 11
 
-11. Confeccionar un algoritmo tal que dados dos números enteros devuelva la suma de los 
-mismos, si se cumple que el primero es menor que el segundo, en caso contrario devolver 
-el producto de los mismos. 
+11. Confeccionar un algoritmo tal que dados dos números enteros devuelva la suma de los mismos, si se cumple que el primero es menor que el segundo, en caso contrario devolver el producto de los mismos. 
 
 ```
 Algoritmo
@@ -386,8 +408,7 @@ FinAlgoritmo
 
 ## Ejercicio 12
 
-12. Se ingresa el nombre, edad y dirección de dos socios, se pide mostrar los datos de socio 
-más joven. 
+12. Se ingresa el nombre, edad y dirección de dos socios, se pide mostrar los datos de socio más joven. 
 
 ```
 Algoritmo
@@ -437,64 +458,64 @@ será la fecha un día después.
  > p ∧ (¬r ∨ q)
 
 ```
-Algoritmo
+Algoritmo ejercicio13
     Definir Dia, Mes, Anio, siguienteDia, SiguienteMes, siguienteAnio Como Entero;
-
+	
     siguienteDia <- 0;
     siguienteMes <- 0;
     siguienteAnio <- 0;
-
-    Leer Dia, Mes, Anio;
+	
+	Leer Dia, Mes, Anio;
 
     Si (Mes = 2) Entonces
         Si ((Anio mod 4) = 0) y (((anio mod 100) <> 0) o ((anio mod 400) = 0)) Entonces
             Si (Dia = 29) Entonces
-                siguienteDia = 1;
-                siguienteMes = Mes + 1;
+                siguienteDia <- 1;
+                siguienteMes <- Mes + 1;
             SiNo
-                siguienteDias = Dia + 1;
-                siguienteMes = Mes;
+                siguienteDias <- Dia + 1;
+                siguienteMes <- Mes;
             FinSi
         SiNo
             Si (Dia = 28) Entonces
-                siguienteDia = 1;
-                siguienteMes = Mes + 1;
+                siguienteDia <- 1;
+                siguienteMes <- Mes + 1;
             SiNo
-                siguienteDia = Dia + 1;
-                siguienteMes = Mes;
+                siguienteDia <- Dia + 1;
+                siguienteMes <- Mes;
             FinSi
         FinSi
     SiNo
         Si (Mes = 4) o (Mes = 6) o (Mes = 9) o (Mes = 11) Entonces
             Si (Dia = 30) Entonces
-                siguienteDia = 1;
-                siguienteMes = Mes + 1;
+                siguienteDia <- 1;
+                siguienteMes <- Mes + 1;
             SiNo
-                iguienteDia = Dia + 1;
-                siguienteMes = Mes;
+                siguienteDia <- Dia + 1;
+                siguienteMes <- Mes;
             FinSi
         SiNo
             Si (Dia = 31) Entonces
                 Si (Mes = 12) Entonces
-                    siguienteDia = 1;
-                    siguienteMes = 1;
-                    siguienteAnio = Anio + 1;
+                    siguienteDia <- 1;
+                    siguienteMes <- 1;
+                    siguienteAnio <- Anio + 1;
                 SiNo
-                    siguienteDia = Dia + 1;
-                    siguienteMes = Mes;
+                    siguienteDia <- Dia + 1;
+                    siguienteMes <- Mes;
                 FinSi
             SiNo
-                siguienteDia = Dia + 1;
-                siguienteMes = Mes;
+                siguienteDia <- Dia + 1;
+                siguienteMes <- Mes;
             FinSi
         FinSi
     FinSi
-
+	
     Si (siguienteAnio <> 0) Entonces
-        Escribir ('El dia siguiente es: ', siguienteDia ,'/', siguienteMes ,'/', siguienteAnio);
+        Escribir 'El dia siguiente es: ', siguienteDia ,'/', siguienteMes ,'/', siguienteAnio;
     SiNo
-        Escribir ('El dia siguiente es: ', siguienteDia ,'/', siguienteMes, '/', Anio);
-    FinSi;
+        Escribir 'El dia siguiente es: ', siguienteDia ,'/', siguienteMes, '/', Anio;
+    FinSi
 FinAlgoritmo
 ```
 
@@ -519,7 +540,7 @@ Algoritmo
                 Escribir "Mariana Ríos esta en la lista.";
             SiNo
                 Escribir "No existe en la lista.";
-            FiSi
+            FinSi
         FinSi
     FinSi
 FinAlgoritmo
@@ -531,7 +552,7 @@ Algoritmo
 
     Leer Nombre1, Nombre2, Nombre3;
 
-    Si (Nombre1 = 'Mariana Ríos') o (Nombre = 'Mariana Ríos') o (Nombre3 = 'Mariana Ríos') Entonces
+    Si (Nombre1 = 'Mariana Ríos') o (Nombre2 = 'Mariana Ríos') o (Nombre3 = 'Mariana Ríos') Entonces
         Escribir "Mariana Ríos esta en la lista.";
     SiNo
         Escribir "No existe en la lista";
@@ -541,8 +562,7 @@ FinAlgoritmo
 
 ## Ejercicio 15
 
-15. Calcular el descuento considerando que para un monto mayor de $1000.- el descuento 
-es del 10%, caso contrario es del 2%. Se pide mostrar monto con descuento incluido.
+15. Calcular el descuento considerando que para un monto mayor de $1000.- el descuento es del 10%, caso contrario es del 2%. Se pide mostrar monto con descuento incluido.
 
 **version 1**
 ```
@@ -567,15 +587,15 @@ FinAlgoritmo
 ```
 Algoritmo
     Definir Descuento, Monto Como Real;
-
+	
     Leer Monto;
-
+	
     Si (Monto > 1000) Entonces
         Descuento <- Monto - (Monto * 0.1);
-        Escribir "Monto mas el descuento del 10%: ", Descuento;  
+        Escribir "Monto: $", Monto ," el descuento del 10%: $", Descuento;  
     SiNo
         Descuento <- Monto - (Monto * 0.02);
-        Escribir "Monto mas el descuento del 2%: ", Descuento; 
+        Escribir "Monto: $", Monto ," el descuento del 2%: $", Descuento; 
     FinSi
 FinAlgoritmo
 ```
@@ -698,7 +718,7 @@ Algoritmo
             2 : Escribir "28";
         De otro modo:
             Escribir "Mes fuera de rango.";
-    Fin Segun
+    FinSegun
 FinAlgoritmo
 ```
 
@@ -738,21 +758,20 @@ Algoritmo
             Escribir "31";
         De otro modo:
             Escribir "Mes fuera de rango.";
-    Fin Segun
+    FinSegun
 FinAlgoritmo
 ```
 
 ## Ejercicio 17
 
-17. Emular una calculadora en la cual se ingresan 2 números y el operador (*, /, +, -) e 
-imprime el resultado.
+17. Emular una calculadora en la cual se ingresan 2 números y el operador (*, /, +, -) e imprime el resultado.
 
 **version 1**
 
 ```
 Algoritmo
     Definir Numero1, Numero2, Resultado Como Real;
-    Definir Operador Como Cadena
+    Definir Operador Como Cadena;
 
     Leer Numero1, Numero2, Operador;
 
@@ -772,7 +791,7 @@ Algoritmo
                     Resultado <- Numero1 / Numero2;
                     Escribir Resultado;
                 SiNo
-                    Escribir "¡Operador incorrecto!"
+                    Escribir "¡Operador incorrecto!";
                 FinSi
             FinSI
         FinSi
@@ -784,8 +803,8 @@ FinAlgoritmo
 
 ```
 Algoritmo
-    Definir Operador : Como Caracter;
-    Definir Numero1, Numero2, Resultado : Como Real
+    Definir Operador Como Caracter;
+    Definir Numero1, Numero2, Resultado Como Real
 
     Leer Operador, Numero1, Numero2;
 
@@ -800,7 +819,7 @@ Algoritmo
             Resultado <- Numero1 * Numero2;
             Escribir "Resultado: ", Resultado;
         "/" :
-            Si (Numero2 < > 0) Entonces
+            Si (Numero2 <> 0) Entonces
                 Resultado <- Numero1 / Numero2;
                 Escribir "Resultado: ", Resultado;
             SiNo
@@ -1164,6 +1183,34 @@ Algoritmo
 
     Leer Dia;
 
-    
+    Si (Dia = 1) Entonces
+        Escribir "Domingo";
+    SiNo
+        Si (Dia = 2) Entonces
+            Escribir "Lunes";
+        SiNo
+            Si (Dia = 3) Entonces
+                Escribir "Martes";
+            SiNo
+                Si (Dia = 4) Entonces 
+                    Escribir "Miercoles";
+                SiNo
+                    Si (Dia = 5) Entonces
+                        Escribir "Jueves";
+                    SiNo
+                        Si (Dia = 6) Entonces
+                            Escribir "Viernes";
+                        SiNo
+                            Si (Dia = 7) Entonces
+                                Escribir "Sabado";
+                            SiNo
+                                Escribir "Dato invalido.";
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
 FinAlgoritmo
 ```
