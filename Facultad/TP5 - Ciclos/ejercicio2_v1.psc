@@ -1,4 +1,4 @@
-Algoritmo ejercicio2
+ Algoritmo ejercicio2
     Definir Indice, Suma Como Entero;
 	Definir Producto Como Real;
 	

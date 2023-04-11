@@ -7,7 +7,8 @@
 **version 1** _(ciclo para)_
 ```
 Algoritmo 
-    Definir Numero1, Numero2, Promedio, Indice Como Real;
+    Definir Numero1, Numero2, Promedio Como Real;
+    Definir Indice Como Entero;
 
     Para Indice <- 1 Hasta 5 Hacer
         Leer Numero1, Numero2;
@@ -213,5 +214,60 @@ Algoritmo
 	Hasta Que Indice = 475;
 	
 	Escribir "Valor maximo del lote es: ", Maximo ,", en el orden: ", Orden ,".";    
+FinAlgoritmo
+```
+
+## Ejercicio 4
+
+4. Ingresar un Nº y un carácter y mostrar dicho carácter repetido tantas veces como indica el Nº.
+
+
+**version 1** _(ciclo para)_
+```
+Algoritmo
+    Definir Numero, Indice Como Entero;
+    Definir Letra Como Caracter;
+
+    Leer Numero, Letra;
+
+    Para Indice <- 1 Hasta Numero Hacer
+        Escribir Letra;
+    FinPara
+FinAlgoritmo
+```
+
+**version 2** _(ciclo mientras)_
+
+```
+Algoritmo
+    Definir Numero, Indice Como Entero;
+    Definir Letra Como Caracter;
+
+    Leer Numero, Letra;
+
+    Indice <- 0;
+
+    Mientras (Indice <= Numero) Hacer
+        Escribir Letra;
+        Indice <- Indice + 1;
+    FinMientras
+FinAlgoritmo
+```
+
+**version 3** _(ciclo repetir...hasta)_
+
+```
+Algoritmo
+    Definir Numero, Indice Como Entero;
+    Definir Letra Como Caracter;
+
+    Leer Numero, Letra;
+
+    Indice <- 0;
+
+    Repetir
+        Indice <- Indice + 1;
+        Escribir Letra;
+    Hasta que (Indice = Numero)
 FinAlgoritmo
 ```
