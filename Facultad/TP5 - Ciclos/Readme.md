@@ -268,6 +268,70 @@ Algoritmo
     Repetir
         Indice <- Indice + 1;
         Escribir Letra;
-    Hasta que (Indice = Numero)
+    Hasta Que (Indice = Numero)
 FinAlgoritmo
 ```
+
+## Ejercicio 5
+
+5. Hacer un programa que lea 100 Números, indique cuáles son múltiplos de 2 y contarlos.
+
+**version 1** _(ciclo para)_
+```
+Algoritmo
+    Definir Numero Como Real;
+    Definir Indice, Contador Como Entero;
+
+    Contador <- 0;
+    Para Indice <- 1 Hasta 100 Hacer
+        Leer Numero;
+        Si ((Numero mod 2) = 0) Entonces
+            Escribir "El numero ", Numero ," es multiplo de 2.";
+            Contador <- Contador + 1;            
+        FinSi
+    FinPara
+    Escribir "Cantidad de numeros multiplo de 2: ", Contador;
+FinAlgoritmo
+```
+
+## Ejercicio 6 
+
+6. Hacer un programa que lea 8 caracteres e indique que cantidad de ‘*’ y que cantidad de 
+letras ‘a’ aparecen. 
+
+
+## Ejercicio 7
+
+7. ¿A cuánto asciende la suma de los números pares comprendidos entre 300 y 1232?
+
+## Ejercicio 8
+
+8. Se  efectúa  una  encuesta  entre  1200  usuarios  de  sistemas  operativos.  Las  respuestas están  codificadas  como  1,  2  ó  3  según  sea  el  elegido.  Preparar  un  algoritmo  para ingresarle las 120 respuestas, y muestre por pantalla el número del sistema preferido
+
+```
+Algoritmo
+    Definir IndiceA, IndiceB, Windows, MacOS, Linux, Opcion Como Entero;
+
+    Windows <- 0;
+    MacOS <- 0;
+    Linux <- 0;
+
+    Para IndiceA <- 1 Hasta 3 Hacer
+        Escribir "Usuario (",1,"): ";
+        Para IndiceB <- 1 Hasta 3 Hacer
+            Escribir "Ingrese un numero, opcion: Windows (1), MacOS(2), Linux(3): "
+            Leer Opcion;
+
+            Segun Opcion Hacer
+                1 : Windows <- Windows + 1;
+                2 : MacOS <- MacOS + 1;
+                3 : Linux <- Linux + 1;
+            De Otro modo:
+                
+            FinSegun
+        FinPara
+    FinPara
+    Para
+FinAlgoritmo
+```
+
