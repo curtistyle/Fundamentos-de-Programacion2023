@@ -679,8 +679,52 @@ Algoritmo
     Leer Ocurrencia;
 
     Repetir 
-        
+        Escribir "Ingrese una letra: ";
+        Leer Letra;
+        Si (Letra = Ocurrencia) Entonces
+            Contador <- Contador + 1;
+        FinSi
     Hasta Que (Letra = '.')
 
+    Escribir "El caracter ", Ocurrencia , " se repitio ", Contador ," veces.";
+FinAlgoritmo
+```
+
+## Ejercicio 19
+
+19. Contar la cantidad de Números negativos de una lista que finaliza con el Nº 0.
+
+```
+Algoritmo
+    Definir Indice, Numero Como Entero;
+
+    Leer Numero;
+    Para Indice <- Numero Hasta 0 Hacer
+        Escribir " > ", Indice;
+    FinPara
+FinAlgoritmo
+```
+
+## Ejercicio 20
+
+20. Escribir  un  algoritmo  que  permita  leer  una  serie  de  enteros.  Contar  el  Nº  de  valores  introducidos y su suma. 
+
+```
+Algoritmo
+    Definir Numero, Suma, Contador Como Entero;
+
+    Suma <- 0;
+    Contador <- 0;
+
+    Escribir "Ingrese una serie de numeros (termina el ciclo con -1): ";
+
+    Repetir
+        Leer Numero;
+        Suma <- Suma + Numero;
+        Contador <- Contador + 1;
+    Hasta Que (Numero = -1)
+
+    Escribir "Cantidad de numeros introducidos: ", Contador;
+    Escribir "Suma de los numeros introducidos: ", Suma;
 FinAlgoritmo
 ```

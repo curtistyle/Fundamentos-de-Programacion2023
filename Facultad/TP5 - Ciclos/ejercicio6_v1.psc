@@ -2,6 +2,9 @@ Algoritmo ejercicio6
 	Definir Contador1, Contador2, Indice Como Entero;
 	Definir Letra Como Caracter;
 	
+	Contador1 <- 0;
+	Contador2 <- 0;
+
 	Para Indice <- 1 Hasta 8 Hacer
 		Escribir  "Ingrese una letra: ";
 		Leer Letra;
