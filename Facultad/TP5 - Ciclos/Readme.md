@@ -612,3 +612,75 @@ Algoritmo
     FinSi
 FinAlgoritmo
 ```
+
+## Ejercicio 16
+
+16. Dada una secuencia de caracteres acabada en #, mostrar los números (0..9) que en ella aparecen.
+
+```
+Algoritmo
+	Definir Letra Como Caracter;
+	Definir Contador Como Entero;
+	
+	Contador <- 0;
+	
+	Repetir
+		Escribir " > Ingrese un catacter: ";
+		Leer Letra;
+		Si (Letra > '0') y (Letra < '9') Entonces
+			Contador <- Contador + 1;
+		FinSi
+	Hasta Que (Letra = '#')
+	
+	Escribir "Los caracteres comprendidos entre 0..9 aparecen: ", Contador ," veces.";
+FinAlgoritmo
+```
+
+## Ejercicio 17
+
+17. Construir  un  algoritmo  que,  dada  una  secuencia  de  enteros  acabada  con  el  valor  cero, devuelva el mayor de ellos. Determinar cuántos números negativos han aparecido.
+
+***revisar***
+
+```
+Algoritmo
+    Definir Numero, Maximo, Contador Como Entero;
+
+    Maximo <- 0;
+
+    Repetir
+        Leer Numero;
+
+        Si (Numero > Maximo) Entonces
+            Maximo <- Numero;
+        FinSi
+        Si (Numero < 0) Entonces
+            Contador <- Contador + 1;
+        FinSi
+    Hasta Que (Numero = 0)
+
+    Escribir "El maximo de los numeros ingresado es: ", Maximo;
+    Escribir "La cantidad de numeros negativos: ", Contador;
+FinAlgoritmo
+```
+
+## Ejercicio 18 
+
+18. Dada una secuencia de caracteres acabada en punto, obtener un algoritmo que determine cuantas veces aparece un determinado carácter, el cual será leído previamente. 
+
+```
+Algoritmo
+    Definir Letra, Ocurrencia Como Cadena;
+    Definir Contador Como Entero;
+
+    Contador <- 0;
+    
+    Escribir "Ingrese el caracter que desea que se cuente: ";
+    Leer Ocurrencia;
+
+    Repetir 
+        
+    Hasta Que (Letra = '.')
+
+FinAlgoritmo
+```
