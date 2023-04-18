@@ -12,24 +12,26 @@
 //		   cantidad de punteros comprados en ambos casos.
 
 Algoritmo ejercicio2
-	Definir Indice, Cantidad, CantidadResma, NumeroCompras Como Entero;
+	Definir Indice, Cantidad, CantidadResma, CantidadPunteros, ContadorFactura, NumeroCompras Como Entero;
 	Definir Descripcion, Rubro, RubroResmas Como Cadena;
 	Definir TotalAbonado, TotalAbonadoResmas Como Real;
 	
 	TotalAbonadoResmas <- 0;
 	RubroResmas <- '';
 	CantidadResma <- 0;
+	ContadorFactura <- 0;
+	CantidadPunteros <- 0;
 	
 	Escribir "Ingrese la cantidad de compras realizadas por la universidad.";
 	Leer NumeroCompras;
 	Si NumeroCompras > 0 Entonces
 		Para Indice <- 1 Hasta NumeroCompras Hacer
-			Escribir ">> Compra Numero [",Indice,"] <<"
+			Escribir ">> Compra Numero [",Indice,"] <<";
 			Escribir "Ingrese la descripcion del articulo: ";
 			Leer Descripcion;
 			Escribir "Ingrese la cantidad del articulo: ";
 			Leer Cantidad;
-			Escribir "Ingrese el rubro al que pertenece la compra: "
+			Escribir "Ingrese el rubro al que pertenece la compra: ";
 			Leer Rubro;
 			Escribir "Ingrese el total abonado: ";
 			Leer TotalAbonado;
@@ -39,6 +41,25 @@ Algoritmo ejercicio2
 				CantidadResma <- Cantidad;
 				TotalAbonadoResmas <- TotalAbonado;
 			FinSi
+			
+			Si (Descripcion = 'Puntero laser') Entonces
+				ContadorFactura <- ContadorFactura + 1;
+				CantidadPunteros <- CantidadPunteros + Cantidad;
+			FinSi
 		FinPara	
 	FinSi
+	
+	Si (CantidadResma <> 0) Entonces
+		Escribir "Se compraron ",CantidadResma," resmas de hojas en el rubro: ", RubroResmas ," y se abono un total de $",TotalAbonadoResmas,".";
+	FinSi
+	
+	Escribir "Ingrese la descripcion de un producto:  ";
+	Leer Descripcion;
+	
+	Si ((Descripcion = 'Puntero laser') o (Descripcion = 'puntero laser')) y (ContadorFactura > 0) Entonces
+		Escribir "Se encontraron ", ContadorFactura ," facturas de punteros lasers.";
+		Escribir "Se compraron en total ", CantidadPunteros ," punteros lasers.";
+	SiNo
+		Escribir "No existen facturas de ", Descripcion ,"."; 
+	FinSi	
 FinAlgoritmo
