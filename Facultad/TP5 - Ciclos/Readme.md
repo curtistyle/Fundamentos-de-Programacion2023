@@ -728,3 +728,195 @@ Algoritmo
     Escribir "Suma de los numeros introducidos: ", Suma;
 FinAlgoritmo
 ```
+
+## Ejercicio 21
+
+21. Dada la siguiente situación: se dispone de un mazo de cartas españolas. Se debe sacar la primera carta y separarla. Luego sacar de a una carta por vez hasta encontrar una del mismo palo y número mayor a la primera. El problema planteado es determinar cuántas cartas fue necesario extraer del mazo.
+
+**version 1** _(ciclo Repetir..Hasta que)_
+```
+Algoritmo
+    Definir Numero, AuxNumero, Indice Como Entero;
+    Definir Palo, AuxPalo Como Cadena;
+	
+    Indice <- 0;
+	
+    Repetir 
+        Escribir "Ingrese una carta. ";
+        Leer Numero, Palo;
+		
+        Si (Indice = 0) Entonces
+			Escribir "Se separo del mazo el ", Numero ," de ", Palo ,".";
+            AuxPalo <- Palo;
+            AuxNumero <- Numero + 1;
+        FinSi
+		Indice <- Indice + 1;
+    Hasta Que ((AuxPalo = Palo) y (AuxNumero = Numero))
+	
+    Escribir "Fueron necesario sacar ", Indice - 1," cartas del mazo.";
+FinAlgoritmo
+```
+
+## Ejercicio 22
+
+22. Dada una lista de valores numéricos, hallar su rango, es decir la diferencia entre su valor máximo y su valor mínimo. 
+
+```
+Algoritmo
+    Definir Numero, Maximo, Minimo, Indice Como Entero;
+    Definir Control Como Logico;
+
+    Control <- Falso;
+    Indice <- 0;
+    Maximo <- 0;
+    Minimo <- 0;
+
+    Repetir
+        Leer Numero;
+
+        Si (Control = Falso) Entonces
+            Minimo <- Numero;
+            Control <- Verdadero;
+        FinSi
+
+        Si (Numero > Maximo) Entonces
+            Maximo <- Maximo;
+        SiNo
+            (Numero < Minimo) Entonces
+            Minimo <- Numero;
+        FinSi
+    Hasta Que (Numero = 0)
+    
+    Escribir "Maximo: ", Maximo ," Minimo: ", Minimo;
+FinAlgoritmo
+```
+
+## Ejercicio 23
+
+23. Dada una lista de valores enteros positivos, hallar cuántos valores mayores que 1.000 hay. Si la cantidad es menor que 20 calcular su factorial.
+
+**version 1** _(Repetir..Hasta que)_
+
+```
+Algoritmo
+    Definir Numero, Indice, Maximo, Contador, Factorial Como Entero;
+	
+    Factorial <- 1;
+    Contador <- 0;
+	
+    Repetir
+		Escribir "Ingrese un numero: ";
+        Leer Numero;
+		
+        Si (Numero > 0) Entonces
+            Si Numero > 1000 Entonces
+                Contador <- Contador + 1;
+			FinSi
+		FinSi
+	Hasta Que (Numero = 0)
+		
+	Si (Contador < 20) Entonces
+		Para Indice <- 1 Hasta Contador Hacer
+			Factorial <- Factorial * Indice;         
+		FinPara    
+	FinSi
+	
+	Escribir "Hay ", Contador ," valores mayores a 1000.";
+	Si (Contador < 20) Entonces
+		Escribir "El factorial de ", Contador , " es ", Factorial ,".";
+	FinSi
+FinAlgoritmo
+```
+
+## Ejercicio 24
+
+24. Se dispone de un conjunto de tarjetas rojas y azules, las cuales están numeradas en forma correlativa. El lote de tarjetas termina con una tarjeta blanca. El problema es determinar de  las  tarjetas  del  lote:  cuántas  son  azules  y  con  número  par;  cuántas  son  rojas  y  con número impar, y cuántas son las restantes (excepto la blanca). 
+
+```
+Algoritmo
+    Definir Indice, Par, Impar, Contador Como Entero;
+    Definir Tarjeta Como Cadena;
+	
+    Contador <- 0;
+    Indice <- 0;
+    Par <- 0;
+    Impar <- 0;
+	
+	Escribir "Ingrese el lote de Cartas Rojas y Azules, (Blanca para terminar el ciclo).";
+    Repetir
+        Indice <- Indice + 1;
+        Escribir "(", Indice ,") Ingresar el color de la tarjeta (roja/azul): ";
+        Leer Tarjeta;
+		
+        Si (Tarjeta = 'Roja') o (Tarjeta = 'roja') Entonces
+            Si ((Indice mod 2) = 0) Entonces
+                Par <- Par + 1;
+            FinSi
+        SiNo
+            Si (Tarjeta = 'Azul') o (Tarjeta = 'azul') Entonces
+				Si ((Indice mod 2) <> 0) Entonces
+					Impar <- Impar + 1;
+				FinSi
+			SiNo
+				Si (Tarjeta = 'Blanca') o (Tarjeta = 'blanca') Entonces
+					Indice <- Indice - 1;
+				SiNo
+					Escribir "Dato Invalido";
+					Indice <- Indice - 1;
+				FinSi
+			FinSi
+			
+		FinSi
+	Hasta Que ((Tarjeta = 'Blanca') o (Tarjeta = 'blanca'))
+		
+    Escribir "El Nº de Tarjetas Rojas y Pares: ", Par;
+    Escribir "El Nº de Tarjetas Azules e Impares: ", Impar;
+    Escribir "El resto de tarjetas: ", (Indice - (Par + Impar));
+FinAlgoritmo
+```
+
+## Ejercicio 25
+
+25. Dada  una  lista  de  precios  de  productos,  la  cual  termina  con  un  precio  igual  a  cero.  Se desea saber el monto total a pagar y la cantidad de artículos comprados. 
+
+```
+Algoritmo
+    Definir Indice Como Entero;
+    Definir Monto, MontoTotal Como Real;
+	
+    Indice <- 0;
+	
+    Escribir "Ingrese la lista de precios.";
+	
+	Repetir
+		Indice <- Indice + 1;
+		Escribir "Monto del poducto (", Indice ,"): ";
+		Leer Monto;
+		MontoTotal <- MontoTotal + Monto;
+	Hasta Que (Monto = 0)
+
+    Escribir "Cantidad de productos: ", Indice ,".";
+    Escribir "Monto Total a pagar: $", MontoTotal ,".";
+FinAlgoritmo
+```
+
+## Ejercicio 26
+
+26. Tenemos una empresa que necesita incorporar a su plantilla varios empleados en diversos departamentos.  Se  reciben  multitud  de  Currículum  Vitae  y  se  intenta  introducir  en  una pequeña  aplicación  para  realizar  una  primera  selección  y  en  base  a  su  resultado, comprobaremos si es apto o no apto para optar al cargo.  
+    **Necesita la empresa:** 
+    - Un administrativo. 
+    - Un transportista. 
+    - Dos operarios. 
+    - Tres guardias de seguridad. 
+        - Para todos los puestos tienen que tener 18 años 
+        - Para administrativo y transportista pueden tener hasta 55 años. 
+        - Para operarios no pueden superar los 50 años. 
+        - Para guardia de seguridad no pueden superar los 45 años. 
+        - Para administrativo se requiere el Ciclo superior en Administración y Finanzas. 
+        - Para los demás puestos el titulo secundario. 
+ 
+Una vez haya superado los requerimientos anteriores, introduciremos el nombre, 
+apellidos, dirección y número de DNI.
+
+
+
