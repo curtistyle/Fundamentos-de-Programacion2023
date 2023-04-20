@@ -908,15 +908,173 @@ FinAlgoritmo
     - Un transportista. 
     - Dos operarios. 
     - Tres guardias de seguridad. 
-        - Para todos los puestos tienen que tener 18 años 
-        - Para administrativo y transportista pueden tener hasta 55 años. 
-        - Para operarios no pueden superar los 50 años. 
-        - Para guardia de seguridad no pueden superar los 45 años. 
-        - Para administrativo se requiere el Ciclo superior en Administración y Finanzas. 
+        - *Para todos los puestos tienen que tener 18 años.*
+        - Para **Administrativo** y **Transportista** pueden tener hasta 55 años. 
+        - Para **Operarios** no pueden superar los 50 años. 
+        - Para **Guardia de Seguridad** no pueden superar los 45 años. 
+        - Para **Administrativo** se requiere el Ciclo superior en Administración y Finanzas. 
         - Para los demás puestos el titulo secundario. 
  
 Una vez haya superado los requerimientos anteriores, introduciremos el nombre, 
 apellidos, dirección y número de DNI.
 
+**version 1**
+```
+Algoritmo
+    Definir Administrativo, Transportista, Operario, Guardia Como Entero;
+    Definir Indice, Edad Como Entero;
+    Definir Opcion, Titulo, Nombre, Apellido, Direccion, DNI Como Cadena;
+    Definir Condicion Como Logico;
 
+    Administrativo <- 0;
+    Transportis <- 0;
+    Operario <- 0;
+    Guardia <- 0;
+    Condicion <- Verdadero;
 
+    Repetir 
+        Escribir "Seleccione el rol que desea evaluar: ";
+        Escribir "  > Administrativo (1). ";
+        Escribir "  > Transportista  (2). ";
+        Escribir "  > Operario       (3). ";
+        Escribir "  > Guaria de Seg. (4). ";
+        Escribir "  > SALIR          (0). "; 
+        Leer Opcion;
+
+        Si ((Administrativo < 1) y (Opcion = 1)) Entonces
+            Escribir "Ingrese la edad: ";
+            Leer Edad;
+            Si ((Edad >= 18) y (Edad <= 55)) Entonces
+                Escribir "Titulo: Secundario (s/n): ";
+                Leer Titulo;
+                Si (Titulo = 's') Entonces
+                    Escribir "Titulo: Ciclo Superior en Administracion y Finanzas (s/n):";
+                    Leer Titulo;
+                    Si (Titulo = 's') Entonces
+                        Escribir "Se superaron los requisitos. Usted esta capacitado para ejercer la profesión de Administrativo.";
+                        Condicion <- Verdadero;
+                        Administrativo <- Administrativo + 1;
+                    SiNo
+                        Esribir "No posee el Titulo: Administracion y Finanzas.";
+                    FinSi
+                SiNo
+                    Condicion <- Falso;
+                    Escribir "No posee Titulo: Secundario.";    
+                FinSi
+            SiNo
+                Condicion <- Falso;
+                Escribir "No esta en el rango de edad."
+            FinSi
+        SiNo
+            Escribir "El Puesto de Administrativo esta ocupado";
+        FinSi
+
+        Si ((Transportista < 1)y (Opcion = 2)) Entonces
+            Escribir "Ingrese la edad: ";
+            Leer Edad;
+            Si ((Edad >= 18) y (Edad <= 55)) Entonces
+                Escribir "Titulo: Secundario (s/n): ";
+                Leer Titulo;
+                Si (Titulo = 's') Entonces     
+                    Escribir "Se superaron los Requisitos. Esta capacitado para ejercer la profesión de Transportista.";
+                    Condicion <- Verdadero;
+                    Transportista <- Transportista + 1;
+                SiNo
+                    Condicion <- Falso;
+                    Escribir "No posee Titulo: Secundario.";    
+                FinSi
+            SiNo
+                Condicion <- Falso;
+                Escribir "No esta en el rango de edad."
+            FinSi
+        SiNo
+            Escribir "El Puesto de Transportista esta ocupado";
+        FinSi
+
+        Si ((Operario < 2) y (Opcion = 3)) Entonces
+            Escribir "Ingrese la edad: ";
+            Leer Edad;
+            Si ((Edad >= 18) y (Edad <= 50)) Entonces
+                Escribir "Titulo: Secundario (s/n): ";
+                Leer Titulo;
+                Si (Titulo = 's') Entonces     
+                    Escribir "Se superaron los Requisitos. Esta capacitado para ejercer la profesión de Operario.";
+                    Condicion <- Verdadero;
+                    Operario <- Operario + 1;
+                SiNo
+                    Condicion <- Falso;
+                    Escribir "No posee Titulo: Secundario.";    
+                FinSi
+            SiNo
+                Condicion <- Falso;
+                Escribir "No esta en el rango de edad."
+            FinSi
+        SiNo
+            Escribir "El Puesto de Operario esta ocupado";
+        FinSi
+
+        Si ((Guardia < 3) y (Opcion = 4)) Entonces
+            Escribir "Ingrese la edad: ";
+            Leer Edad;
+            Si ((Edad >= 18) y (Edad <= 50)) Entonces
+                Escribir "Titulo: Secundario (s/n): ";
+                Leer Titulo;
+                Si (Titulo = 's') Entonces     
+                    Escribir "Se superaron los Requisitos. Esta capacitado para ejercer la profesión de Guardia de Seguridad.";
+                    Condicion <- Verdadero;
+                    Guardia <- Guardia + 1;
+                SiNo
+                    Condicion <- Falso;
+                    Escribir "No posee Titulo: Secundario.";    
+                FinSi
+            SiNo
+                Condicion <- Falso;
+                Escribir "No esta en el rango de edad."
+            FinSi
+        SiNo
+            Escribir "El Puesto de Operario esta ocupado";
+        FinSi
+
+        Si (Condicion = Verdadero) Entonces
+            Escribir "Ingrese el Nombre: ";
+            Leer Nombre;
+            Escribir "Ingrese el apellido: ";
+            Leer Apellido;
+            Escribir "Ingrese la Direccion: ";
+            Leer Direccion;
+            Escribir "Ingrese el DNI: ";
+            Leer DNI;
+        SiNo
+            Escribir "No supero los requisitos.";
+        FinSi
+        Condicion <- Falso;
+    Hasta Que (Indice)
+FinAlgoritmo
+```
+
+**version 2**
+
+```
+Algoritmo
+    Definir Administrativo, Transportista, Operario, Guardia Como Entero;
+    Definir Indice, Edad Como Entero;
+    Definir Opcion, TituloSecundario, TituloTerciario, Nombre, Apellido, Direccion, DNI Como Cadena;
+    Definir Condicion Como Logico;
+
+    Administrativo <- 0;
+    Transportista <- 0;
+    Operario <- 0;
+    Guardia <- 0;
+
+    Repetir
+
+        Leer Opcion;
+
+        Leer Edad;
+        Leer TituloSecundario;
+        Leer TituloTerciario;
+
+        Si 
+    Hasta Que (Opcion = 0)
+FinAlgoritmo
+```
