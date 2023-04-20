@@ -664,6 +664,31 @@ Algoritmo
 FinAlgoritmo
 ```
 
+**version 2**
+
+```
+Algoritmo
+    Definir Numero, Maximo, Contador Como Entero;
+
+    Contador <- 0;
+
+    Leer Numero;
+    Maximo <- Numero;
+    Mientras (Numero <> 0) Hacer
+        Si (Numero > Maximo) Entonces
+            Maximo <- Numero;
+        FinSi
+        Si (Numero < 0) Entonces
+            Contador <- Contador + 1;
+        FinSi
+        Leer Numero;
+    FinMientras
+
+    Escribir "El maximo de los numeros ingresado es: ", Maximo;
+    Escribir "La cantidad de numeros negativos: ", Contador;
+FinAlgoritmo 
+```
+
 ## Ejercicio 18 
 
 18. Dada una secuencia de caracteres acabada en punto, obtener un algoritmo que determine cuantas veces aparece un determinado carácter, el cual será leído previamente. 
