@@ -1053,11 +1053,10 @@ FinAlgoritmo
 ```
 
 **version 2**
-
 ```
 Algoritmo
     Definir Administrativo, Transportista, Operario, Guardia Como Entero;
-    Definir Indice, Edad Como Entero;
+    Definir Edad Como Entero;
     Definir Opcion, TituloSecundario, TituloTerciario, Nombre, Apellido, Direccion, DNI Como Cadena;
     Definir Condicion Como Logico;
 
@@ -1072,9 +1071,44 @@ Algoritmo
 
         Leer Edad;
         Leer TituloSecundario;
-        Leer TituloTerciario;
 
-        Si 
+        Si (Opcion = 1) Entonces
+            Leer TituloTerciario;
+        FinSi
+        
+        Si (Edad >= 18) Entonces
+            Si (TituloSecundario = 's') Entonces
+                Si (Edad <= 55) Entonces
+                    Si (Opcion = 1) y (TituloTerciario = 's') y (Administrativo < 1) Entonces
+                        Administrativo = Administartivo + 1;
+                        Condicion <- Verdadero;
+                    SiNo
+                        Si (Opcion = 2) y (Transportista < 1) Entonces
+                            Transportista <- Transportista + 1;
+                            Condicion <- Verdadero;
+                        SiNo
+                            Si (Opcion = 3) y (Operario < 2) y (Edad <= 50) Entonces
+                                Operario <- Operario + 1;
+                                Condicion <- Verdadero;
+                            SiNo
+                                Si (Opcion = 4) y (Guardia < 3) y (Edad <= 45) Entonces
+                                    Guardia <- Guardia + 1;
+                                    Condicion <- Verdadero;
+                                FinSi
+                            FinSi
+                        FinSi
+                    FinSi    
+                FinSi
+            FinSi
+        FinSi
+
+        Si (Condicion = Verdadero) Entonces
+            Leer Nombre;
+            Leer Apellido;
+            Leer Direccion;
+            Leer DNI;
+        FinSi
+        Condicion <- Falso;
     Hasta Que (Opcion = 0)
 FinAlgoritmo
 ```
