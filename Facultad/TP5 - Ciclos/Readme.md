@@ -805,7 +805,7 @@ Algoritmo
         FinSi
 
         Si (Numero > Maximo) Entonces
-            Maximo <- Maximo;
+            Maximo <- Numero;
         SiNo
             (Numero < Minimo) Entonces
             Minimo <- Numero;
@@ -813,6 +813,7 @@ Algoritmo
     Hasta Que (Numero = 0)
     
     Escribir "Maximo: ", Maximo ," Minimo: ", Minimo;
+    Escribir "El rango  es", Maximo - Minimo;
 FinAlgoritmo
 ```
 
