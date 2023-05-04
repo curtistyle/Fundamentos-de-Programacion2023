@@ -13,7 +13,7 @@
 Algoritmo ejercicio2
 	Definir Indice Como Entero;
 	Definir Titulo, Genero, Protagonista, Origen, Opcion Como Cadena;
-	Definir Origen_Argentina, Origen_Brasil, Duracion, Duracion_Maxima Como Entero;
+	Definir Origen_Argentina, Origen_Brasil, Duracion, Duracion_Maxima, Anio, Anio_2020, Anio_2021, Anio_2022 Como Entero;
 	Definir Candidata_Protagonista1, Candidata_Genero1, Candidata_Protagonista2, Candidata_Genero2, Titulo_Maxima_Duracion Como Cadena;
 	
 	Duracion_Maxima <- 0;
@@ -21,13 +21,18 @@ Algoritmo ejercicio2
 	Candidata_Genero1 <- '';
 	Candidata_Protagonista2 <- ''; 
 	Candidata_Genero2 <- '';
-	
+	Anio_2020 <- 0;
+	Anio_2021 <- 0;
+	Anio_2022 <- 0;
 	
 	Escribir "Quiere ingresar una pelicula(s/n): ";
 	Leer Opcion;
 	Mientras (Opcion = 's') Hacer
 		Escribir "Ingrese el titulo: ";
 		Leer Titulo;
+		
+		Escribir "Ingrese el anio: ";
+		Leer Anio;
 		
 		Escribir "Ingrese el Genero: ";
 		Leer Genero;
@@ -41,8 +46,9 @@ Algoritmo ejercicio2
 		Escribir "Ingrese la duracion: ";
 		Leer Duracion;
 		
-		Escribir "Quiere ingresar una pelicula(s/n): ";
-		Leer Opcion;		
+		Si (Anio = 2020) Entonces
+			Anio_2020 <- Anio_2020 + 1;
+		FinSi
 		
 		Si ((Origen = 'argentina') o (Origen = 'Argentina')) Entonces
 			Origen_Argentina <- Origen_Argentina + 1;
@@ -67,6 +73,9 @@ Algoritmo ejercicio2
 			Duracion_Maxima <- Duracion;
 			Titulo_Maxima_Duracion <- Titulo;
 		FinSi
+		
+		Escribir "Quiere ingresar una pelicula(s/n): ";
+		Leer Opcion;
 		
 	FinMientras
 	

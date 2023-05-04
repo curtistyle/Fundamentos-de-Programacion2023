@@ -12,6 +12,7 @@ Algoritmo ejercicio1
 	Adultez <- 0;
 	Vejez <- 0;
 	Pythonizame <- 0;
+	Pythonizame_Edad <- 0;
 	Estudiante <- 0;
 	Estudiante_Ninez <- 0;
 	Estudiante_Adolescencia <- 0;
