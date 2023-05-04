@@ -89,18 +89,32 @@ Algoritmo ejercicio1
 	Escribir " > Juventud: ", Juventud;
 	Escribir " > Adultez: ", Adultez;
 	Escribir " > Vejez: ", Vejez;
-	Si (Ninez > Adolescencia) y (Ninez > Juventud) y (Ninez > Adultez) y (Ninez > Vejez) Entonces
+	
+	Si (Ninez >= Adolescencia) y (Ninez >= Juventud) y (Ninez >= Adultez) y (Ninez >= Vejez) Entonces
 		Escribir "El rango etario Niñes tiene mayor representatividad en la red social.";
 	SiNo
-		Si (Adolescencia > Ninez) y (Adolescencia > Juventud) y (Adolescencia > Adultez) y (Adolescencia > Vejez) Entonces
+		Si (Adolescencia >= Ninez) y (Adolescencia >= Juventud) y (Adolescencia >= Adultez) y (Adolescencia >= Vejez) Entonces
 			Escribir "El rango etario Adolescencia tiene mayor representatividad en la red social.";
 		SiNo
-			Si ()
+			Si (Juventud >= Ninez) y (Juventud >= Adolescencia) y (Juventud >= Adultez) y (Juventud >= Vejez) Entonces
+				Escribir "El rango etario Juventud tiene mayor representatividad en la red social.";
+			SiNo
+				Si (Adultez >= Ninez) y (Adultez >= Adolescencia) y (Adultez >= Juventud) y (Adultez >= Vejez) Entonces
+					Escribir "El rango etario Adultez tiene mayor representatividad en la red social.";
+				SiNo
+					Escribir "El rango etario Adultez tiene mayor representatividad en la red social.";
+				FinSi
+			FinSi
 		FinSi
 	FinSi
 	
-	Promedio <- Pythonizame_Edad / Pythonizame;
-	Escribir "Cantidad de seguidosres de la pagina Pythonizame: ", Pythonizame ," y su promedio de edad es: ", Promedio,".";
+	Si (Pythonizame > 0) Entonces
+		Promedio <- Pythonizame_Edad / Pythonizame;
+		Escribir "Cantidad de seguidores de la pagina Pythonizame: ", Pythonizame ," y su promedio de edad es: ", Promedio,".";
+	SiNo
+		Escribir "No hay seguidores en la pagina Pythonizame.";
+	FinSi
+	
 	
 	Escribir "Porcentaje de estudiantes en general: ", (Estudiante * 100) / Indice ,"%.";
 	Escribir "Porcentaje de Estudiante por rango etario: ";

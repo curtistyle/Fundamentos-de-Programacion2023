@@ -22,6 +22,7 @@ Algoritmo ejercicio2
 	Candidata_Protagonista2 <- ''; 
 	Candidata_Genero2 <- '';
 	
+	
 	Escribir "Quiere ingresar una pelicula(s/n): ";
 	Leer Opcion;
 	Mientras (Opcion = 's') Hacer
