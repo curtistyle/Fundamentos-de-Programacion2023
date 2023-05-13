@@ -1138,7 +1138,6 @@ Algoritmo
     Hasta Que (Opcion = 0)
 FinAlgoritmo
 ```
-
 *version 3*
 
 ```
