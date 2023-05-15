@@ -11,13 +11,11 @@
 
 
 Algoritmo ejercicio2
-	Definir Indice Como Entero;
+	Definir Contador, Indice Como Entero;
 	Definir Titulo, Genero, Protagonista, Origen, Opcion Como Cadena;
 	Definir Origen_Argentina, Origen_Brasil, Duracion, Duracion_Maxima, Anio, Anio_2020, Anio_2021, Anio_2022 Como Entero;
 	Definir Candidata_Protagonista1, Candidata_Genero1, Candidata_Protagonista2, Candidata_Genero2, Titulo_Maxima_Duracion Como Cadena;
-	Definir Estado Como Logico;
 	
-	Estado <- Verdadero;
 	Indice <- 0;
 	Duracion_Maxima <- 0;
 	Candidata_Protagonista1 <- '';
@@ -28,80 +26,83 @@ Algoritmo ejercicio2
 	Anio_2021 <- 0;
 	Anio_2022 <- 0;
 	
-	Escribir "Quiere ingresar una pelicula(s/n): ";
-	Leer Opcion;
-	Mientras (Opcion = 's') Hacer
-		Estado <- Verdadero;
-		
-		Escribir "Ingrese el titulo: ";
-		Leer Titulo;
-		
-		Escribir "Ingrese el anio: ";
-		Leer Anio;
-		
-		Escribir "Ingrese el Genero: ";
-		Leer Genero;
-		
-		Escribir "Ingrese el Protagonista: ";
-		Leer Protagonista;
-		
-		Escribir "Ingrese el Origen: ";
-		Leer Origen;
-		
-		Escribir "Ingrese la duracion: ";
-		Leer Duracion;
-		
-		Si (Anio = 2020) Entonces
-			Anio_2020 <- Anio_2020 + 1;
-		SiNo
-			Si (Anio = 2021) Entonces
-				Anio_2021 <- Anio_2021 + 1;
-			SiNo
-				Si (Anio = 2022) Entonces
-					Anio_2022 <- Anio_2022 + 1;
-				SiNo
-					Escribir "Anio fuera de rango!";
-					Estado <- Falso;
-					Indice <- Indice - 1;
-				FinSi
-			FinSi
-		FinSi
-		
-		// Cantidad de peliculas argentinas
-		Si (((Origen = 'argentina') o (Origen = 'Argentina')) y (Estado = Verdadero)) Entonces
-			Origen_Argentina <- Origen_Argentina + 1;
-		FinSi
-		
-		// Cantidad de peliculas brazileras
-		Si (((Origen = 'Brazil') o (Origen = 'brazil')) y (Estado = Verdadero)) Entonces
-			Origen_Brasil <- Origen_Brasil + 1;
-		FinSi
-		
-		//"La teoría del todo" y "El código enigma"
-		Si (((Titulo = 'La teoria del todo') o (Titulo = 'la teoria del todo')) y (Estado = Verdadero)) Entonces
-			Candidata_Genero1 <- Genero;
-			Candidata_Protagonista1 <- Protagonista;
-		SiNo
-			Si (((Titulo = 'El codigo enigma') o (Titulo = 'el codigo enigma')) y (Estado = Verdadero)) Entonces
-				Candidata_Genero2 <- Genero;
-				Candidata_Protagonista2 <- Protagonista;
-			FinSi
-		FinSi
-		
-		// Pelicula con mayor duración
-		Si ((Duracion > Duracion_Maxima) y (Estado = Verdadero)) Entonces
-			Duracion_Maxima <- Duracion;
-			Titulo_Maxima_Duracion <- Titulo;
-		FinSi
-		
+	Para Indice <- 1 Hasta 3 Hacer
+		Segun Indice Hacer
+			1 : Escribir "Ingrese las peliculas candidatas del Año 2020.";
+			2 : Escribir "Ingrese las peliculas candidatas del Año 2021.";
+			3 : Escribir "Ingrese las peliculas candidatas del Año 2022.";
+		FinSegun
 		Escribir "Quiere ingresar una pelicula(s/n): ";
 		Leer Opcion;
-		
-		Indice <- Indice + 1;
-	FinMientras
+		Mientras (Opcion = 's') Hacer
+			Estado <- Verdadero;
+			
+			Escribir "Ingrese el titulo: ";
+			Leer Titulo;
+			
+			Escribir "Ingrese el anio: ";
+			Leer Anio;
+			
+			Escribir "Ingrese el Genero: ";
+			Leer Genero;
+			
+			Escribir "Ingrese el Protagonista: ";
+			Leer Protagonista;
+			
+			Escribir "Ingrese el Origen: ";
+			Leer Origen;
+			
+			Escribir "Ingrese la duracion: ";
+			Leer Duracion;
+			
+			Si (Indice = 1) Entonces
+				Anio_2020 <- Anio_2020 + 1;
+			SiNo
+				Si (Indice = 2) Entonces
+					Anio_2021 <- Anio_2021 + 1;
+				SiNo
+					Si (Indice = 3) Entonces
+						Anio_2022 <- Anio_2022 + 1;
+					FinSi
+				FinSi
+			FinSi
+			
+			// Cantidad de peliculas argentinas
+			Si ((Origen = 'argentina') o (Origen = 'Argentina'))  Entonces
+				Origen_Argentina <- Origen_Argentina + 1;
+			FinSi
+			
+			// Cantidad de peliculas brazileras
+			Si ((Origen = 'Brazil') o (Origen = 'brazil')) Entonces
+				Origen_Brasil <- Origen_Brasil + 1;
+			FinSi
+			
+			//"La teoría del todo" y "El código enigma"
+			Si ((Titulo = 'La teoria del todo') o (Titulo = 'la teoria del todo'))  Entonces
+				Candidata_Genero1 <- Genero;
+				Candidata_Protagonista1 <- Protagonista;
+			SiNo
+				Si ((Titulo = 'El codigo enigma') o (Titulo = 'el codigo enigma')) Entonces
+					Candidata_Genero2 <- Genero;
+					Candidata_Protagonista2 <- Protagonista;
+				FinSi
+			FinSi
+			
+			// Pelicula con mayor duración
+			Si (Duracion > Duracion_Maxima) Entonces
+				Duracion_Maxima <- Duracion;
+				Titulo_Maxima_Duracion <- Titulo;
+			FinSi
+			
+			Escribir "Quiere ingresar una pelicula(s/n): ";
+			Leer Opcion;
+			
+			Contador <- Contador + 1;
+		FinMientras
+	FinPara	
 	
 	Escribir "Cantidad de peliculas Argentinas: ", Origen_Argentina;
-	Escribir "Porcentaje de peliculas Brazileras: ", (Origen_Brazil * 100) / Indice;
+	Escribir "Porcentaje de peliculas Brazileras: ", (Origen_Brazil * 100) / Contador;
 	Escribir "Titulo de la pelicula con mayor duracion: ", Titulo_Maxima_Duracion;
 	
 	Si (Candidata_Protagonista1 <> '') y (Candidata_Protagonista2 <> '') Entonces
