@@ -11,6 +11,7 @@
 //      e) Indicar la cantidad de donantes con enfermedad preexistentes e indicar
 //         además la cantidad que han padecido cáncer.
 
+// Alum: Sebastian Maldonado
 Algoritmo ejercicio3
 	
 	Definir Premedio Como Real;
@@ -18,18 +19,16 @@ Algoritmo ejercicio3
 	Definir Opcion Como Caracter;
 	Definir Nombre, Apellido, Tutor, Enfermedad_Preexistente Como Cadena;
 	Definir Translante Como Logico;
-	// (varaibles) Persona mas joven por Sede
 	Definir Persona_MJ_UADER, Persona_MJ_Plaza, Persona_MJ_Dono Como Cadena;
 	Definir Edad_MJ_UADER, Edad_MJ_Plaza, Edad_MJ_Dono Como Entero;
-	// (variables) Promedio de edad por lugar de ashesion
 	Definir Sede_UADER, Sede_Plaza, Sede_Dono Como Entero;
 	Definir Edad_UADER, Edad_Plaza, Edad_Dono Como Entero;
 	
-	// Contadores
+	// Contadores de donantes por sedes
 	Sede_UADER <- 0;
 	Sede_Plaza <- 0;
 	Sede_Dono <- 0;
-	// Acumuladores
+	// Acumuladores de edades por sedes
 	Edad_UADER <- 0;
 	Edad_Plaza <- 0;
 	Edad_Dono <- 0;
@@ -159,7 +158,7 @@ Algoritmo ejercicio3
 		Escribir " > Edad: ", Edad_MJ_Plaza;
 	FinSi
 	
-	// Si existe al menos un donante en la sede *Dono por vos*
+	// Si existe al menos un donante en la sede *Dono por vos* muestra la informacion
 	Si (Sede_Dono > 0) Entonces
 		Escribir "Promedio de edad de los donantes de la Sede *Dono por vos:*", Edad_Dono / Edad_Dono;
 		Escribir "Persona mas Joven de la Sede *Dono por vos*";
