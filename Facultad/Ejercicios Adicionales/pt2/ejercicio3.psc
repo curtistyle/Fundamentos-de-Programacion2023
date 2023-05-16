@@ -25,11 +25,13 @@ Algoritmo ejercicio3
 	Definir Sede_UADER, Sede_Plaza, Sede_Dono Como Entero;
 	Definir Edad_UADER, Edad_Plaza, Edad_Dono Como Entero;
 	
+	// Contadores
 	Sede_UADER <- 0;
-	Edad_UADER <- 0;
 	Sede_Plaza <- 0;
-	Edad_Plaza <- 0;
 	Sede_Dono <- 0;
+	// Acumuladores
+	Edad_UADER <- 0;
+	Edad_Plaza <- 0;
 	Edad_Dono <- 0;
 	
 	Enfermedad_Preexistente <- ' ';   
@@ -135,7 +137,7 @@ Algoritmo ejercicio3
 			FinSi
 			Escribir "Desea agregar otro donante (s/n): ";
 			Leer Opcion;
-			Indice <- Indice + 1;
+			Indice <- Indice + 1;         // Contador de todos los donantes de todas las sedes
 		FinMientras
 	FinPara
 	
