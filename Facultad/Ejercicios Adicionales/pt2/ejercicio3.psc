@@ -36,13 +36,16 @@ Algoritmo ejercicio3
 	
 	Enfermedad_Preexistente <- ' ';   
 	
-	Indice <- 0;                      // Cantidad Total de Donantes
-	Contador_Transplante <- 0;        // Cantidad de Donantes con Transplantes
-	Contador_Enfermedad <- 0;         // Cantidad de Donantes con Enfermadades Preexistentes
-	Contador_Cancer <- 0;             // Cantidad de Donantes con Enfermedad: Cancer
-	Edad_MJ_UADER <- 0;               // Edad Donante mas joven -UADER-
-	Edad_MJ_Plaza <- 0;               // Edad Donante mas joven -Plaza ramirez-
-	Edad_MJ_Dono <- 0;                // Edad Donante mas joven -Dono por vos-
+	Indice <- 0;                           // Cantidad Total de Donantes
+	Contador_Transplante <- 0;             // Cantidad de Donantes con Transplantes
+	Contador_Enfermedad <- 0;              // Cantidad de Donantes con Enfermadades Preexistentes
+	Contador_Cancer <- 0;                  // Cantidad de Donantes con Enfermedad: Cancer
+	Edad_MJ_UADER <- 0;                    // Edad Donante mas joven -UADER-
+	Edad_MJ_Plaza <- 0;                    // Edad Donante mas joven -Plaza ramirez-
+	Edad_MJ_Dono <- 0;                     // Edad Donante mas joven -Dono por vos-
+	Persona_MJ_UADER <- '';                // Nombre completo del donante mas joven -UADER-
+	Persona_MJ_Plaza <- '';                // Nombre completo del donante mas joven -Plaza Ramirez-
+	Persona_MJ_Dono <- '';                 // Nombre completo del donante mas joven -Dono po vos-
 	
 	Para Sede <- 1 Hasta 3 Hacer
 		Segun Sede Hacer
@@ -80,7 +83,6 @@ Algoritmo ejercicio3
 				Si (Enfermedad_Preexistente = 'cancer') o (Enfermedad_Preexistente = 'Cancer') Entonces
 					Contador_Cancer <- Contador_Cancer + 1;
 				FinSi
-				Enfermedad_Preexistente <- ' ';
 			FinSi
 			
 			// Muestra los datos de los donantes menores de edad (en cada ciclo -mientras-)
@@ -141,22 +143,31 @@ Algoritmo ejercicio3
 		FinMientras
 	FinPara
 	
-	Escribir "Promedio de edad de los donantes de la Sede *UADER*: ", Edad_UADER / Sede_UADER;
-	Escribir "Promedio de edad de los donantes de la Sede *Plaza Ramirez*: ", Edad_Plaza / Sede_Plaza;
-	Escribir "Promedio de edad de los donantes de la Sede *Dono por vos:*", Edad_Plaza / Sede_Plaza;
+	// Si existe al menos un donante en la sede *UADER* muestra la informacion
+	Si (Sede_UUADER > 0) Entonces
+		Escribir "Promedio de edad de los donantes de la Sede *UADER*: ", Edad_UADER / Sede_UADER;
+		Escribir "Persona mas Joven de la Sede *UADER*";
+		Escribir " > Nombre Completo: ", Persona_MJ_UADER;
+		Escribir " > Edad: ", Edad_MJ_UADER;
+	FinSi
 	
-	Escribir "Persona mas Joven de la Sede *UADER*";
-	Escribir " > Nombre Completo: ", Persona_MJ_UADER;
-	Escribir " > Edad: ", Edad_MJ_UADER;
+	// Si existe al menos un donante en la sede *Plaza Ramirez* muestra la informacion
+	Si (Sede_Plaza > 0) Entonces
+		Escribir "Promedio de edad de los donantes de la Sede *Plaza Ramirez*: ", Edad_Plaza / Sede_Plaza;
+		Escribir "Persona mas Joven de la Sede *Plaza Ramirez*";
+		Escribir " > Nombre Completo: ", Persona_MJ_Plaza;
+		Escribir " > Edad: ", Edad_MJ_Plaza;
+	FinSi
 	
-	Escribir "Persona mas Joven de la Sede *Plaza Ramirez*";
-	Escribir " > Nombre Completo: ", Persona_MJ_Plaza;
-	Escribir " > Edad: ", Edad_MJ_Plaza;
+	// Si existe al menos un donante en la sede *Dono por vos*
+	Si (Sede_Dono > 0) Entonces
+		Escribir "Promedio de edad de los donantes de la Sede *Dono por vos:*", Edad_Dono / Edad_Dono;
+		Escribir "Persona mas Joven de la Sede *Dono por vos*";
+		Escribir " > Nombre Completo: ", Persona_MJ_Dono;
+		Escribir " > Edad: ", Edad_MJ_Dono;
+	FinSi
 	
-	Escribir "Persona mas Joven de la Sede *Dono por vos*";
-	Escribir " > Nombre Completo: ", Persona_MJ_Dono;
-	Escribir " > Edad: ", Edad_MJ_Dono;
-	
+	// Informacion general de todas las sedes
 	Escribir "Porcentaje del total de donadores transplandos: ", (Contador_Transplante * 100) / Indice,"%"; 
 	Escribir "Cantidad de donantes con enfermedades preexistentes: ", Contador_Enfermedad;
 	Escribir "Cantidad de donantes con cancer: ", Contador_Cancer;
