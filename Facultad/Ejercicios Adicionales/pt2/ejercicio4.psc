@@ -15,7 +15,7 @@
 Algoritmo ejercicio4
 	Definir Indice, Edad, Contador_Linkedin Como Entero;
 	Definir Nombre, Apellido, Profesion, Area_Desarollo, Nombre_Institucion Como Cadena;
-	Definir Acumulador_Edad_Software, Contador_Edad_Software, Contador_Sistemas Como Entero;
+	Definir Acumulador_Edad_Software, Contador_Edad_Software, Contador_Sistemas, Contador_Areas Como Entero;
 	Definir Contador_Estudiantes, Contador_Institucion Como Entero;
 	Definir Opcion Como Caracter;
 	Definir Estado Como Logico;
