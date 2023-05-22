@@ -8,27 +8,31 @@
 
 Algoritmo ejercicio1
 	Definir Fondos, Monto Como Real;
-	Definir Indice Como Entero;
+	Definir Empleado Como Entero;
 	
-	Indice <- 1;
+	Empleado <- 1;
 	Monto <- 0;
 	
 	Escribir "Ingrese el monto total de la empresa: ";
 	Leer Fondos;
 	
-	
-	Mientras ((Monto > Fondos) y (Fondos > 0))  Hacer
-		Indice <- Indice + 1;
-		Escribir "Ingrese el sueldo del Empleado Nº",Indice,'.:';
-		Leer Monto;
+	// - Designa los sueldos a los empledos hasta que el ultimo monto 
+	//   que se asigna es mayor a los fondos de la empresa.
+	Escribir "Ingrese el sueldo del Empleado Nº ",Indice,'.:';
+	Leer Monto;
+	Mientras ((Fondos > Monto) y (Fondos > 0))  Hacer
 		Si (Monto < Fondos) Entonces
 			Fondos <- Fondos - Monto;
 			Escribir "Se le abono al empleado $",Monto,'.';	
+			Empleado <- Empleado + 1;
+			Escribir "Fondos disponibles: $", Fondos,'.';
+			Escribir "Ingrese el sueldo del Empleado Nº ",Indice,'.:';
+			Leer Monto;
 		SiNo
 			Escribir "Fondos insuficientes.";
 		FinSi
-		Escribir "Fondos disponibles: $", Fondos,'.';
 	FinMientras
+	Escribir "Fondos insuficientes";
 	
-	Escribir "La empresa abono ", Indice, "sueldos";
+	Escribir "La empresa abono ", Empleado, " sueldos";
 FinAlgoritmo
