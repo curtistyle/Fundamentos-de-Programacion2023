@@ -7,32 +7,27 @@
 //	diseñaría el algoritmo para que cumpla con el objetivo?
 
 Algoritmo ejercicio1
-	Definir Fondos, Monto Como Real;
-	Definir Empleado Como Entero;
+	Definir Fondos, Sueldo Como Real;
+	Definir Empleado, Empresa Como Entero;
 	
-	Empleado <- 1;
-	Monto <- 0;
-	
-	Escribir "Ingrese el monto total de la empresa: ";
-	Leer Fondos;
-	
-	// - Designa los sueldos a los empledos hasta que el ultimo monto 
-	//   que se asigna es mayor a los fondos de la empresa.
-	Escribir "Ingrese el sueldo del Empleado Nº ",Indice,'.:';
-	Leer Monto;
-	Mientras ((Fondos > Monto) y (Fondos > 0))  Hacer
-		Si (Monto < Fondos) Entonces
-			Fondos <- Fondos - Monto;
-			Escribir "Se le abono al empleado $",Monto,'.';	
-			Empleado <- Empleado + 1;
-			Escribir "Fondos disponibles: $", Fondos,'.';
-			Escribir "Ingrese el sueldo del Empleado Nº ",Indice,'.:';
-			Leer Monto;
-		SiNo
-			Escribir "Fondos insuficientes.";
-		FinSi
-	FinMientras
-	Escribir "Fondos insuficientes";
-	
-	Escribir "La empresa abono ", Empleado, " sueldos";
+	Para Empresa <- 1 Hasta 3 Hacer
+		Escribir "Ingrese el monto total de la empresa ",Empresa,": ";
+		Leer Fondos;
+		
+		// - Designa los sueldos a los empledos hasta que el ultimo monto 
+		//   que se asigna es mayor a los fondos de la empresa.
+		Escribir "Ingrese el sueldo del Empleado Nº ",Empleado,'.:';
+		Leer Sueldo;
+		Mientras ((Fondos > Sueldo) y (Fondos > 0))  Hacer
+				Fondos <- Fondos - Sueldo;
+				Empleado <- Empleado + 1;
+				Escribir "Se le abono al empleado $",Sueldo,'.';	
+				Escribir "Fondos disponibles: $", Fondos,'.';
+				Escribir "Ingrese el sueldo del Empleado Nº ",Empleado,'.:';
+				Leer Sueldo;
+		FinMientras
+		Escribir "Fondos insuficientes";
+		
+		Escribir "La empresa ",Empresa," abono ", Empleado, " sueldos";
+	FinPara
 FinAlgoritmo
