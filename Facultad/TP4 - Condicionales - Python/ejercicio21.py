@@ -25,7 +25,7 @@ if (distancia <= 30):
     monto = distancia * 20
     if (distancia > 30) and (distancia <= 100):
         monto = monto + (distancia - 30)
-        ifººº (distancia > 100):
+        if(distancia > 100):
             monto = monto + ((distancia - 100) * 0.5)
 
 print(f"Distancia recorrida: {distancia:.2f} km", f" Monto: ${monto:.2f}")
