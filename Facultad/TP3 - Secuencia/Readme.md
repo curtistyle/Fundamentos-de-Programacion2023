@@ -193,7 +193,7 @@ Algoritmo
     Digito2 <- (Numero - (Digito1 * 100)) div 10;
     Digito3 <- (Numero - (Digito1 * 100) + Digito2 * 10);
 
-    Suma <- (Digito1^3)+(Digito2^3)(Digito3^3);
+    Suma <- (Digito1^3)+(Digito2^3)+(Digito3^3);
 
     Escribir Suma;
 FinAlgoritmo

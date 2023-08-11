@@ -9,7 +9,7 @@ Algoritmo ejercicio13
     Leer Dia;
 	Escribir "Ingrese el Mes: ";
 	Leer Mes;
-	Escribir "Ingrese el Año: ";
+	Escribir "Ingrese el Aï¿½o: ";
 	Leer Anio;
     Si (Mes = 2) Entonces
         Si ((Anio mod 4) = 0) y (((anio mod 100) <> 0) o ((anio mod 400) = 0)) Entonces
@@ -17,7 +17,7 @@ Algoritmo ejercicio13
                 siguienteDia <- 1;
                 siguienteMes <- Mes + 1;
             SiNo
-                siguienteDias <- Dia + 1;
+                siguienteDia <- Dia + 1;
                 siguienteMes <- Mes;
             FinSi
         SiNo
