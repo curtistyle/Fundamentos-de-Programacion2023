@@ -7,7 +7,7 @@
               por km desde los 30 a los 100 y los 20 euros. Diseñar un programa que pida los 
               kilómetros recorridos y calcule el total a pagar según la tarifa anterior. """
 
-distancia = float(input("Ingrese la distancia recorrida: "))
+distancia = float(input("(METODO 1) Ingrese la distancia recorrida: "))
 
 if (distancia <= 30):
     monto = distancia * 20
@@ -19,7 +19,7 @@ else:
 print(f"Distancia recorrida: {distancia:.2f} km", f" Monto: ${monto:.2f}")
 # ! otro metodo
 
-distancia = float(input("Ingrese la distancia recorrida: "))
+distancia = float(input("(METODO 2) Ingrese la distancia recorrida: "))
     
 if (distancia <= 30):
     monto = distancia * 20
@@ -29,3 +29,5 @@ if (distancia <= 30):
             monto = monto + ((distancia - 100) * 0.5)
 
 print(f"Distancia recorrida: {distancia:.2f} km", f" Monto: ${monto:.2f}")
+
+
