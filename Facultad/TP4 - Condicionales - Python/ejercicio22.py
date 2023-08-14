@@ -7,10 +7,14 @@ numero2 = int(input("Ingrese el segundo numero: "))
 numero3 = int(input("Ingrese el tercer numero: "))
 
 if (numero1 > numero2 > numero3):
-    print("Ordenados de forma creciente: ", numero3, " - ", numero2, " - ", numero1, ".")
+    print("(A)Ordenados de forma creciente: ", numero3, " - ", numero2, " - ", numero1, ".")
 elif (numero1 > numero3 > numero2):
-    print("Ordenados de forma creciete: ", numero2, " - ", numero3, " - ", numero1, ".")   
+    print("(B)Ordenados de forma creciete: ", numero2, " - ", numero3, " - ", numero1, ".")   
 elif (numero2 > numero1 > numero3):
-    print("Ordenados de forma creciete: ", numero3, " - ", numero1, " - ", numero2, ".")
+    print("(C)Ordenados de forma creciete: ", numero3, " - ", numero1, " - ", numero2, ".")
 elif (numero2 > numero3 > numero1):
-    print("Ordenados de forma creciete: ", numero1, " - ", numero3, " - ", numero2, ".")
+    print("(D)Ordenados de forma creciete: ", numero1, " - ", numero3, " - ", numero2, ".")
+elif (numero3 > numero1 > numero2):
+    print("(E)Ordenados de forma creciete: ", numero2, " - ", numero1, " - ", numero3, ".")
+else:
+    print("(F)Ordenados de forma creciete: ", numero1, " - ", numero2, " - ", numero3, ".")
