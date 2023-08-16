@@ -4,7 +4,7 @@ Algoritmo ejercicio10
 	
     Serie <- 0;
 	
-	Escribir "Calculadora de la serie h(n)=1 + ½ + 1/3 + ... + 1/n."
+	Escribir "Calculadora de la serie h(n)=1 + ½ + 1/3 + ... + 1/n.";
 	Escribir "Ingrese el valor de N: ";
     Leer N;
 	
