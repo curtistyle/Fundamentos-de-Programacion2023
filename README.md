@@ -62,3 +62,29 @@ ejemplo:
 
     print(resultado) # out: 8
 ```
+
+## Errores
+
+### `int too large convert to float`
+
+El error *int too large to convert to float* en Python ocurre cuando intentas convertir un entero demasiado grande en un valor de punto flotante (`float`), y el entero excede la cantidad de formato `float` para representar números enteros con precisión completa.
+El formato `float` tiene una capacidad finita para representar números grandes y pequeños con precisión limitada.
+
+Si estas trabajando con números enteros muy grandes y necesitas mantener la presicisión, puedes considerar mantener la presicion utilizando el metodo `Decimal()` del modulo `decimal` que proporciona representación decimal de alta precision. Ejemplo:
+
+```python
+    from decimal  import Decimal
+
+    entero_grande = 1234567890123456789012345678901234567890
+    decimal_entero = Decimal(entero_grande)
+    print(decimal_grande) # Output: 1234567890123456789012345678901234567890
+```
+
+Si no necesitas una alta precisión y solo deseas imprimir o mostrar el número grande, puedes utilizar el formato de cadena sin convertirlo a `float`:
+
+```python
+    entero_grande = 123456789012345678901234567890
+    print(str(entero_grande)) # Output: 123456789012345678901234567890
+```
+
+En este caso, simplemente convertimos el número grande a una cadena y lo imprimimos directamente. Esto evitará el problema de convertir el entero grande en un `float`.
