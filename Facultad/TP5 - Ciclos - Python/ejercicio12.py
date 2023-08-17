@@ -3,7 +3,7 @@ señalando  su  comportamiento  académico.  Dicho  código  puede  tomar  valor
 Indicar  cuántos  alumnos  obtuvieron  cada  una  de  las  calificaciones  tratando  de  a  una 
 calificación por vez. """
 
-from msvcrt import getch
+from msvcrt import getwch
 
 contador1 = 0
 contador2 = 0
@@ -14,13 +14,12 @@ index = 1
 while (index <= 10):
     print(f"Ingrese el compartamiento academico (1,2,3) del alumno #{index}.")
     
-    opcion = getch()
-    print("opcion: ", opcion)
-    if (opcion == b'1'):
+    opcion = getwch()
+    if (opcion == '1'):
         contador1 += 1
-    elif (opcion == b'2'):
+    elif (opcion == '2'):
         contador2 += 1
-    elif (opcion == b'3'):
+    elif (opcion == '3'):
         contador3 += 1
     else:
         print("La opcion  que ingrese es invalida.")
