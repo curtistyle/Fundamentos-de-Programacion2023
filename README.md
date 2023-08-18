@@ -37,6 +37,113 @@ print(f"{numero:.{decumales}f}") # tambien imprimira el numero con cuatro decima
 
 Al usar `{:.{}f}`, el primer corchete representa el numero a formatear y el segundo corchete con `{}` representa la variable que contiene la cantidad de decimales que desea mostrar.
 
+
+Otro uso basico del metodo `format()`
+
+```python
+    print("We are the {} who say '{}!'".format('knights','Ni'))
+
+    # out: We are the knights who say 'Ni!'
+``` 
+
+Las llaves y caracteres dentro de las mismas (llamados campos de formato) son reemplazadas con los objetos pasados en el método `str.format()`. Un número en las llaves se refiere a la posición del objeto pasado en el método `str.format()`.
+
+```python
+    print("{0} and {1}".format('spam','eggs'))
+    # spam and eggs
+
+    print("{1} and {0}.".format('spam','eggs'))
+    # eggs and spam
+```
+
+Si se usan argumentos nombrados en el método `str.format()`, sus valores se referencian usando el nombre del argumento
+
+```python
+    print("This {food} is {adjetive}.".format(food='spam', adjetive='absolutely horrible'))
+
+    # out: This spam is absolutely horrible.
+```
+
+Si tiene una cadena de caracteres de formato realmente larga que no desea dividir, sería bueno si pudiera hacer referencia a las variables que se formatearán por nombre en lugar de por posición. Esto se puede hacer simplemente pasando el diccionario y usando corchetes `[]` para acceder a las claves.
+
+```python
+    table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcad': 8637678}
+    print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoer]:d}; Dcab: {0[Dcab]:d}.'.format(table))
+
+    # out: Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+```
+
+Esto se podría hacer, también, pasando el diccionario `table` como argumentos por palabra clave con la notación “**”.
+
+```python
+    table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+    print('Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'.format(**table))
+```
+
+Esto es particularmente útil en combinación con la función integrada `vars()`, que retorna un diccionario conteniendo todas las variables locales.
+
+Como ejemplo, las siguientes líneas producen un conjunto ordenado de columnas que dan enteros y sus cuadrados y cubos:
+
+```python
+    for x in range(1, 11)
+        print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
+
+    # out: 
+"""  1   1    1
+     2   4    8
+     3   9   27
+     4  16   64
+     5  25  125
+     6  36  216
+     7  49  343
+     8  64  512
+     9  81  729
+    10 100 1000
+"""
+```
+
+
+### Modificadores para convertir variables
+
+Se pueden utilizar otros modificadores para convertir el valor antes de formateo. `!a` se aplica `ascii()`, `!s` se aplica `str()`, y `!r` se aplica `repr()`
+
+```python
+    animal = 'cat'
+
+    print(f"My house is full of {animal}")
+    # out: My house is full of cat
+
+    print(f"My house is full of {animal!r}")
+    # out: My house is full of 'cat'
+```
+
+El especificador `=` puede utilizarse para expandir una expresión al texto de la expresión, un signo igual y, a continuación, la representacion de la expresión evaluada.
+
+```python
+    bugs = 'roaches'
+    count = 13
+    area = 'living room'
+    print(f"Debugging {bugs=} {count=} {area=}")
+    # Debugging bugs='roaches' count=13 area='living room'
+```
+
+
+
+### Caracteres de escape 
+
+En Python, los caracteres de escape son secuencias especiales que se utilizan en secuencia de texto para representar caracteres que de otra manera seria dificiles de insertar directamente en el codigo.
+
+1. `\n`: Salto de línea. Insertar una nueva linea de cadena.
+2. `\t`: Tabulacion. Insertar un carácter de tabulación en la cadena.
+3. `\\`: Barra invertida. Inserta un carácter de barra invertida en la cadena.
+4. `\'`: Comilla simple. Inserta una comilla simple en la cadena.
+5. `\"`: Comilla doble. Inserta una comilla doble en la cadena.
+6. `\r`: Retorno de carro. Se utiliza para realizar un retorno de carro (retorno al inicio de la linea) en algunas plataformas.
+7. `\b`: Retroceso. Borra un carácter antes del cursor en la cadena.
+8. `\f`: Avance de página. Insertar un caracter de avance de pagina.
+9. `\v`: Tabulacion vertical. Inserta un carácter de tabulación vertical.
+10. `\xhh` : Representacion hexadecimal. Inserta un caracter correspondiente al valor hexadecimal `hh`.
+
 ## Math
 
 ### `math.floor()`
@@ -88,3 +195,41 @@ Si no necesitas una alta precisión y solo deseas imprimir o mostrar el número 
 ```
 
 En este caso, simplemente convertimos el número grande a una cadena y lo imprimimos directamente. Esto evitará el problema de convertir el entero grande en un `float`.
+
+
+## Modulo `msvcrt`
+
+### `getch()`
+El metodo `getch()` del modulo `msvcrt` en Python se utiliza para capturar la entrada del teclado de manera sencilla y sin necesidad de presionar Enter. Este metodo es especialmente útil en aplicaciones donde se requiere una entrada de teclado inmediata y sin buffer.
+
+Ejemplo:
+
+```python
+    print("Presiona una tecla: ")
+    
+    # in: s
+    tecla_presionada = msvcrt.getch()
+    
+    print(f"Presionaste la tecla: {tecla_presionada.decode('utf-8')}")
+    # out: s
+```
+
+otras variantes del metodo: 
+
+#### `getwch()`
+
+Variante de caracteres anchos de getch(), que devuelve un valor Unicode.
+
+Ej. 
+
+```python
+    print("Presiona una tecla: ")
+
+    # in: s
+    tecla_presionada = msvcrt.getwch()
+
+    print(f"Presionaste la tecla: {tecla_presioada}")
+    # out: s
+```
+
+
