@@ -233,5 +233,193 @@ Ej.
 ```
 
 
-### Otra forma de formatear un `print()` 
+### Como funciona el `as` en Python
 
+En Python, la palabra clave `as` se utiliza principalmente para crear alias o nombres alternativos para módulos, clases, funciones y otros objetos. Su principal función es permitirte darle a un objeto un nombre más corto o más significativo para facilitar su uso en tu código.
+
+Aquí tienes algunos ejemplos de cómo se utiliza la palabra clave `as` en diferentes contextos:
+
+1. **Alias para módulos:**
+```python
+import math as m
+print(m.sqrt(25))  # En lugar de math.sqrt(25)
+```
+
+2. **Alias para clases:**
+```python
+from datetime import datetime as dt
+today = dt.now()  # En lugar de datetime.datetime.now()
+```
+
+3. **Alias para funciones:**
+```python
+from math import factorial as fact
+result = fact(5)  # En lugar de math.factorial(5)
+```
+
+4. **Alias para nombres de objetos:**
+```python
+my_long_variable_name = 42
+short = my_long_variable_name  # Usar un alias para el nombre largo
+```
+
+Es importante mencionar que, aunque el uso de `as` puede hacer que tu código sea más legible, también debes tener cuidado de elegir nombres que aún sean descriptivos y fáciles de entender. Usar `as` en exceso o elegir nombres ambiguos puede dificultar la comprensión del código para otras personas que lo lean en el futuro.
+
+### Como funciona el `assert` en Python
+
+En Python, la palabra clave `assert` se utiliza como una herramienta de depuración para verificar si una expresión es verdadera. Si la expresión es verdadera, no ocurre nada y el programa continúa su ejecución normal. Sin embargo, si la expresión es falsa, se genera una excepción `AssertionError` y el programa se detiene en ese punto, lo que te permite identificar y corregir errores en tu código.
+
+La sintaxis básica del `assert` es la siguiente:
+
+```python
+assert expresión, mensaje_de_error
+```
+
+Donde:
+- `expresión` es la condición que deseas verificar. Si esta condición es falsa, se generará un `AssertionError`.
+- `mensaje_de_error` es un argumento opcional que puedes proporcionar para personalizar el mensaje de error que se mostrará cuando la aserción falle.
+
+Aquí tienes un ejemplo de cómo usar `assert`:
+
+```python
+def dividir(a, b):
+    assert b != 0, "El divisor no puede ser cero"
+    return a / b
+
+resultado = dividir(10, 0)
+print(resultado)
+```
+
+En este ejemplo, la función `dividir` utiliza `assert` para verificar que el divisor `b` no sea cero antes de realizar la división. Si `b` es cero, se generará un `AssertionError` con el mensaje "El divisor no puede ser cero".
+
+Es importante mencionar que las aserciones (`assert`) se utilizan principalmente para depurar y verificar condiciones que deberían ser siempre verdaderas en tu código. No deben confundirse con manejo de errores o validaciones más robustas para situaciones inesperadas en producción. En la mayoría de los casos, las aserciones se desactivan en entornos de producción para mejorar el rendimiento y la seguridad del programa. Esto se hace pasando el parámetro `-O` (letra "o" en mayúscula) al ejecutar el script, lo que deshabilita las aserciones. Por ejemplo:
+
+```
+python -O tu_script.py
+```
+
+En resumen, `assert` es una herramienta útil para verificar suposiciones y condiciones durante la depuración de tu código, pero se debe usar con precaución y solo para propósitos de desarrollo y depuración.
+
+### Como funciona el `yield` en Python
+
+En Python, la palabra clave `yield` se utiliza en la definición de una función para crear un generador. Un generador es un tipo especial de función que produce una secuencia de valores en lugar de calcularlos y devolverlos todos de una vez. El `yield` permite pausar la ejecución de la función y "devolver" un valor temporalmente, luego reanudar la función desde donde se detuvo en la próxima iteración.
+
+Cuando se utiliza `yield`, la función se convierte en un generador, y cada vez que se llama a la función, no se ejecuta de manera lineal como una función regular. En su lugar, se ejecuta hasta que encuentra una declaración `yield`, en ese punto "pausa" y devuelve el valor especificado, y el estado de la función se guarda. Luego, la próxima vez que se llama a la función, se reanuda desde donde se detuvo y continúa ejecutándose hasta encontrar la próxima declaración `yield` o hasta que termine.
+
+Aquí tienes un ejemplo simple para entender cómo funciona `yield`:
+
+```python
+def contador(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+
+# Crear un generador
+gen = contador(5)
+
+# Iterar a través del generador
+for num in gen:
+    print(num)
+```
+
+En este ejemplo, la función `contador` es un generador que produce una secuencia de números del 0 al 4. Cada vez que se llama a la función y se encuentra la declaración `yield`, se "pausa" y devuelve el valor actual de `i`. Luego, en la próxima iteración del bucle `for`, se reanuda desde donde se detuvo y continúa hasta que la condición se cumpla.
+
+El uso de `yield` es útil cuando necesitas generar una secuencia de valores de manera eficiente, especialmente si la secuencia es grande y no deseas almacenarla completamente en memoria. Los generadores son especialmente útiles para iterar sobre conjuntos de datos grandes o secuencias infinitas.
+
+En resumen, `yield` se utiliza para crear generadores en Python, lo que permite generar secuencias de valores de manera eficiente y sin necesidad de almacenarlos completamente en memoria.
+
+### Como funciona `del` en Python
+
+En Python, la palabra clave `del` se utiliza para eliminar objetos o variables, liberando la memoria que ocupan y permitiendo que sean eliminados por el recolector de basura. `del` se utiliza en diferentes contextos para eliminar varios tipos de objetos:
+
+1. **Eliminar variables:**
+   Puedes usar `del` para eliminar variables y liberar la memoria que ocupan. Por ejemplo:
+
+   ```python
+   x = 10
+   del x  # Elimina la variable x
+   ```
+
+2. **Eliminar elementos de una lista o diccionario:**
+   `del` también se usa para eliminar elementos específicos de una lista o diccionario utilizando su índice o clave. Por ejemplo:
+
+   ```python
+   lista = [1, 2, 3, 4]
+   del lista[2]  # Elimina el tercer elemento de la lista (índice 2)
+   
+   diccionario = {'a': 1, 'b': 2, 'c': 3}
+   del diccionario['b']  # Elimina la clave 'b' y su valor del diccionario
+   ```
+
+3. **Eliminar elementos de una colección usando slices:**
+   Puedes usar `del` con slices para eliminar un rango de elementos de una lista o una sección de un objeto mutable. Por ejemplo:
+
+   ```python
+   lista = [1, 2, 3, 4, 5]
+   del lista[1:4]  # Elimina los elementos con índices 1, 2 y 3
+   
+   cadena = "Python"
+   del cadena[2]  # No es válido en este caso, ya que las cadenas son inmutables
+   ```
+
+4. **Eliminar objetos:**
+   `del` también se puede usar para eliminar objetos, como instancias de clases personalizadas. Si una instancia deja de ser referenciada, el recolector de basura eliminará automáticamente el objeto, por lo que en muchos casos no es necesario usar `del`.
+
+Es importante tener en cuenta que `del` elimina solo la referencia al objeto y libera su memoria si no hay otras referencias a ese objeto. No todos los objetos pueden ser eliminados directamente usando `del`, ya que algunos objetos pueden ser manejados automáticamente por el recolector de basura cuando dejan de ser accesibles.
+
+En resumen, `del` se utiliza para eliminar variables, elementos de listas o diccionarios, y también puede usarse con slices para eliminar rangos de elementos.
+
+### Como funciona el `nonlocal` en python
+
+En Python, la palabra clave `nonlocal` se utiliza en una función anidada para indicar que una variable definida en una función exterior (pero no en la función global) debe ser considerada no local en lugar de global. Esto permite modificar y acceder a la variable en la función anidada sin crear una nueva variable local con el mismo nombre.
+
+La necesidad de `nonlocal` surge cuando tienes una función anidada dentro de otra función, y deseas modificar una variable que está en el ámbito de la función exterior, no en el ámbito global. Aquí tienes un ejemplo para entender cómo funciona `nonlocal`:
+
+```python
+def funcion_exterior():
+    variable_exterior = 10
+    
+    def funcion_anidada():
+        nonlocal variable_exterior
+        variable_exterior += 1
+        print("Variable exterior modificada:", variable_exterior)
+    
+    funcion_anidada()
+
+funcion_exterior()
+```
+
+En este ejemplo, `variable_exterior` es una variable en el ámbito de la función `funcion_exterior`. Dentro de `funcion_anidada`, se utiliza la palabra clave `nonlocal` para indicar que la variable a la que se hace referencia es la variable en el ámbito de `funcion_exterior`, no una nueva variable local. Como resultado, el valor de `variable_exterior` se incrementa dentro de `funcion_anidada` y se muestra correctamente después de la modificación.
+
+Es importante mencionar que `nonlocal` solo es relevante cuando hay anidamiento de funciones y cuando se desea modificar una variable en un nivel superior de anidamiento. Si la variable está en el ámbito global, no necesitas `nonlocal`. Si la variable está en el ámbito local de la función actual, simplemente puedes modificarla sin usar `nonlocal`.
+
+En resumen, `nonlocal` se utiliza para indicar que una variable en una función anidada debe ser considerada no local en lugar de global, lo que permite modificarla y acceder a ella en el nivel de anidamiento superior.
+
+### Como funciona `lambda` en python
+
+En Python, `lambda` es una palabra clave que se utiliza para crear funciones anónimas, también conocidas como funciones lambda. Estas son funciones pequeñas y simples que se definen de manera compacta y pueden tener una o varias expresiones, pero no contienen una declaración de bloque de código como una función regular definida con `def`.
+
+La sintaxis básica de una función lambda es la siguiente:
+
+```python
+lambda argumentos: expresión
+```
+
+Donde:
+- `argumentos` son los parámetros de la función.
+- `expresión` es la operación que la función realiza y devuelve.
+
+Aquí tienes un ejemplo simple de cómo se utiliza `lambda`:
+
+```python
+suma = lambda x, y: x + y
+resultado = suma(3, 5)
+print(resultado)  # Imprime 8
+```
+
+En este ejemplo, se ha creado una función lambda llamada `suma` que toma dos argumentos `x` e `y`, y devuelve la suma de estos valores. Luego, se llama a la función `suma` con los valores `3` y `5`, y se almacena el resultado en la variable `resultado`.
+
+Las funciones lambda son útiles cuando necesitas definir una función pequeña y simple en línea, por ejemplo, para pasarla como argumento a otras funciones que esperan una función como entrada, como en el caso de `map`, `filter`, `sorted`, entre otros.
+
+Aunque las funciones lambda son convenientes para ciertas situaciones, es importante tener en cuenta que su uso excesivo o en contextos complejos puede dificultar la legibilidad del código. En general, se recomienda utilizar funciones regulares definidas con `def` para casos más complejos y cuando se necesita un mayor nivel de claridad en el código.
