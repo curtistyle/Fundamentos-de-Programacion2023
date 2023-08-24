@@ -22,12 +22,34 @@
 # for person in persons:
 #     print(f"{person['name']:<15}{person['year']:<14}{person['dorsal']:<10}")
 
+# ! ------------------------------------
 
-def divisor (x,y):
-    assert y != 0, "El divisor no puede ser cero"
-    return x / y
+# def divisor (x,y):
+#     assert y != 0, "El divisor no puede ser cero"
+#     return x / y
 
-x = int(input("Ingrese el valor de x: "))
-y = int(input("Ingrese el valor de y: "))
+# x = int(input("Ingrese el valor de x: "))
+# y = int(input("Ingrese el valor de y: "))
 
-print(f"Resultado: {divisor(x,y)}")
+# print(f"Resultado: {divisor(x,y)}")
+
+# ! -------------------------------------------
+
+# # Función de filtrado para números pares
+# def es_par(numero):
+#     return numero % 2 == 0
+
+# numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# # Filtrar los números pares de la lista
+# numeros_pares = filter(es_par, numeros)
+
+# # Convertir el resultado a una lista
+# numeros_pares_lista = list(numeros_pares)
+
+# print(numeros_pares_lista)  # Imprime [2, 4, 6, 8, 10]
+
+
+numero = int(input("Ingrese un numero: "))
+
+print("Es par" if ((numero % 2) == 0) else "Es impar")

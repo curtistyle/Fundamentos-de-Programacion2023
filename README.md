@@ -423,3 +423,212 @@ En este ejemplo, se ha creado una función lambda llamada `suma` que toma dos ar
 Las funciones lambda son útiles cuando necesitas definir una función pequeña y simple en línea, por ejemplo, para pasarla como argumento a otras funciones que esperan una función como entrada, como en el caso de `map`, `filter`, `sorted`, entre otros.
 
 Aunque las funciones lambda son convenientes para ciertas situaciones, es importante tener en cuenta que su uso excesivo o en contextos complejos puede dificultar la legibilidad del código. En general, se recomienda utilizar funciones regulares definidas con `def` para casos más complejos y cuando se necesita un mayor nivel de claridad en el código.
+
+### Funcion `filter()`.
+
+La función `filter()` en Python se utiliza para filtrar elementos de una secuencia (como una lista, tupla o conjunto) basándose en una función de filtrado que se aplica a cada elemento. La función de filtrado debe ser una función que devuelva un valor booleano (True o False) para cada elemento. Solo los elementos para los cuales la función de filtrado devuelve `True` se incluirán en el resultado.
+
+La sintaxis básica de la función `filter()` es la siguiente:
+
+```python
+filter(función_de_filtrado, secuencia)
+```
+
+Donde:
+- `función_de_filtrado`: Es la función que define el criterio de filtrado. Debe tomar un argumento (un elemento de la secuencia) y devolver `True` o `False`.
+- `secuencia`: La secuencia de elementos que deseas filtrar.
+
+Aquí tienes un ejemplo para ilustrar cómo funciona la función `filter()`:
+
+```python
+# Función de filtrado para números pares
+def es_par(numero):
+    return numero % 2 == 0
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filtrar los números pares de la lista
+numeros_pares = filter(es_par, numeros)
+
+# Convertir el resultado a una lista
+numeros_pares_lista = list(numeros_pares)
+
+print(numeros_pares_lista)  # Imprime [2, 4, 6, 8, 10]
+```
+
+En este ejemplo, la función `es_par()` se utiliza como función de filtrado para identificar números pares. La función `filter()` devuelve un objeto de tipo `filter`, que puedes convertir a una lista u otra secuencia para obtener los elementos filtrados.
+
+Es importante tener en cuenta que la función `filter()` no modifica la secuencia original, sino que crea un nuevo iterador que proporciona los elementos que cumplan con el criterio de filtrado.
+
+### Formas de pasar parametros en funciones en python
+
+En Python, puedes pasar parámetros a funciones de diversas maneras, lo que te permite adaptar la función para que trabaje con diferentes valores. Aquí hay varias formas de pasar parámetros a funciones:
+
+1. **Pasar por Valor (por defecto):**
+   Los argumentos se pasan por valor en Python. Esto significa que una copia del valor del argumento se pasa a la función. Las modificaciones realizadas dentro de la función no afectan al valor original fuera de ella.
+
+   ```python
+   def funcion(parametro):
+       parametro += 1
+
+   valor = 5
+   funcion(valor)
+   print(valor)  # Imprime 5 (sin cambios)
+   ```
+
+2. **Pasar por Referencia (en el caso de objetos mutables):**
+   Si pasas objetos mutables (como listas o diccionarios) como argumentos, los cambios realizados dentro de la función afectarán al objeto original, ya que la referencia al objeto se pasa a la función.
+
+   ```python
+   def modificar_lista(lista):
+       lista.append(10)
+
+   mi_lista = [1, 2, 3]
+   modificar_lista(mi_lista)
+   print(mi_lista)  # Imprime [1, 2, 3, 10]
+   ```
+
+3. **Pasar Argumentos por Posición:**
+   Los argumentos se pasan en el mismo orden en que se definen en la función. Es la forma más común de pasar argumentos.
+
+   ```python
+   def funcion(a, b):
+       # hacer algo con a y b
+
+   funcion(5, 10)
+   ```
+
+4. **Pasar Argumentos por Nombre:**
+   Puedes pasar argumentos fuera de orden al especificar su nombre al llamar a la función.
+
+   ```python
+   def funcion(a, b):
+       # hacer algo con a y b
+
+   funcion(b=10, a=5)
+   ```
+
+5. **Pasar Argumentos por Posición y Nombre Juntos:**
+   Puedes combinar ambas formas al llamar a una función.
+
+   ```python
+   def funcion(a, b, c):
+       # hacer algo con a, b y c
+
+   funcion(5, c=20, b=10)
+   ```
+
+6. **Pasar un Número Variable de Argumentos:**
+   Puedes usar `*args` para pasar un número variable de argumentos posicionales y `**kwargs` para pasar argumentos clave-valor.
+
+   ```python
+   def funcion(*args, **kwargs):
+       # args es una tupla de argumentos posicionales
+       # kwargs es un diccionario de argumentos clave-valor
+
+   funcion(1, 2, 3, a=10, b=20)
+   ```
+
+7. **Pasar una Función como Argumento:**
+   Puedes pasar funciones como argumentos a otras funciones. Esto es útil para implementar funciones de orden superior.
+
+   ```python
+   def aplicar_funcion(func, lista):
+       return [func(x) for x in lista]
+
+   def cuadrado(x):
+       return x ** 2
+
+   numeros = [1, 2, 3, 4]
+   resultado = aplicar_funcion(cuadrado, numeros)
+   ```
+
+8. **Uso de Valores Predeterminados en los Parámetros:**
+   Puedes proporcionar valores predeterminados para los parámetros, lo que permite llamar a la función sin proporcionar todos los argumentos.
+
+   ```python
+   def saludar(nombre="Usuario"):
+       print(f"Hola, {nombre}!")
+
+   saludar()           # Imprime "Hola, Usuario!"
+   saludar("Juan")     # Imprime "Hola, Juan!"
+   ```
+
+Estas son algunas de las formas en que puedes pasar parámetros a funciones en Python. La elección depende de tus necesidades específicas y del comportamiento deseado de la función.
+
+### Tipo de dato 
+
+Puedes utilizar la función `type()` en Python para obtener el tipo de dato de una variable. Aquí tienes un ejemplo:
+
+```python
+# Variables de diferentes tipos de datos
+numero = 5
+cadena = "Hola, mundo!"
+lista = [1, 2, 3]
+diccionario = {"a": 1, "b": 2}
+conjunto = {1, 2, 3}
+booleano = True
+
+# Obtener el tipo de dato de cada variable
+print(type(numero))        # <class 'int'>
+print(type(cadena))        # <class 'str'>
+print(type(lista))         # <class 'list'>
+print(type(diccionario))   # <class 'dict'>
+print(type(conjunto))      # <class 'set'>
+print(type(booleano))      # <class 'bool'>
+```
+
+La función `type()` devuelve un objeto de tipo `type` que representa el tipo de dato de la variable. Puedes utilizar esta información para verificar el tipo de tus variables en tu código.
+
+### Alternativa `if`
+
+Una alternativa al uso del condicional `if` en Python es el uso de expresiones condicionales ternarias (también conocidas como operadores ternarios) y, en algunos casos, estructuras de datos como diccionarios.
+
+1. **Expresiones Condicionales Ternarias:**
+   Las expresiones condicionales ternarias permiten realizar una evaluación rápida en una sola línea. La sintaxis es:
+   
+   ```python
+   resultado_si_true if condición else resultado_si_false
+   ```
+
+   Ejemplo:
+
+   ```python
+   edad = 20
+   mensaje = "Mayor de edad" if edad >= 18 else "Menor de edad"
+   print(mensaje)  # Imprime "Mayor de edad"
+   ```
+
+2. **Diccionarios para Emular Switch:**
+   Si tienes múltiples casos a evaluar, podrías usar un diccionario para emular una especie de estructura switch-case. Aquí tienes un ejemplo:
+
+   ```python
+   def operacion(a, b, operador):
+       operaciones = {
+           "+": a + b,
+           "-": a - b,
+           "*": a * b,
+           "/": a / b
+       }
+       return operaciones.get(operador, "Operador no válido")
+
+   resultado = operacion(10, 5, "+")
+   print(resultado)  # Imprime 15
+   ```
+
+3. **Usar Funciones y Métodos:**
+   En lugar de usar condicionales directamente, puedes usar funciones y métodos para realizar diferentes tareas según las condiciones.
+
+   ```python
+   def funcion_para_condicion_verdadera():
+       # hacer algo
+
+   def funcion_para_condicion_falsa():
+       # hacer algo diferente
+
+   condicion = True
+   accion = funcion_para_condicion_verdadera if condicion else funcion_para_condicion_falsa
+   accion()
+   ```
+
+Es importante considerar la legibilidad y la claridad del código al elegir entre estas alternativas al condicional `if`. El uso de `if` es generalmente más claro en muchos casos, pero las expresiones ternarias y las técnicas mencionadas pueden ser útiles en situaciones donde se necesita concisión o flexibilidad.
