@@ -13,14 +13,65 @@ Se pide:
        mostrar los datos del trabajo.
 """
 
+from msvcrt import getwch
 
+# Inicializar variables
+contador1 = 0
+contador2 = 0
+contador3 = 0
+contador4 = 0
 
 for index in range(1,4):
-    tematica = input("Ingrese la tematica: ")
-    moderador = input("Ingrese el moderador: ")
+    tematica = input("Ingrese la Tematica: ")
+    moderador = input("Ingrese el Moderador: ")
     cantidadTrabajos = int(input("Ingrese la cantidad de trabajos: "))
     
-    opcion = input("Quiere presentar un trabajo (s/n): ")
-    while (opcion == 's'):
-        
-        opcion = input("Quiere presentar un trabajo (s/n): ")
+    for indice in range(1,cantidadTrabajos + 1):
+        print(f"Trabajo N{indice}.")
+        titulo = input("Ingrese el Titulo: ")
+        autor = input("Ingrese el Autor: ")
+        while True: 
+            print("Ingrese la linea en la cual se presenta: ")
+            print(" * (1) Docencia en la pospandemia.")
+            print(" * (2) Educacion superior como derecho.")
+            print(" * (3) Investigacion: ")
+            print(" * (4) Extension.")
+            estado = int(getwch())
+            if ((estado >= 1) and (estado <= 4)):
+                break
+            
+            match estado:
+                case 1:
+                    contador1 += 1
+                case 2: 
+                    contador2 += 1
+                case 3: 
+                    contador3 += 1
+                case 4: 
+                    contador4 += 1
+                case _:
+                    pass
+                
+    
+    print(f"En la tematica '{tematica}', bajo la supervicion de '{moderador}' \n "
+          f"Se presentaron {cantidadTrabajos} de los cuales en cada linea de trabajo hubo: \n\n")
+    
+    print(f" * Docencia en la pandemia: {contador1:<38}")
+    print(f" * Educacion superior como derecho: {contador2:<38}")
+    print(f" * Investigacion: {contador3:<38}")
+    print(f" * Extension:  {contador4:<38}")
+
+    if ((contador1 > contador2) and (contador1 > contador3) and (contador1 > contador4)):
+        print("Predomino la linea de trabajo 'Docencia en la pandemia'.")
+        print(f"Con un porcentaje con respecto al resto: {((contador1*100)/cantidadTrabajos):.1f}%")
+    elif((contador2 > contador1) and (contador2 > contador3) and (contador2 > contador4)):
+        print("Predomino la linea de trabajo 'Educacion superior como derecho.'")
+        print(f"Con un porcentaje con respecto al resto: {((contador2*100)/cantidadTrabajos):.1f}%")
+    elif((contador3 > contador1) and (contador3 > contador2) and (contador3 > contador4)):
+        print("Predomino la linea de trabajo 'Investigacion.'")
+        print(f"Con un porcentaje con respecto al resto: {((contador3*100)/cantidadTrabajos):.1f}%")
+    elif((contador4 > contador1) and (contador4 > contador2) and (contador4 > contador3)):
+        print("Predomino la linea de trabajo 'Extencion'")
+        print(f"Con un porcentaje con respecto al resto: {((contador4*100)/cantidadTrabajos):.1f}%")
+    
+    
