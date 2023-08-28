@@ -1,6 +1,24 @@
-def doble(x):
-    return x * 2
 
-lista = [2,4,6,8,10]
+# tamanio = 5
+# lista = [None] * tamanio
 
-print(list(map(doble,lista)))
+# def inicializar_lista(lista):
+#     for indice in range(0,len(lista)):
+#         lista[indice] = 0
+#     return lista
+        
+# print(lista)
+
+# persons = [
+#     {"name" : "L. Messi", "year" : 36, "dorsal" : 10},
+#     {"name" : "A. Di Maria", "year" : 35, "dorsal" : 11},
+#     {"name" : "A. Varela", "year" : 22, "dorsal" : 22},
+#     {"name" : "C. Medina", "year" : 21, "dorsal" : 36}
+# ]
+
+# print(f'{"Nombre":<15}{"Edad":<14}{"Dorsal":<10}')
+# for person in persons:
+#     print(f"{person['name']:<15}{person['year']:<14}{person['dorsal']:<10}")
+
+
+
