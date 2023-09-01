@@ -20,6 +20,9 @@ contador1 = 0
 contador2 = 0
 contador3 = 0
 contador4 = 0
+auxCantidadTrabajos = None
+
+auxAutor = input("Ingrese el nombre de un autor para determinar si presento trabajos: ")
 
 for index in range(1,4):
     tematica = input("Ingrese la Tematica: ")
@@ -30,6 +33,7 @@ for index in range(1,4):
         print(f"Trabajo N{indice}.")
         titulo = input("Ingrese el Titulo: ")
         autor = input("Ingrese el Autor: ")
+
         while True: 
             print("Ingrese la linea en la cual se presenta: ")
             print(" * (1) Docencia en la pospandemia.")
@@ -52,7 +56,12 @@ for index in range(1,4):
                 case _:
                     pass
                 
-    
+        if (autor == auxAutor):
+            auxCantidadTrabajos = cantidadTrabajos            
+            auxTematica = tematica
+            auxModerador = moderador
+            auxTitulo = titulo 
+
     print(f"En la tematica '{tematica}', bajo la supervicion de '{moderador}' \n "
           f"Se presentaron {cantidadTrabajos} de los cuales en cada linea de trabajo hubo: \n\n")
     
@@ -61,17 +70,22 @@ for index in range(1,4):
     print(f" * Investigacion: {contador3:<38}")
     print(f" * Extension:  {contador4:<38}")
 
-    if ((contador1 > contador2) and (contador1 > contador3) and (contador1 > contador4)):
+    if ((contador1 > contador2) and (contador1 > contador3) and (contador1 > contador4) and (cantidadTrabajos != 0)):
         print("Predomino la linea de trabajo 'Docencia en la pandemia'.")
         print(f"Con un porcentaje con respecto al resto: {((contador1*100)/cantidadTrabajos):.1f}%")
-    elif((contador2 > contador1) and (contador2 > contador3) and (contador2 > contador4)):
+    elif((contador2 > contador1) and (contador2 > contador3) and (contador2 > contador4) and (cantidadTrabajos != 0)):
         print("Predomino la linea de trabajo 'Educacion superior como derecho.'")
         print(f"Con un porcentaje con respecto al resto: {((contador2*100)/cantidadTrabajos):.1f}%")
-    elif((contador3 > contador1) and (contador3 > contador2) and (contador3 > contador4)):
+    elif((contador3 > contador1) and (contador3 > contador2) and (contador3 > contador4) and (cantidadTrabajos != 0)):
         print("Predomino la linea de trabajo 'Investigacion.'")
         print(f"Con un porcentaje con respecto al resto: {((contador3*100)/cantidadTrabajos):.1f}%")
-    elif((contador4 > contador1) and (contador4 > contador2) and (contador4 > contador3)):
+    elif((contador4 > contador1) and (contador4 > contador2) and (contador4 > contador3) and (cantidadTrabajos != 0)):
         print("Predomino la linea de trabajo 'Extencion'")
         print(f"Con un porcentaje con respecto al resto: {((contador4*100)/cantidadTrabajos):.1f}%")
     
-    
+if auxCantidadTrabajos != None:
+    print(f"El autor o autora {auxAutor} presento trabajos: ")
+    print(f" > Cantidad de trabajos: {cantidadTrabajos}")
+    print(f" > Tematica: {auxTematica}")
+    print(f" > Moderador: {auxModerador}")
+    print(f" > Titulo: {auxTitulo}")

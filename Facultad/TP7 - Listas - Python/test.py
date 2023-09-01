@@ -19,6 +19,3 @@
 # print(f'{"Nombre":<15}{"Edad":<14}{"Dorsal":<10}')
 # for person in persons:
 #     print(f"{person['name']:<15}{person['year']:<14}{person['dorsal']:<10}")
-
-
-
