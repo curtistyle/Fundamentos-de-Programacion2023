@@ -1,4 +1,3 @@
-
 def crear_lista(tamanio : int):
     vector = [None] * tamanio
     return vector, tamanio

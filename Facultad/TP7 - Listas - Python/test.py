@@ -19,3 +19,19 @@
 # print(f'{"Nombre":<15}{"Edad":<14}{"Dorsal":<10}')
 # for person in persons:
 #     print(f"{person['name']:<15}{person['year']:<14}{person['dorsal']:<10}")
+
+
+tipo_persona = {
+    "nombre"   : str(),
+    "apellido" : str(),
+    "edad"     : int(),
+    "DNI"      : int()
+}
+
+lista_personas = [tipo_persona] * 5
+
+for persona in lista_personas:
+    persona['nombre'] = input("Nombre: ")
+    persona['apellido'] = input("Apellido: ")
+    persona['edad'] = input("Edad: ")
+    persona['DNI'] = input("DNI: ")
