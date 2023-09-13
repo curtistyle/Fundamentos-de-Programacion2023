@@ -20,8 +20,6 @@ def sumatoria(tamanio : int, vector : list):
         resultado += vector[indice]
     return resultado
 
-
-
 lista_numeros, limite = crear_lista(5)
 
 cargar_lista(limite, lista_numeros)

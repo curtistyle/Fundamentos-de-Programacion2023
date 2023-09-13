@@ -42,6 +42,6 @@ def cargar_lista_dinamica():
                 lista[indice] = aux_lista[indice]        
     return lista, len(lista)
 
-lista_de_numeros = cargar_lista_dinamica()
+lista_de_numeros, tamanio = cargar_lista_dinamica()
 
 print(lista_de_numeros)
