@@ -21,16 +21,13 @@ def burbuja(lista,lim):
                 
 
 def cargar_lista_dinamica():
-    i = 0
-    vector = [0]
+    vector = []
     valor = int(input("Ingrese un valor: "))
-    vector[i] = valor
     while valor != 0:
-        i += 1
-        vector[i] = vector[i] + [valor] 
-        valor = int(input("Ingrese un numero: "))
-        if valor == 0: break
-    return vector
+        vector = vector + [valor]
+        valor = int(input("Ingrese un valor: "))
+        print(vector)
+    return vector, len(vector)
          
 lista = cargar_lista_dinamica()
 
