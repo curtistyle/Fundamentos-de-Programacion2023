@@ -30,7 +30,6 @@ def recorrer_lista(tamanio : int, vector : list):
     for indice in range(0, tamanio):
         print(f"{indice=:<8} valor={vector[indice]:<8}")
 
-
 def burbuja(lista : list):
     for i in range(0, (len(lista) - 1) - 1):
         for j in range(0, len(lista) - 1 - i):
