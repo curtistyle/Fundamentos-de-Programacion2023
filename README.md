@@ -642,3 +642,6 @@ El orden más natural de procesar los vectores es el orden secuencial: del prime
 Los elementos de la primera fila/columna se procesan primero, a continuación los de la segunda fila/columna, y asi sucesivamente. Sea el array *A* de 3 filas y 4 columnas. La siguiente figura muestra graficamente los recorridos.
 
 ![imagen](img/image.png)
+
+
+Better Comments
