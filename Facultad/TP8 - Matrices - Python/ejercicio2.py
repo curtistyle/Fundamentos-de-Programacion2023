@@ -43,3 +43,5 @@ if __name__=='__main__':
     print(f"Se vendieron {ventas_articulos(lista, filas, 1)} del Articulo 1.")
     print(f"Se vendieron {ventas_articulos(lista, filas, 2)} del Articulo 2.")
     print(f"Se vendieron {ventas_articulos(lista, filas, 3)} del Articulo 3.")
+    
+    

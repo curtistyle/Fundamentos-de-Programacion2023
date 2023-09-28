@@ -632,3 +632,13 @@ Una alternativa al uso del condicional `if` en Python es el uso de expresiones c
    ```
 
 Es importante considerar la legibilidad y la claridad del código al elegir entre estas alternativas al condicional `if`. El uso de `if` es generalmente más claro en muchos casos, pero las expresiones ternarias y las técnicas mencionadas pueden ser útiles en situaciones donde se necesita concisión o flexibilidad.
+
+## Manipulación de tablas.
+
+El orden más natural de procesar los vectores es el orden secuencial: del primero al último elemento. En el caso de las tablas o de los arrays multidimensionales, existen diferentes órdenes para su recorrido. Los más usuales son: *recorrido por filas y recorrido por columnas.*
+
+### Recorrido por filas/columnas.
+
+Los elementos de la primera fila/columna se procesan primero, a continuación los de la segunda fila/columna, y asi sucesivamente. Sea el array *A* de 3 filas y 4 columnas. La siguiente figura muestra graficamente los recorridos.
+
+![imagen](img/image.png)
