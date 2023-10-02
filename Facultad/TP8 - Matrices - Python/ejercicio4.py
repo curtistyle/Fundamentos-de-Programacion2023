@@ -45,7 +45,7 @@ def determinar_mayor(matriz : list, filas : int, columnas : int):
     mayor = [matriz[0][0],[0,0]]
     for fila in range(0, filas):
         for columna in range(0, columnas):
-            if (subindeice_par(fila,columna) and (matriz[fila,columna] > mayor)):
+            if ((subindeice_par(fila,columna) == True) and (matriz[fila][columna] > mayor[0])):
                 mayor[0] = matriz[fila][columna]
                 mayor[1] = [fila,columna]
     return mayor
@@ -59,7 +59,12 @@ if __name__=="__main__":
     
     cargar_matriz(matriz, filas, columnas)
     
-    
+    mostrar_matriz(matriz, filas, columnas)
+
+    mayor = determinar_mayor(matriz, filas, columnas)
+
+    print(mayor)
+    print(f"El elemento mayor es: {mayor[0]}")
     
     
     
