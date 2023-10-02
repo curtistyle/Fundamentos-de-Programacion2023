@@ -36,23 +36,26 @@ def mostrar_matriz(matriz : list, filas : int, columnas : int):
         print()
         
 
-def monto_facturado(matriz : list, filas : int, columnas : int, cliente : int, mes : int):
-    if ((cliente > 0) and (cliente <= filas)):
-        if ((mes > 0) and (mes <= columnas)):
-            return matriz[cliente][mes]
+def obtener_elemento(matriz : list, filas : int, columnas : int, indice_x : int, indice_y : int):
+    """Retorna el elemento de la matriz"""
+    if ((indice_x > 0) and (indice_x <= filas)):
+        if ((indice_y > 0) and (indice_y <= columnas)):
+            return matriz[indice_x][indice_y]
         else:
-            return "Error! Mes fuera de rango."
+            return None
     else:
-        return "Error! Cliente fuera de rango."
+        return None
 
-def monto_total(matriz : list, filas : int, columnas : int):
+def sumatoria_fila(matriz : list, filas : int, columnas : int):
+    """Retorna la suma totoal de c/u de las filas."""
     monto_cliente_total = [0] * filas
     for fila in range(0, filas):
         for columna in range(0, columnas):
             monto_cliente_total[fila] += matriz[fila][columna]
     return monto_cliente_total
 
-def posicion_mayor(lista : list, filas : int):
+def mayor_lista_indice(lista : list, filas : int):
+    """Retorna la posicion del `elemento` mayor de una `lista`"""
     aux = lista[0]
     posicion = 0
     for indice in range(0, filas):
@@ -61,8 +64,8 @@ def posicion_mayor(lista : list, filas : int):
             posicion = indice
     return posicion
             
-def mayor_matriz(matriz : list, filas : int, columnas : int):
-    """Retorna la `posicion` del menor elemento de una `matriz`."""
+def mayor_matriz_indice(matriz : list, filas : int, columnas : int):
+    """Retorna la `posicion` del mayor elemento de una `matriz`."""
     pos = [0,0]
     aux = matriz[0][0]
     for fila in range(0, filas):
@@ -72,7 +75,7 @@ def mayor_matriz(matriz : list, filas : int, columnas : int):
                 pos = [fila,columna]
     return pos    
 
-def menor_matriz(matriz : list, filas : int, columnas : int):
+def menor_matriz_indice(matriz : list, filas : int, columnas : int):
     """Retorna la `posicion` del menor elemento de una `matriz`."""
     pos = [0,0]
     aux = matriz[0][0]
@@ -101,7 +104,7 @@ if __name__=='__main__':
     # En este caso el Cliente '2' en el Mes '3'.
     cliente = 2
     mes = 3
-    monto = monto_facturado(matriz, cliente, mes)
+    monto = obtener_elemento(matriz, cliente, mes)
     
     # Si el cliente y el mes esta dentro del rango de la matriz
     # 'monto' devuelve un resultado (entero, flotante) de lo contrario
@@ -113,20 +116,20 @@ if __name__=='__main__':
         print(monto)
     
     # Calcula el monto total por cliente.
-    lista_monto_total = monto_total(matriz, filas, columnas,)
+    lista_monto_total = sumatoria_fila(matriz, filas, columnas,)
     
     # ? Determina el numero de cliente (el primero) que vendio mas.
-    posicion = posicion_mayor(lista_monto_total, filas)
+    posicion = mayor_lista_indice(lista_monto_total, filas)
     print(f"\nEl cliente {posicion + 1} facturo mas que los demas.")
     
     # Determina el cliente que factura mas en un mes
-    posicion = mayor_matriz(matriz, filas, columnas)
+    posicion = mayor_matriz_indice(matriz, filas, columnas)
     print(f"\n*** El cliente {posicion[0] + 1} registro la mayor venta. ***")
     # ? Otro dato: 
     print(f"- En el mes: {posicion[1] + 1}. Monto: ${matriz[posicion[0]][posicion[1]]}")
     
     # Determina en que mes se registro la menor facturacion
-    posicion = menor_matriz(matriz, filas, columnas)
+    posicion = menor_matriz_indice(matriz, filas, columnas)
     print(f"\nEl mes en el que se registro la menor facturacion es: Mes {posicion[1]}")
     
     
