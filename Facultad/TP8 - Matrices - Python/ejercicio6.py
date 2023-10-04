@@ -104,6 +104,7 @@ def items_columna(matriz : list, filas : int, columnas : int):
     return items
 
 def promedio_columna(matriz : list, filas : int, columnas :int):
+    """Retorna una `lista` con el `promedio` de c/u de las columnas."""
     promedios = [0] * columnas
     for columna in range(0, columnas):  
         contador = 0
@@ -199,3 +200,5 @@ if __name__=="__main__":
     datos = invertir_matriz(datos, len(datos), len(datos[0]))
     tp.table(datos, headers)
     print("± Materia: Cantidad de Materias cursadas, Σ Materias: Promedio Materias")
+
+    

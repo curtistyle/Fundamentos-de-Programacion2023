@@ -26,7 +26,6 @@ def paridad(tamanio : str):
 
 def media_par(tamanio : int, vector : list):
     acumulador = 0
-    
     for indice in range(0, tamanio, 2):
         acumulador += vector[indice]
     a, b = paridad(tamanio)   

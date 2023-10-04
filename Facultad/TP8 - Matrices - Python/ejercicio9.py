@@ -57,18 +57,55 @@ def agregar_elemento(elemento, x : int, y : int, matriz : list, filas : int, col
             print("Error, `y` fuera de rango.")
     else:
         print("Error, `x` fuera de rango.")
-    
+
+def suma_columnas(matriz : list, filas : int, columnas : int):
+    """Retorna una `lista` con la `suma` total de c/u de las columnas de una `matriz`."""
+    lista = [0] * columnas
+    for columna in range(0, columnas):
+        for fila in range(0, filas):  
+            lista[columna] += matriz[fila][columna] 
+    return lista
+
+def suma_filas(matriz : list, filas : int, columnas):
+    """Retorna una `lista` con la `suma` total de c/u de las filas de una `matriz`."""
+    lista = [0] * filas
+    for fila in range(0, filas):
+        for columna in range(0, columnas):
+            lista[fila] += matriz[fila][columna]
+    return lista
+
+def mayor_matriz(matriz : list, filas : int, columnas : int):
+    """Retorna una `lista` con la `posicion` del elemento `mayor` de una `matriz`."""
+    mayor = matriz[0][0]
+    pos = None
+    for fila in range(0, filas):
+        for columna in range(0, columnas):
+            if (matriz[fila][columna] > mayor):
+                mayor = matriz[fila][columna]
+                pos = [fila, columna]
+    return pos
+
+def menor_matriz(matriz : list, filas : int, columnas : int):
+    """Retorna una `lista` con la `posicion` del elemento `menor` de una `matriz`."""
+    menor = matriz[0][0]
+    pos = None
+    for fila in range(0, filas):
+        for columna in range(0, columnas):
+            if (matriz[fila][columna] < menor):
+                menor = matriz[fila][columna]
+                pos = [fila, columna]
+    return pos
 
 if __name__=="__main__":
-    
+        
     opc = ["a","b","c","d","A","B","C","D"]
-    
+
     FILAS = 10 # cantidad de localidades.
     COLUMNAS = 4 # cantidad de categorias.
-    
+
     matriz = crear_matriz(FILAS, COLUMNAS, "-")
-    
-    
+
+
     while True:
         print("Quiere agregar un nuevo item? (s/n): ")
         item = getwch()
@@ -92,5 +129,7 @@ if __name__=="__main__":
     mostrar_matriz(matriz, FILAS, COLUMNAS)
     headers = ['CAT A', 'CAT B', 'CAT C', 'CAT D']
     tp.table(matriz, headers)
-    
-    
+
+
+        
+        
