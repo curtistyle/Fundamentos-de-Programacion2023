@@ -6,7 +6,6 @@ título, autor, año de publicación y duración en segundos. """
 
 import math
 
-
 tipo_disco = {
     "titulo"   : str(),
     "autor"    : str(),
@@ -25,9 +24,6 @@ def cargar_registro(registro : tipo_disco):
     registro["autor"]    = input("Ingrese el autor de disco: ")
     registro["año"]      = int(input("Ingrese el año del disco: "))
     registro["duracion"] = _min(int(input("Ingrese la duracion del disco: ")))
-
-
-
 
 if __name__ == "__main__":
 

@@ -128,7 +128,14 @@ if __name__=="__main__":
         
     mostrar_matriz(matriz, FILAS, COLUMNAS)
     headers = ['CAT A', 'CAT B', 'CAT C', 'CAT D']
+    print("A- Cantidad de pasajeros por localidad, por categoria: ")
     tp.table(matriz, headers)
+
+    resultado = suma_filas(matriz, FILAS, COLUMNAS)
+    print("Cantidad de pasajeros por localidad: ")
+    for index in range(0, FILAS):
+        print(f"Localidad {index}: ")
+
 
 
         

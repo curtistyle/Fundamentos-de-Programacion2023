@@ -64,12 +64,13 @@ matriz = [
 # print(content + top_head)
 
 
-import tableprint as tp
-import numpy as np
-# pip install numpy
-# pip install tableprint
+# import tableprint as tp
+# import numpy as np
+# # pip install numpy
+# # pip install tableprint
 
-data = np.random.randn(10, 3)
-headers = ['Column A', 'Column B', 'Column C']
+# data = np.random.randn(10, 3)
+# headers = ['Column A', 'Column B', 'Column C']
 
-tp.table(matriz, headers)
+# tp.table(matriz, headers)
+
