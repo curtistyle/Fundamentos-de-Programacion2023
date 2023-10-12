@@ -645,3 +645,114 @@ Los elementos de la primera fila/columna se procesan primero, a continuación lo
 
 
 Better Comments
+
+## Metodo `map()`
+
+El método `map()` en Python es una función incorporada que se utiliza para aplicar una función a cada elemento de una secuencia iterable (como una lista, tupla o conjunto) y devuelve un nuevo iterable con los resultados.
+
+La sintaxis general de `map()` es la siguiente:
+
+```python
+map(función, iterable)
+```
+
+- `función`: Es la función que quieres aplicar a cada elemento del iterable. Puede ser una función predefinida de Python o una función definida por el usuario.
+- `iterable`: Es la secuencia de elementos a la que se aplicará la función (por ejemplo, una lista, tupla, conjunto, etc.).
+
+El resultado de `map()` es un objeto map, que es un iterable. Para obtener los resultados como una lista, tupla u otro tipo de colección, es necesario convertirlo a través de `list()`, `tuple()`, u otros métodos de conversión de tipos.
+
+Aquí hay un ejemplo sencillo para ilustrar cómo funciona `map()`:
+
+```python
+# Definir una función que duplica un número
+def duplicar(numero):
+    return numero * 2
+
+# Crear una lista de números
+numeros = [1, 2, 3, 4, 5]
+
+# Aplicar la función duplicar a cada elemento de la lista usando map
+resultado = map(duplicar, numeros)
+
+# Convertir el objeto map a una lista
+lista_duplicada = list(resultado)
+
+print(lista_duplicada)
+```
+
+En este ejemplo, la función `duplicar()` se aplica a cada elemento de la lista `numeros` utilizando `map()`. El resultado es un objeto map, que luego convertimos a una lista usando `list()`. El resultado impreso será `[2, 4, 6, 8, 10]`, ya que cada número en la lista original ha sido duplicado.
+
+`map()` es una herramienta muy útil para aplicar operaciones a múltiples elementos de una secuencia de manera eficiente. Puede ser combinado con funciones lambda (funciones anónimas) para hacer el código más conciso y legible en casos simples.
+
+## Metodo `iter()`
+
+`iter()` es una función incorporada en Python que se utiliza para obtener un iterador a partir de un objeto iterable. Un iterador es un objeto que permite acceder a los elementos de un iterable uno por uno, sin tener que cargar todos los elementos en la memoria al mismo tiempo. Esto es especialmente útil cuando trabajamos con conjuntos de datos muy grandes.
+
+La sintaxis de `iter()` es la siguiente:
+
+```python
+iter(objeto)
+```
+
+- `objeto`: Es el objeto que queremos convertir en un iterador.
+
+Por ejemplo, si tienes una lista y quieres acceder a sus elementos uno por uno, puedes convertirla en un iterador usando `iter()` y luego usar la función `next()` para obtener los elementos secuencialmente.
+
+Aquí hay un ejemplo:
+
+```python
+# Crear una lista
+numeros = [1, 2, 3, 4, 5]
+
+# Convertir la lista en un iterador
+iterador = iter(numeros)
+
+# Acceder a los elementos usando next()
+print(next(iterador))  # Imprime: 1
+print(next(iterador))  # Imprime: 2
+print(next(iterador))  # Imprime: 3
+print(next(iterador))  # Imprime: 4
+print(next(iterador))  # Imprime: 5
+
+# Si intentas acceder a más elementos de los que hay, lanzará una excepción StopIteration
+# print(next(iterador))  # Esto lanzará una excepción
+```
+
+En este ejemplo, hemos convertido la lista `numeros` en un iterador usando `iter()`. Luego, hemos utilizado la función `next()` para acceder a los elementos uno por uno. Cada llamada a `next()` devuelve el siguiente elemento en la secuencia.
+
+Es importante destacar que si intentas acceder a más elementos de los que hay en el iterador, se generará una excepción `StopIteration` para indicar que no hay más elementos disponibles.
+
+`iter()` es fundamental en el funcionamiento interno de bucles `for` en Python, ya que estos utilizan iteradores para recorrer secuencias de elementos. También es útil cuando trabajamos con grandes conjuntos de datos, ya que nos permite acceder a los elementos de manera eficiente sin cargar todo el conjunto de datos en la memoria al mismo tiempo.
+
+## `iter()` y diccionarios
+
+Claro, aquí tienes un ejemplo de cómo usar `iter()` con un diccionario en Python:
+
+```python
+# Crear un diccionario
+frutas = {'manzana': 3, 'banana': 5, 'naranja': 2, 'pera': 4}
+
+# Convertir el diccionario en un iterador
+iterador = iter(frutas)
+
+# Acceder a las claves usando next()
+print(next(iterador))  # Imprime la primera clave ('manzana')
+print(next(iterador))  # Imprime la segunda clave ('banana')
+print(next(iterador))  # Imprime la tercera clave ('naranja')
+print(next(iterador))  # Imprime la cuarta clave ('pera')
+
+# Si intentas acceder a más elementos de los que hay, lanzará una excepción StopIteration
+# print(next(iterador))  # Esto lanzará una excepción
+```
+
+En este ejemplo, hemos creado un diccionario `frutas` que contiene diferentes frutas y sus cantidades. Luego, convertimos el diccionario en un iterador usando `iter()`. Al usar la función `next()` sobre este iterador, obtenemos las claves del diccionario una por una.
+
+Al igual que con las listas, si intentas acceder a más elementos de los que hay en el iterador, se generará una excepción `StopIteration`.
+
+Es importante destacar que, en este caso, el iterador está proporcionando las claves del diccionario. Si necesitas los valores, puedes acceder a ellos utilizando las claves como índices:
+
+```python
+print(frutas['manzana'])  # Imprime el valor asociado a la clave 'manzana'
+```
+
+Esto imprimirá el valor asociado a la clave `'manzana'`, que en este caso es `3`.

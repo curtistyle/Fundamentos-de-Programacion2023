@@ -62,6 +62,16 @@ def mostrar_asegurados(polizas : list, tamanio : int):
         if (polizas[poliza]['nombre'] == 'Pedro Fernandez'):
             print(f"{polizas[poliza]['nombre']} esta asegurado en la compania.")
 
+def burbuja(lista : list, clave : str):
+    for i in range(0,(len(lista)-1)):
+        for j in range(0,(len(lista)-1)-i):
+            if lista[j][clave] > lista[j+1][clave]:
+                aux               = lista[j][clave]
+                lista[j][clave]   = lista[j+1][clave]
+                lista[j+1][clave] = aux
+
+
+
 
 polizas = [0, 0, 0, 0]
 print("Ingrese las polizas.")

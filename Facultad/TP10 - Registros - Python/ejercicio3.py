@@ -50,3 +50,58 @@ def menor(lista : list, tamanio : int, campo : str):
 
 # ! falta busqueda y ordenamiento.
 
+def mostrar(lista : str, tamanio : int):
+    for indice in range(0, tamanio):
+        for key, item in lista[indice].items():
+            print(f"{key} = {item}")
+        print()
+
+def burbuja(lista : list, clave : str) -> None:
+    """Metodo de ordenamiento burbuja"""
+    for i in range(0,(len(lista)-1)):
+        for j in range(0,(len(lista)-1)-i):
+            if lista[j][clave] > lista[j+1][clave]:
+                aux               = lista[j][clave]
+                lista[j][clave]   = lista[j+1][clave]
+                lista[j+1][clave] = aux
+
+def busqueda_binaria(lista : list, tamanio : int, buscado, clave, posicion=None) -> int:
+    primero = 0
+    ultimo  = tamanio - 1
+    while (posicion == None) and (primero <= ultimo):
+        medio = (primero + ultimo) // 2
+        if (lista[medio][clave] == buscado):
+            posicion = medio
+        elif (lista[medio][clave] >= buscado):
+            ultimo   = medio - 1
+        else:
+            primero  = medio + 1   
+    return posicion
+
+alumnos = [
+    {'numero' : 1, 'nombre' : 'Pablo López', 'nota': 8},
+    {'numero' : 2, 'nombre' : 'Ana María Sánchez', 'nota': 9},
+    {'numero' : 3, 'nombre' : 'Julia García', 'nota': 4},
+    {'numero' : 4, 'nombre' : 'Nuria Sánchez', 'nota': 5},
+    {'numero' : 5, 'nombre' : 'Daniel Martínez', 'nota': 7.50},
+]
+
+print("# Sin ordenar")
+mostrar(alumnos, len(alumnos))
+
+burbuja(alumnos,'nombre')
+
+print("# Ordenado")
+mostrar(alumnos, len(alumnos))
+
+buscado = input("Ingrese un nombre: ")
+pos = busqueda_binaria(alumnos, len(alumnos), buscado, "nombre")
+
+if pos is not None:
+    print(f"{buscado} existe en la lista, posicion: {pos + 1}")
+else:
+    print(f"{buscado} no existe. {pos + 1}")
+
+
+
+
