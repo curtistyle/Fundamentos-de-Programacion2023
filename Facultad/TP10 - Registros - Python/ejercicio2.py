@@ -57,9 +57,9 @@ def mayor_monto(polizas : list, tamanio : int):
             print("Nombre: ", polizas[poliza]['nombre'])
          
 
-def mostrar_asegurados(polizas : list, tamanio : int):
+def mostrar_asegurados(polizas : list, tamanio : int, asegurado : str):
     for poliza in range(0, tamanio):
-        if (polizas[poliza]['nombre'] == 'Pedro Fernandez'):
+        if (polizas[poliza]['nombre'] == asegurado):
             print(f"{polizas[poliza]['nombre']} esta asegurado en la compania.")
 
 def burbuja(lista : list, clave : str):
@@ -88,4 +88,5 @@ print()
 print("Personas que tienen un monto asegurado mayor a $100.000: ")
 mayor_monto(polizas, limite)
 # TODO : Determina si Pedro Fernandez esta registrado en la aseguradora.
-mostrar_asegurados(polizas, limite)
+mostrar_asegurados(polizas, limite, 'Pedro Fernandez')
+

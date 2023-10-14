@@ -29,10 +29,8 @@ def codigo_articulo(dato, error):
 
 def descipcion(dato, error):
     
-        
-    
-
+    ...
 def insertar(error):
     stock = tipo_stock
     
-    stock = input("Ingrese el codigo de aticulo: ")
+    stock = input("Ingrese el codigo de aticulo: ")...
