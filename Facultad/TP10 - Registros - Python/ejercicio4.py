@@ -41,11 +41,7 @@ def cargar(lyst : list, tamanio : int):
         print(f" # Stock {indice + 1}")
         stock, sentinela = insertar() 
         print()
-    
-    if (indice > 0):
-        return (indice + 1)
-    else:
-        return 0
+    return indice
    
 def mostrar_todo(lista : list, ultimo : int):
     for stock in range(0, ultimo):
@@ -75,6 +71,13 @@ def menor(lista : list, tamanio : int, campo : str):
             posicion = stock
     return posicion
 
+def burbuja(lista : list, clave : str):
+    for i in range(0,(ultimo-1)):
+        for j in range(0,(ultimo-1)-i):
+            if lista[j][clave] > lista[j+1][clave]:
+                aux               = lista[j][clave]
+                lista[j][clave]   = lista[j+1][clave]
+                lista[j+1][clave] = aux
 
 def busqueda_binaria(lista : list, tamanio : int, buscado, clave, posicion=None) -> int:
     primero = 0
@@ -104,10 +107,45 @@ lyst = [
 
 TAMANIO = len(lyst)
 
-ultimo = cargar(lyst, TAMANIO)
-print("ultimo=",ultimo)
-print(lyst)
-# mostrar(lyst, ultimo)
+# ultimo = cargar(lyst, TAMANIO)
+# print("ultimo=",ultimo)
+# print(lyst)
+ultimo = 4
+for item in lyst:
+    print(item)
 
+# TODO: b - Mostrar del artículo más caro, cantidad en existencia.
 
+posicion = mayor(lyst, ultimo, 'precio_unitario')
+print(f"El articulo mas caro es '{lyst[posicion]['descripcion']}', cantidad: {lyst[posicion]['cantidad']} ")
+
+# TODO: c - Dado un cod_articulo ver si existe. 
+
+buscado = int(input("Ingrese un codigo de articulo: "))
+posicion = busqueda_binaria(lyst, ultimo, buscado, 'cod_art')
+if posicion != None:
+    print(f"El articulo existe. ({posicion})")
+else:
+    print("El articulo no existe.")
+
+# TODO: d - Mostrar si este almacén vende queso “Don Bautista”. 
+
+burbuja(lyst, 'descripcion')
+for item in lyst:
+    print(item)
+posicion = busqueda_binaria(lyst, ultimo, 'Queso Don Bautista', 'descripcion')
+if posicion != None:
+    print(f" 'Queso Don Bautista' EXISTE en el almacen.")
+else:
+    print(f" 'Queso Don Bautista' NO EXISTE en el almacen.")
+
+# TODO: e-  Mostrar el artículo con menor existencia. 
+
+posicion = menor(lyst, ultimo, 'cantidad')
+print(f"El articulo con menor existencia es '{lyst[posicion]['descripcion']}'.")
+
+# TODO: f-  Mostrar cual es el artículo más barato.
+
+posicion = menor(lyst, ultimo, 'precio_unitario')
+print(f"El articulo mas barato es '{lyst[posicion]['descripcion']}'")
 
