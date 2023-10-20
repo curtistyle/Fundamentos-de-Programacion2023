@@ -39,7 +39,6 @@ def mayor(lista : list, tamanio : int, campo : str):
             posicion = stock
     return posicion
 
-#    Ganancia = (PrecioVenta - PrecioCompra) * CantidadVendida
 def ganancia(producto : dict):
     ganancia = (producto['precio_venta'] - producto['costo_fabricacion']) * producto['cantidad']
     return ganancia
@@ -75,9 +74,6 @@ distribuidora = [
     0,
     0,
 ]
-    
-
-    # c - Cual es el costo unitario del producto más caro.
 
 ultimo = 5
 
