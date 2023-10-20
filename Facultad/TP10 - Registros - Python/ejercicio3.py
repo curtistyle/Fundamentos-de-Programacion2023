@@ -7,15 +7,8 @@
         c- Nombre de estudiante de menor nota. 
         d- Nota que obtuvo la alumna Laura Suárez. """
         
-tipo_estudiante = {
-    'numero': int,
-    'nombre': str,
-    'nota': int
-}
-
 def insertar():
-    estudiante = tipo_estudiante
-    
+    estudiante = { 'numero' : int, 'nombre' : str, 'nota' : int }
     estudiante['numero'] = int(input("Ingrese el numero de estudiante: "))
     estudiante['nombre'] = input("Ingrese el nombre del estudiante: ")
     estudiante['nota'] = float(input("Ingrese la nota del estudiante: "))

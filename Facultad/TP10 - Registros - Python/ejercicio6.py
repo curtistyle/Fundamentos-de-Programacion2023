@@ -47,6 +47,12 @@ def menor(lista : list, tamanio : int, campo : str):
             posicion = stock
     return posicion
 
+def mostrar(lista : list, posicion : int):
+    print(lista[posicion]['nombre'])
+    print(lista[posicion]['edad'])
+    print(lista[posicion]['alquiler'])
+    print()
+
 def total_acumulado(lista : list, tamanio : int, campo : str):
     acumulador = 0
     for alquilino in range(0, tamanio):
@@ -66,6 +72,28 @@ edificio = [
     
 ]
 
+ultimo = len(edificio)
 
-    
-    
+# TODO: a- Total recaudado por el consorcio en concepto de alquileres. 
+
+total = total_acumulado(edificio, ultimo, 'alquiler')
+print(f"El total recaudado por el consorcio es: ${total:.2f}", end="\n\n")
+
+# TODO: b- Nombre del inquilino que paga el alquiler más caro.
+
+inquilino = mayor(edificio, ultimo, 'alquiler')
+print(f"El inquilino que paga el alquiler mas caro es: {edificio[inquilino]['nombre']}.", end="\n\n")
+
+# TODO: c- Nombre y edad del inquilino más viejo. 
+
+inquilino = mayor(edificio, ultimo, 'edad')
+print("El inquilino mas viejo es: ")
+print(f" - Nombre: {edificio[inquilino]['nombre']}")
+print(f" - Edad: {edificio[inquilino]['edad']}", end="\n\n")
+
+# TODO: d- Nombre y edad del inquilino más joven.
+
+inquilino = menor(edificio, ultimo, 'edad')
+print("El inquilino mas joven es: ")
+print(f" - Nombre: {edificio[inquilino]['nombre']}")
+print(f" - Edad: {edificio[inquilino]['edad']}", end="\n\n")

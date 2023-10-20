@@ -13,15 +13,8 @@ Se pide además:
     e-  Mostrar el artículo con menor existencia. 
     f-  Mostrar cual es el artículo más barato. """
     
-tipo_stock = {
-    'cod_art' : int,
-    'descripcion' : str,
-    'cantidad' : int,
-    'precio_unitario' : float
-}
-
 def insertar():
-    stock = tipo_stock
+    stock = { 'cod_art' : int, 'descripcion' : str, 'cantidad' : int, 'precio_unitario' : float }
     sentinela = int(input("Ingrese el codigo del articulo: "))
     if sentinela != 0:
         stock['cod_art'] = sentinela
@@ -45,10 +38,12 @@ def cargar(lyst : list, tamanio : int):
    
 def mostrar_todo(lista : list, ultimo : int):
     for stock in range(0, ultimo):
-        print(lista[stock]['cod_art']) 
-        print(lista[stock]['descripcion']) 
-        print(lista[stock]['cantidad']) 
-        print(lista[stock]['precio_unitario']) 
+        print(f"Articulo {stock + 1}.")
+        print(f"Codigo Articulo = {lista[stock]['cod_art']}") 
+        print(f"Descripcion     = {lista[stock]['descripcion']}") 
+        print(f"Cantidad        = {lista[stock]['cantidad']}") 
+        print(f"Precio Unitario = {lista[stock]['precio_unitario']}") 
+        print()
 
 def mostrar(lista : list, posicion : int, campos : list):
     for indice in range(0, len(campos)):
@@ -131,21 +126,22 @@ else:
 # TODO: d - Mostrar si este almacén vende queso “Don Bautista”. 
 
 burbuja(lyst, 'descripcion')
-for item in lyst:
-    print(item)
+mostrar_todo(lyst, ultimo)
+
 posicion = busqueda_binaria(lyst, ultimo, 'Queso Don Bautista', 'descripcion')
 if posicion != None:
     print(f" 'Queso Don Bautista' EXISTE en el almacen.")
 else:
     print(f" 'Queso Don Bautista' NO EXISTE en el almacen.")
 
-# TODO: e-  Mostrar el artículo con menor existencia. 
+# TODO: e - Mostrar el artículo con menor existencia. 
 
 posicion = menor(lyst, ultimo, 'cantidad')
 print(f"El articulo con menor existencia es '{lyst[posicion]['descripcion']}'.")
 
-# TODO: f-  Mostrar cual es el artículo más barato.
+# TODO: f - Mostrar cual es el artículo más barato.
 
 posicion = menor(lyst, ultimo, 'precio_unitario')
 print(f"El articulo mas barato es '{lyst[posicion]['descripcion']}'")
+
 
