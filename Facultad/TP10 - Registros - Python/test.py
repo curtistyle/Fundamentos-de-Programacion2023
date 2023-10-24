@@ -79,16 +79,60 @@
 #     print(personas[indice])
 
 
-# * [3, 3, 5, 1, 4, 3, 5, 5]
-lista = [3, 3, 5, 1, 4, 3, 5, 5]
-tamanio = 8
+# # * [3, 3, 5, 1, 4, 3, 5, 5]
+# lista = [3, 3, 5, 1, 4, 3, 5, 5]
+# tamanio = 8
 
-resultado = [-1] * tamanio
-mayor = lista[0]
-for indice in range(0, tamanio):
-    if lista[indice] >= mayor:
-        if lista[indice] > mayor:
-            print('cambio',mayor)
-        mayor = lista[indice]
-        print(mayor)
-        input()
+# resultado = [-1] * tamanio
+# mayor = lista[0]
+# for indice in range(0, tamanio):
+#     if lista[indice] >= mayor:
+#         if lista[indice] > mayor:
+#             print('cambio',mayor)
+#         mayor = lista[indice]
+#         print(mayor)
+#         input()
+
+
+# def crear_matriz(filas : int, columnas : int, valor=None):
+#     """Crea una matriz de 'n' `filas` y 'n' `columnas` e inicializa la matriz con x `valor`."""
+#     matriz = []
+#     for fila in range(filas):
+#         matriz = matriz + [[]]
+#         for columna in range(columnas):
+#             matriz[fila] = matriz[fila] + [valor]
+#     return matriz
+
+# print(crear_matriz( 2,4 ))
+
+
+# ! # Definir el tamaño de la matriz
+# filas = 3
+# columnas = 3
+
+# # Crear una matriz inicializada con ceros
+# matriz = [[0 for _ in range(columnas)] for _ in range(filas)]
+
+# # Imprimir la matriz
+# for fila in matriz:
+#     print(fila)
+
+
+lista = ['nombre', 'apellido', 'DNI']
+
+# def burbuja_personalizado( lista : list, ultimo : int, parametros : list ):
+#     for i in range(ultimo - 1):
+#         for j in range(ultimo - 1 - i):
+#             elemento_actual = lista[j]['obra_social'] + lista[j]['nombre'] + lista[j]['apellido']
+#             elemnto_siguiente = lista[j + 1]['obra_social'] + lista[j + 1]['nombre'] + lista[j]['apellido']
+#             if elemento_actual > elemnto_siguiente:
+#                 aux = lista[j]
+#                 lista[j] = lista[j + 1]
+#                 lista[j + 1] = aux
+
+# for item in lista: elemento_actual += item
+
+
+ordenar = "noombre>apelldio>obra_social"
+
+print(ordenar.split('>'))
