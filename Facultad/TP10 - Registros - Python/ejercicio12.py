@@ -31,7 +31,7 @@ def cargar(lista : list, tamanio : int, ultimo : int):
     indice = 0
     if ultimo > 0:
         indice = ultimo
-    print()
+    
     print( " - ¿Quiere ingresar un afiliado? (s/n): ", end="" )
     opc = getwch()
     limpiar()
@@ -59,7 +59,16 @@ def contar( lista : list, ultimo : int, campo : str, ocurrencia ):
             posicion[indice] = indice
     return contador, posicion
 
-def total( lista : list, ultimo : int, campo : str, valor : str):
+def contar_( lista : list, ultimo : int, campo : str, ocurrencia ):
+    contador = 0
+    registros = [ -1 ] * ultimo
+    for indice in range( 0, ultimo ):
+        if lista[ indice ][ campo ] > ocurrencia:
+            registros[ contador ] = lista[ indice ]
+            contador += 1
+    return contador, registros
+
+def total( lista : list, ultimo : int, campo : str, valor : str ):
     acumulador = 0
     for elemento in range( 0, ultimo ):
         if lista[elemento][campo] == valor:
@@ -142,9 +151,9 @@ def burbuja_personalizado( lista : list, ultimo : int, parametros : list ):
         for j in range(ultimo - 1 - i):
             elemento_actual = ''
             elemento_siguiente = ''
-            for campo in parametros: 
+            for campo in range( 0, parametros ): 
                 elemento_actual += lista[ j ][ campo ]
-            for campo in parametros: 
+            for campo in range( 0, parametros ): 
                 elemento_siguiente += lista[ j + 1 ][ campo ]
             if elemento_actual > elemento_siguiente:
                 aux = lista[ j ]
@@ -212,6 +221,7 @@ def menu( afiliados=0 ):
         )
         opc = getwch()
         if opc.upper() in ['A', 'B', 'C', 'D', 'E', 'F', 'Z']:
+            limpiar()
             return opc
     
 def menu_ordenamiento():
@@ -249,30 +259,35 @@ lista = [
     { 'nombre' : "Sandra", 'apellido' : "Martínez", 'obra_social' : "OSPRESA", 'cuota' : 1100, 'integrantes' : 5 },
     { 'nombre' : "Jesús", 'apellido' : "García", 'obra_social' : "OSME", 'cuota' : 12000, 'integrantes' : 9 },
     { 'nombre' : "Pablo", 'apellido' : "Benitez", 'obra_social' : "OSSEG", 'cuota' : 800, 'integrantes' : 8 },
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
 ]
 
 TAMANIO = len( lista )
 
 opc = ''
 # ultimo = TAMANIO
-ultimo = TAMANIO
+ultimo = 9
 
 while opc.upper() != 'Z':
     limpiar()
     opc = menu( ultimo )
     if opc.upper() == 'A':
-        limpiar()
         ultimo = cargar( lista, TAMANIO, ultimo )
     elif opc.upper() == 'B':
-        limpiar()
+        
         ultimo = quitar( lista, ultimo )
     elif opc.upper() == 'C':
-        limpiar()
+        
         opc = menu_ordenamiento()
         ordenar( lista, opc, ultimo )
         input()
     elif opc.upper() == 'D':
-        limpiar()
+        
         opc = menu_obra_social()
         if ( opc.upper() == 'A' ):
             print( f"El total aportado de todos los afiliados a IOSPER es: $ {total( lista, ultimo, 'obra_social', 'IOSPER' ):.2f}" )
@@ -288,22 +303,23 @@ while opc.upper() != 'Z':
                 print( f"La obra social {buscado} no existe!." )
             input()
     elif opc.upper() == 'F':
-        limpiar()
-        contador, posicion = contar( lista, ultimo, 'integrantes', 6 )
+        
+        contador, registros = contar_( lista, ultimo, 'integrantes', 6 )
+        print( f"{contador=} - {registros}" )
         print( f"Cantidad de Familias que possen mas de 6 integrantes en su grupo familiar: {contador}", end="\n\n" )
-        for pos in range( 0, len( posicion ) ):
-            if pos != -1:
-                if lista[pos]['cuota'] > 10000:
-                    print(
-                        f" + Nombre: {lista[pos]['nombre']}.\n"
-                        f" + Apellido: {lista[pos]['apellido']}.\n"
-                        f" + Obra Social: {lista[pos]['obra_social']}.\n"
-                        f" + Cuota: {lista[pos]['cuota']}.\n"
-                        f" + Integrantes: {lista[pos]['integrantes']}.\n\n"
-                    )
+        contador, registros = contar_( registros, contador, 'cuota', float(10000) )
+        print( f"{contador=} - {registros}" )
+        for persona in range( 0, contador ):
+            print(
+                f" + Nombre: {registros[persona]['nombre']}.\n"
+                f" + Apellido: {registros[persona]['apellido']}.\n"
+                f" + Obra Social: {registros[persona]['obra_social']}.\n"
+                f" + Cuota: {registros[persona]['cuota']}.\n"
+                f" + Integrantes: {registros[persona]['integrantes']}.\n\n"
+            )         
         input()
     elif opc.upper() == 'E':
-        limpiar()
+        
         print( " *** BUSCAR AFILIADO **** ", end="\n\n" )
         nombre = input( " - Nombre: " )
         apellido = input( " - Apellido: " )
