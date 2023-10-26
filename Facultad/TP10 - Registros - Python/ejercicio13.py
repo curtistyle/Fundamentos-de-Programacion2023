@@ -156,7 +156,6 @@ if __name__=="__main__":
     input()
     limpiar("cls")
 
-
     # TODO: C - Crear una lista con los concursantes menores de 18 años.
     print( f"{Fore.MAGENTA}C - Lista con los concursantes menores de 18 años.{Style.RESET_ALL}", end="\n\n" )
     ultimo_menores = determinar_menores( lista, menores, ultimo )
@@ -169,8 +168,6 @@ if __name__=="__main__":
     burbuja_personalizado( lista, ultimo, [ 'apellido', 'nombre' ] )
     mostrar( lista, ultimo )
     
-
-
     # TODO: E – Determinar si existe al menos una canción cuya autora es Adele.
 
     burbuja_personalizado( lista, ultimo, [ 'autor' ] )
@@ -183,12 +180,10 @@ if __name__=="__main__":
     input()
     limpiar("cls")
 
-
     # TODO: F - Listado ordenado por autores de las canciones que se interpretarán.
 
     print( f"{Fore.MAGENTA}F - Listado Ordenado por Autores.{Style.RESET_ALL}", end="\n\n" )
     mostrar( lista, ultimo )
-
 
     # TODO: G - Determinar porcentaje de menores a 18 años sobre el total
 
