@@ -29,6 +29,7 @@ def cargar_matriz(matriz : list, filas : int, columnas : int):
 
 def mostrar_matriz(matriz : list, filas, columnas):
     """Muestra la matriz en forma de bloque."""
+    # ! COLORAMA
     from colorama import Fore, Style
     for fila in range(0, filas):
         print(f"Fila {fila + 1}:",end="  ")

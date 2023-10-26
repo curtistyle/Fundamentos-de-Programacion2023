@@ -22,4 +22,4 @@ de sus componentes de posición par.  """
 
 
 def cargar_lista(valor):
-    
+    ...

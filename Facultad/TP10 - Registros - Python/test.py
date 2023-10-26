@@ -118,7 +118,7 @@
 #     print(fila)
 
 
-lista = ['nombre', 'apellido', 'DNI']
+# lista = ['nombre', 'apellido', 'DNI']
 
 # def burbuja_personalizado( lista : list, ultimo : int, parametros : list ):
 #     for i in range(ultimo - 1):
@@ -133,6 +133,39 @@ lista = ['nombre', 'apellido', 'DNI']
 # for item in lista: elemento_actual += item
 
 
-ordenar = "noombre>apelldio>obra_social"
+# ordenar = "noombre>apelldio>obra_social"
 
-print(ordenar.split('>'))
+# print(ordenar.split('>'))
+
+def burbuja_personalizado( lista : list, ultimo : int, parametros : list ):
+    for i in range(ultimo - 1):
+        for j in range(ultimo - 1 - i):
+            elemento_actual = ''
+            elemento_siguiente = ''
+            for campo in range( 0, len( parametros ) ): 
+                elemento_actual += lista[ j ][ parametros[ campo ] ]
+                print( f"{ultimo=}" )
+                print( f"{i=}" )
+                print( f"{j=}" )
+                print( f"{lista[j]=}" )
+                print( f"{lista[ j ][ parametros[ campo ] ]=}" )
+                input()
+            for campo in range( 0, len( parametros ) ): 
+                elemento_siguiente += lista[ j + 1 ][ parametros[ campo ]  ]
+            if elemento_actual > elemento_siguiente:
+                aux = lista[ j ]
+                lista[ j ] = lista[ j + 1 ]
+                lista[ j + 1 ] = aux
+
+
+lista = [ 
+            { 'nombre' : "Marta", 'apellido' : "Dias", 'edad' : 22 },
+            { 'nombre' : "Julia", 'apellido' : "Garcia", 'edad' : 22 },
+            { 'nombre' : "Jesus", 'apellido' : "Dias", 'edad' : 22 },
+        ]
+
+
+
+burbuja_personalizado( lista, len(lista), ['apellido', 'nombre'] )
+
+

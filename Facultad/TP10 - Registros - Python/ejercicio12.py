@@ -220,8 +220,8 @@ def menu( afiliados=0 ):
          "#################################################"    
         )
         opc = getwch()
+        limpiar()
         if opc.upper() in ['A', 'B', 'C', 'D', 'E', 'F', 'Z']:
-            limpiar()
             return opc
     
 def menu_ordenamiento():
