@@ -20,3 +20,6 @@ print( type(f) )
 var = json.load(f)
 print(var)
 
+import io
+
+io.TextIOWrapper
