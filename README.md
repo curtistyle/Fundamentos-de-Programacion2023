@@ -756,3 +756,56 @@ print(frutas['manzana'])  # Imprime el valor asociado a la clave 'manzana'
 ```
 
 Esto imprimirá el valor asociado a la clave `'manzana'`, que en este caso es `3`.
+
+
+# Archivos
+
+`TextIOWrapper` es una clase en Python que proporciona una interfaz para trabajar con archivos de texto. Es un subtipo de `io.TextIOBase` y se utiliza para leer y escribir texto en modo texto (no binario).
+
+Aquí están algunos de los métodos más comunes de la clase `TextIOWrapper` y para qué se utilizan:
+
+1. **`read(size=-1)`**:
+   - Lee y devuelve hasta `size` bytes del archivo o hasta el final del archivo si `size` es negativo.
+
+2. **`readline(size=-1)`**:
+   - Lee y devuelve una línea del archivo. Si `size` es especificado, lee hasta `size` bytes de la línea.
+
+3. **`readlines(hint=-1)`**:
+   - Lee y devuelve una lista de líneas del archivo. Si `hint` es especificado, intenta leer al menos esa cantidad de bytes.
+
+4. **`write(s)`**:
+   - Escribe la cadena `s` en el archivo.
+
+5. **`writelines(lines)`**:
+   - Escribe una lista de líneas en el archivo.
+
+6. **`seek(offset, from_what=0)`**:
+   - Cambia la posición del puntero de lectura/escritura dentro del archivo. `offset` es la cantidad de bytes a mover y `from_what` indica desde dónde se calculará el desplazamiento (0 para el inicio del archivo, 1 para la posición actual, 2 para el final del archivo).
+
+7. **`tell()`**:
+   - Devuelve la posición actual del puntero de lectura/escritura en el archivo.
+
+8. **`flush()`**:
+   - Forza a escribir cualquier buffer interno al archivo.
+
+9. **`close()`**:
+   - Cierra el archivo y libera los recursos asociados.
+
+10. **`detach()`**:
+    - Desvincula el flujo del archivo de su manejador. Esto puede ser útil para trabajar con sistemas de archivos y manipulación de archivos a un nivel más bajo.
+
+11. **`seekable()`**:
+    - Indica si el archivo es "seekable", lo que significa que puedes cambiar la posición del puntero de lectura/escritura.
+
+12. **`readable()`**:
+    - Indica si el archivo es de solo lectura.
+
+13. **`writable()`**:
+    - Indica si el archivo es de solo escritura.
+
+14. **`isatty()`**:
+    - Indica si el archivo es un terminal interactivo.
+
+Estos son solo algunos de los métodos disponibles en la clase `TextIOWrapper`. Cada uno de estos métodos proporciona una funcionalidad específica para la lectura y escritura de texto en archivos. Puedes consultar la [documentación oficial de Python](https://docs.python.org/3/library/io.html#io.TextIOWrapper) para obtener más detalles sobre estos métodos y otros que pueden estar disponibles.
+
+
