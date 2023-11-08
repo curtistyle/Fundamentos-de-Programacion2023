@@ -1,32 +1,4 @@
-¡Bienvenidos!
-Este es un archivo de texto.
-Adios!
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3 
-
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3 
-
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
-Nueva lieaa 1 
-Nueva lieaa 2 
-Nueva lieaa 3
+1 Sebastian 27
+2 Cristian 28
+3 Franco 26
+4 Santiago 25
