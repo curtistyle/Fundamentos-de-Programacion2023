@@ -809,3 +809,155 @@ Aquí están algunos de los métodos más comunes de la clase `TextIOWrapper` y 
 Estos son solo algunos de los métodos disponibles en la clase `TextIOWrapper`. Cada uno de estos métodos proporciona una funcionalidad específica para la lectura y escritura de texto en archivos. Puedes consultar la [documentación oficial de Python](https://docs.python.org/3/library/io.html#io.TextIOWrapper) para obtener más detalles sobre estos métodos y otros que pueden estar disponibles.
 
 
+¡Por supuesto! Aquí tienes una explicación de los métodos del módulo `os` que mencionaste:
+
+1. **`os.mkdir(nombre_directorio)`**:
+   - **Descripción**: Este método se utiliza para crear un nuevo directorio en el sistema de archivos.
+   - **Parámetro**:
+     - `nombre_directorio`: Es una cadena de texto que representa el nombre del nuevo directorio que se va a crear.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     os.mkdir("nuevo_directorio")
+     ```
+
+2. **`os.rmdir(nombre_directorio)`**:
+   - **Descripción**: Elimina el directorio especificado. El directorio debe estar vacío para que esta operación tenga éxito.
+   - **Parámetro**:
+     - `nombre_directorio`: Es una cadena de texto que representa el nombre del directorio a eliminar.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     os.rmdir("nuevo_directorio")
+     ```
+
+3. **`os.chdir(nuevo_directorio)`**:
+   - **Descripción**: Cambia el directorio de trabajo actual a `nuevo_directorio`.
+   - **Parámetro**:
+     - `nuevo_directorio`: Es una cadena de texto que representa el nuevo directorio al que se desea cambiar.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     os.chdir("/ruta/del/nuevo/directorio")
+     ```
+
+4. **`os.getcwd()`**:
+   - **Descripción**: Obtiene el directorio de trabajo actual (Current Working Directory - CWD), es decir, el directorio en el que se está ejecutando el script de Python.
+   - **Retorno**:
+     - Retorna una cadena de texto que representa la ruta absoluta del directorio actual.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     cwd = os.getcwd()
+     print(cwd)
+     ```
+
+5. **`os.remove(nombre_archivo)`**:
+   - **Descripción**: Elimina el archivo especificado del sistema de archivos.
+   - **Parámetro**:
+     - `nombre_archivo`: Es una cadena de texto que representa el nombre del archivo a eliminar.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     os.remove("archivo.txt")
+     ```
+
+6. **`os.path.exists(ruta)`**:
+   - **Descripción**: Comprueba si un archivo o directorio existe en la ruta especificada.
+   - **Parámetro**:
+     - `ruta`: Es una cadena de texto que representa la ruta a verificar.
+   - **Retorno**:
+     - Retorna `True` si el archivo o directorio existe, y `False` si no existe.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     existe = os.path.exists("archivo.txt")
+     print(existe)
+     ```
+
+7. **`os.rename(viejo_nombre, nuevo_nombre)`**:
+   - **Descripción**: Cambia el nombre de un archivo o directorio.
+   - **Parámetros**:
+     - `viejo_nombre`: Es una cadena de texto que representa el nombre actual del archivo o directorio.
+     - `nuevo_nombre`: Es una cadena de texto que representa el nuevo nombre que se desea asignar.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     os.rename("viejo_nombre.txt", "nuevo_nombre.txt")
+     ```
+
+8. **`os.listdir(ruta)`**:
+   - **Descripción**: Devuelve una lista con los nombres de los archivos y directorios en la ruta especificada.
+   - **Parámetro**:
+     - `ruta`: Es una cadena de texto que representa la ruta de la que se desea obtener el listado.
+   - **Retorno**:
+     - Retorna una lista de cadenas de texto con los nombres de los archivos y directorios.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     contenido = os.listdir("directorio")
+     print(contenido)
+     ```
+
+9. **`os.path.join(*rutas)`**:
+   - **Descripción**: Combina una o más partes de rutas para formar una ruta completa y compatible con el sistema operativo.
+   - **Parámetros**:
+     - `*rutas`: Uno o más argumentos de cadenas de texto que representan partes de rutas a combinar.
+   - **Retorno**:
+     - Retorna una cadena de texto que representa la ruta completa.
+   - **Ejemplo**:
+
+     ```python
+     import os
+
+     ruta_completa = os.path.join("directorio", "archivo.txt")
+     ```
+
+10. **`os.stat(ruta)`**:
+    - **Descripción**: Obtiene información detallada sobre un archivo o directorio en la ruta especificada.
+    - **Parámetro**:
+      - `ruta`: Es una cadena de texto que representa la ruta del archivo o directorio.
+    - **Retorno**:
+      - Retorna un objeto `os.stat_result` que contiene información sobre el archivo o directorio.
+    - **Ejemplo**:
+
+      ```python
+
+
+      import os
+
+      info = os.stat("archivo.txt")
+      print(info)
+      ```
+
+11. **`os.path.abspath(ruta)`**:
+    - **Descripción**: Devuelve la ruta absoluta de la ruta especificada.
+    - **Parámetro**:
+      - `ruta`: Es una cadena de texto que representa la ruta que se desea convertir a absoluta.
+    - **Retorno**:
+      - Retorna una cadena de texto que representa la ruta absoluta.
+    - **Ejemplo**:
+
+      ```python
+      import os
+
+      ruta_absoluta = os.path.abspath("archivo.txt")
+      ```
+
+Espero que estas explicaciones te sean útiles. Si tienes alguna otra pregunta, no dudes en preguntar.
