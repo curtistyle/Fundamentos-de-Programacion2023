@@ -1,5 +1,4 @@
 from msvcrt import getwch
-from colorama import Fore, Style
 
 def principal() -> str:
     while (True):

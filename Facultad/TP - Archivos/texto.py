@@ -31,4 +31,4 @@ def reemplazar( texto : list, linea : str, posicion ):
     
 def mostrar( texto : list ):
     for fila in range( 0, len( texto ) ):
-        print( f"{texto[fila]}", end="" )
+        print( f"{(fila+1):<2} | {texto[fila]}", end="" ) 
