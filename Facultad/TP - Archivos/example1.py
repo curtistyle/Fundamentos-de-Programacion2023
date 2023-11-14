@@ -28,8 +28,28 @@
 #     fichero.seek(0,0)
 #     print(fichero.read())
 
+# !seek
+# with open( "Facultad\TP - Archivos\cuentas.txt", "r", encoding="utf-8" ) as fichero:
+#     linea1=fichero.readline()
+#     print( linea1 )
+#     fichero.seek( len(linea1) + 1, 0 )
+#     linea2=fichero.readline()
+#     print( linea2 )
 
+
+# with open( "cuentas.txt", "r", encoding="utf-8" ) as fichero:
+#     texto = fichero.read()                       
+#     lineas = texto.split( '\n' )  
+#     print( f"{'ID':>5} {'Nombre':>10} {'Apellido':>10} {'Email':>20} {'Edad':>5}" )                 
+#     for indice in range( 0, len( lineas ) ):
+#         linea = lineas[indice]
+#         datos = linea.split()
+#         print( f"{datos[0]:>5} {datos[1]:>10} {datos[2]:>10} {datos[3]:>20} {datos[4]:>5}" ) 
+    
 with open( "Facultad\TP - Archivos\cuentas.txt", "r", encoding="utf-8" ) as fichero:
-
-    
-    
+    lineas = fichero.readlines()                        
+    print( f"{'ID':>5} {'Nombre':>10} {'Apellido':>10} {'Email':>20} {'Edad':>5}" )                 
+    for indice in range( 0, len( lineas ) ):
+        linea = lineas[indice]
+        datos = linea.split()
+        print( f"{datos[0]:>5} {datos[1]:>10} {datos[2]:>10} {datos[3]:>20} {datos[4]:>5}" ) 
