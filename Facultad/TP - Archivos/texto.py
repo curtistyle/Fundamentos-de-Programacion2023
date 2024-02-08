@@ -22,6 +22,7 @@ def añadir( texto : list , linea : str, posicion=0 ):
 
 def reemplazar( texto : list, linea : str, posicion ):
     n_filas = len( texto )
+    
     if ( ( posicion > 0 ) and (posicion <= n_filas ) ):
         texto[posicion - 1] = linea + "\n"
         return texto
