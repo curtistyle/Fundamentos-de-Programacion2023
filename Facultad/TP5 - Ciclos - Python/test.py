@@ -50,6 +50,12 @@
 # print(numeros_pares_lista)  # Imprime [2, 4, 6, 8, 10]
 
 
-numero = int(input("Ingrese un numero: "))
+# numero = int(input("Ingrese un numero: "))
 
-print("Es par" if ((numero % 2) == 0) else "Es impar")
+# print("Es par" if ((numero % 2) == 0) else "Es impar")
+
+
+lyst = ["rojo", "verde", "amarillo"]
+
+for item, index in enumerate(lyst):
+    print(f"{item=}, {index=}")
